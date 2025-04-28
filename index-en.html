@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>CleanX - Partneriks</title>
+    <title>CleanX - Become a Partner</title>
     <style>
       html {
         scroll-behavior: smooth;
@@ -88,24 +88,24 @@
       .btn-primary:hover {
         background: #254a99;
       }
-      /* Päis */
+      /* Header */
       header {
         background: linear-gradient(to right, #3366cc, #6699ff);
         color: white;
-        padding: 40px 20px; /* Kitsam! */
+        padding: 40px 20px;
         text-align: center;
       }
       header h1 {
-        font-size: 30px; /* Veidi väiksem ja modernsem */
+        font-size: 30px;
         margin-bottom: 10px;
       }
       header p {
         font-size: 16px;
         max-width: 500px;
-        margin: 0 auto 20px; /* Tekst on ilusasti tsentreeritud */
+        margin: 0 auto 20px;
         line-height: 1.5;
       }
-      /* Sammud */
+      /* Steps */
       .steps {
         padding: 60px 20px;
         text-align: center;
@@ -167,131 +167,126 @@
       <div class="navbar-left">
         <a href="#" class="navbar-logo">CleanX</a>
         <div class="navbar-links">
-          <a href="about.html" class="btn-link">Meist</a>
-          <a href="#how" class="btn-link">Kuidas alustada</a>
-          <a href="kkk.html" class="btn-link">KKK</a>
+          <a href="about-en.html" class="btn-link">About</a>
+          <a href="#how" class="btn-link">How to Start</a>
+          <a href="faq-en.html" class="btn-link">FAQ</a>
         </div>
       </div>
       <div class="navbar-buttons">
-        <a href="#registration" class="btn-secondary">Registreeru</a>
-        <a href="#registration" class="btn-primary">Lae alla äpp</a>
+        <a href="#registration" class="btn-secondary">Register</a>
+        <a href="#registration" class="btn-primary">Download App</a>
+        <a href="index.html" class="btn-link">ET</a>
       </div>
     </nav>
 
     <!-- HEADER -->
     <header>
-      <h1>Tule CleanX partneriks!</h1>
-      <p>Liitu puhastusteenuse meeskonnaga ja hakka teenima oma tingimustel.</p>
+      <h1>Become a CleanX Partner!</h1>
+      <p>Join our cleaning service team and start earning on your terms.</p>
       <a
         href="#registration"
         class="btn-primary"
         style="margin-top: 20px; display: inline-block"
-        >Alusta registreerimist</a
+        >Start Registration</a
       >
     </header>
 
-    <!-- SAMMUD -->
+    <!-- STEPS -->
     <section class="steps" id="overview">
-      <h2>Kuidas alustada?</h2>
+      <h2>How to Start?</h2>
       <div class="step-item" id="how">
-        <h3>1. Registreeru</h3>
-        <p>Täida lihtne CleanX liitumisvorm ja esita oma andmed.</p>
+        <h3>1. Register</h3>
+        <p>
+          Fill out the simple CleanX registration form and submit your
+          information.
+        </p>
       </div>
       <div class="step-item">
-        <h3>2. Kinnita dokumendid</h3>
-        <p>Lae üles vajalikud dokumendid ja kinnita oma ettevõtlusvorm.</p>
+        <h3>2. Confirm Documents</h3>
+        <p>Upload the necessary documents and confirm your business type.</p>
       </div>
       <div class="step-item" id="faq">
-        <h3>3. Alusta tööd</h3>
+        <h3>3. Start Working</h3>
         <p>
-          Pärast kinnitamist saad kohe pakkumisi ja hakata puhastustöid tegema.
+          After confirmation, you can immediately start receiving offers and
+          performing cleaning tasks.
         </p>
       </div>
     </section>
 
-    <!-- Registreerimisvorm -->
+    <!-- REGISTRATION FORM -->
     <section id="registration">
-      <h2>Registreerimisvorm</h2>
+      <h2>Registration Form</h2>
       <form
         action="send_form.php"
         method="post"
         enctype="multipart/form-data"
         autocomplete="off"
       >
-        <input type="text" name="firstname" placeholder="Eesnimi" required />
-        <input
-          type="text"
-          name="lastname"
-          placeholder="Perekonnanimi"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="E-maili aadress"
-          required
-        />
+        <input type="text" name="firstname" placeholder="First Name" required />
+        <input type="text" name="lastname" placeholder="Last Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
         <input
           type="text"
           name="referral"
-          placeholder="Soovituskood (valikuline)"
+          placeholder="Referral Code (optional)"
         />
         <input
           type="text"
           name="birthdate"
-          placeholder="Sünniaeg (PP.KK.AAAA)"
+          placeholder="Date of Birth (DD.MM.YYYY)"
           maxlength="10"
           required
         />
         <input
           type="text"
           name="idcode"
-          placeholder="Isikukood"
+          placeholder="ID Code"
           maxlength="11"
           required
         />
         <select name="documentType" required>
-          <option value="">Vali dokumendi tüüp</option>
-          <option value="Eesti ID-kaart">Eesti ID-kaart</option>
-          <option value="Eesti pass">Eesti pass</option>
-          <option value="Elamisluba">Elamisluba</option>
+          <option value="">Select Document Type</option>
+          <option value="Estonian ID Card">Estonian ID Card</option>
+          <option value="Estonian Passport">Estonian Passport</option>
+          <option value="Residence Permit">Residence Permit</option>
         </select>
         <input type="file" name="file" required />
         <select name="businessType" required>
-          <option value="">Vali ettevõtlusvorm</option>
-          <option value="FIE">FIE (Füüsilisest isikust ettevõtja)</option>
-          <option value="OÜ">OÜ (Osaühing)</option>
-          <option value="Ettevõtluskonto">Ettevõtluskonto</option>
+          <option value="">Select Business Type</option>
+          <option value="Sole Proprietor">Sole Proprietor (FIE)</option>
+          <option value="Limited Company">Limited Company (OÜ)</option>
+          <option value="Entrepreneur Account">Entrepreneur Account</option>
         </select>
         <input
           type="text"
           name="iban"
-          placeholder="Pangakonto number (IBAN)"
+          placeholder="Bank Account Number (IBAN)"
           required
         />
         <input
           type="text"
           name="companyName"
-          placeholder="Ettevõtte nimi (kui OÜ)"
+          placeholder="Company Name (if OÜ)"
         />
         <input
           type="text"
           name="companyRegistryCode"
-          placeholder="Registrikood (kui OÜ)"
+          placeholder="Registry Code (if OÜ)"
         />
-        <button type="submit">Saada</button>
+        <button type="submit">Submit</button>
       </form>
     </section>
 
     <!-- FOOTER -->
     <footer>
-      © 2025 CleanX - Puhastusteenuste platvorm |
-      <a href="privacy.html" style="color: #3366cc; text-decoration: none"
-        >Privaatsustingimused</a
+      © 2025 CleanX - Cleaning Services Platform |
+      <a href="privacy-en.html" style="color: #3366cc; text-decoration: none"
+        >Privacy Policy</a
       >
       |
-      <a href="terms.html" style="color: #3366cc; text-decoration: none"
-        >Kasutustingimused</a
+      <a href="terms-en.html" style="color: #3366cc; text-decoration: none"
+        >Terms of Service</a
       >
     </footer>
   </body>
