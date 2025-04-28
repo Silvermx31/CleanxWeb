@@ -7,10 +7,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $birthdate = $_POST['birthdate'] ?? '';
     $idcode = $_POST['idcode'] ?? '';
     $documentType = $_POST['documentType'] ?? '';
+    $businessType = $_POST['businessType'] ?? '';
+    $companyName = $_POST['companyName'] ?? '';
+    $companyRegistryCode = $_POST['companyRegistryCode'] ?? '';
+    $iban = $_POST['iban'] ?? '';
 
     $to = 'silvermx31@gmail.com';
     $subject = 'Uus registreerimine CleanX kaudu';
     
+    // Kirja põhisisu
     $message = "
 Eesnimi: $firstname
 Perekonnanimi: $lastname
@@ -19,6 +24,20 @@ Soovituskood: $referral
 Sünniaeg: $birthdate
 Isikukood: $idcode
 Dokumendi tüüp: $documentType
+Ettevõtlusvorm: $businessType
+";
+
+    // Kui ettevõtlusvorm on OÜ, lisame ettevõtte andmed
+    if ($businessType === 'OÜ') {
+        $message .= "
+Ettevõtte nimi: $companyName
+Registrikood: $companyRegistryCode
+";
+    }
+
+    // Pangakonto number (IBAN) lisatakse alati
+    $message .= "
+Pangakonto (IBAN): $iban
 ";
 
     // Faili töötlemine
@@ -31,21 +50,19 @@ Dokumendi tüüp: $documentType
         $file_size = $_FILES['file']['size'];
         $file_type = $_FILES['file']['type'];
 
-        // Kontrollime failitüüpi
+        // Faili kontrollid
         if (!in_array($file_type, $allowed_types)) {
             http_response_code(400);
             echo "Lubatud on ainult JPG, PNG või PDF failid.";
             exit;
         }
 
-        // Kontrollime faili suurust
         if ($file_size > $max_size) {
             http_response_code(400);
-            echo "Fail on liiga suur. Maksimaalselt 5MB.";
+            echo "Fail on liiga suur. Maksimaalne suurus on 5MB.";
             exit;
         }
 
-        // Faili nime puhastamine
         $file_name = preg_replace("/[^A-Za-z0-9\.\-_]/", '', $file_name);
 
         $handle = fopen($file_tmp, "r");
@@ -73,14 +90,14 @@ Dokumendi tüüp: $documentType
         $body .= $encoded_content . "\r\n";
         $body .= "--$boundary--";
 
-        // Saadame kirja
+        // Saadame meili
         if (mail($to, $subject, $body, $headers)) {
             http_response_code(200);
         } else {
             http_response_code(500);
         }
     } else {
-        // Kui faili pole, saadame ainult tekstiga
+        // Kui faili pole, saadame lihtsalt tekstilise kirja
         $headers = "From: cleanx@yourdomain.com\r\n";
         if (mail($to, $subject, $message, $headers)) {
             http_response_code(200);
