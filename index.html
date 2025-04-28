@@ -2,6 +2,7 @@
 <html lang="et">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CleanX - Partneriks</title>
     <style>
       html {
@@ -13,46 +14,45 @@
         background: #f0f4f8;
         color: #333;
       }
+      .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
       /* Fade-in animatsioon */
       .fade-in {
         opacity: 0;
         transform: translateY(20px);
         animation: fadeIn 1s ease-out forwards;
       }
-
       @keyframes fadeIn {
         to {
           opacity: 1;
           transform: none;
         }
       }
-
-      /* Täiendatud nuppude hover efekt (kasvamine) */
+      /* Nuppude hover-efekt */
       .btn-primary:hover,
       .btn-secondary:hover,
       .btn-link:hover {
         transform: scale(1.05);
       }
-
-      /* Testimonials sektsioon */
+      /* Testimonials */
       .testimonials {
         padding: 60px 20px;
         background: #ffffff;
         text-align: center;
       }
-
       .testimonials h2 {
         font-size: 28px;
         margin-bottom: 40px;
         color: #3366cc;
       }
-
       .testimonial-item {
         margin-bottom: 30px;
         font-style: italic;
         color: #555;
       }
-
       /* Dark mode */
       @media (prefers-color-scheme: dark) {
         body {
@@ -132,7 +132,6 @@
         border-radius: 20px;
         font-size: 14px;
         border: none;
-        text-decoration: none;
         cursor: pointer;
         transition: background 0.3s;
       }
@@ -146,7 +145,6 @@
         border-radius: 20px;
         font-size: 14px;
         border: none;
-        text-decoration: none;
         cursor: pointer;
         transition: background 0.3s;
       }
@@ -157,17 +155,17 @@
       header {
         background: linear-gradient(to right, #3366cc, #6699ff);
         color: white;
-        padding: 40px 20px; /* Kitsam! */
+        padding: 40px 20px;
         text-align: center;
       }
       header h1 {
-        font-size: 30px; /* Veidi väiksem ja modernsem */
+        font-size: 30px;
         margin-bottom: 10px;
       }
       header p {
         font-size: 16px;
         max-width: 500px;
-        margin: 0 auto 20px; /* Tekst on ilusasti tsentreeritud */
+        margin: 0 auto 20px;
         line-height: 1.5;
       }
       /* Sammud */
@@ -192,7 +190,7 @@
         font-size: 14px;
         color: #666;
       }
-      /* Registration form */
+      /* Registreerimisvorm */
       #registration {
         background: white;
         margin: 40px auto;
@@ -223,70 +221,6 @@
       #registration button:hover {
         background: #254a99;
       }
-      /* Responsiivsus: mobiilisõbralik paigutus */
-      @media (max-width: 768px) {
-        .navbar {
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 10px 20px;
-        }
-
-        .navbar-left,
-        .navbar-buttons,
-        .navbar-links {
-          flex-direction: column;
-          align-items: flex-start;
-          width: 100%;
-          gap: 10px;
-          margin-left: 0;
-        }
-
-        .navbar-links a,
-        .navbar-buttons a {
-          width: 100%;
-          text-align: left;
-          padding: 10px;
-        }
-
-        header {
-          padding: 30px 15px;
-        }
-
-        header h1 {
-          font-size: 24px;
-        }
-
-        header p {
-          font-size: 14px;
-        }
-
-        .steps,
-        .testimonials,
-        #registration {
-          padding: 40px 15px;
-        }
-
-        .steps h2,
-        .testimonials h2 {
-          font-size: 24px;
-        }
-
-        .step-item h3 {
-          font-size: 20px;
-        }
-
-        #registration input,
-        #registration select,
-        #registration button {
-          font-size: 14px;
-          padding: 8px;
-        }
-
-        footer {
-          font-size: 12px;
-          padding: 20px 10px;
-        }
-      }
     </style>
   </head>
 
@@ -310,132 +244,141 @@
 
     <!-- HEADER -->
     <header>
-      <h1>Tule CleanX partneriks!</h1>
-      <p>Liitu puhastusteenuse meeskonnaga ja hakka teenima oma tingimustel.</p>
-      <a
-        href="#registration"
-        class="btn-primary"
-        style="margin-top: 20px; display: inline-block"
-        >Alusta registreerimist</a
-      >
+      <div class="content">
+        <h1>Tule CleanX partneriks!</h1>
+        <p>
+          Liitu puhastusteenuse meeskonnaga ja hakka teenima oma tingimustel.
+        </p>
+        <a
+          href="#registration"
+          class="btn-primary"
+          style="margin-top: 20px; display: inline-block"
+          >Alusta registreerimist</a
+        >
+      </div>
     </header>
 
     <!-- SAMMUD -->
     <section class="steps" id="overview">
-      <h2>Kuidas alustada?</h2>
-      <div class="step-item" id="how">
-        <h3>1. Registreeru</h3>
-        <p>Täida lihtne CleanX liitumisvorm ja esita oma andmed.</p>
-      </div>
-      <div class="step-item">
-        <h3>2. Kinnita dokumendid</h3>
-        <p>Lae üles vajalikud dokumendid ja kinnita oma ettevõtlusvorm.</p>
-      </div>
-      <div class="step-item" id="faq">
-        <h3>3. Alusta tööd</h3>
-        <p>
-          Pärast kinnitamist saad kohe pakkumisi ja hakata puhastustöid tegema.
-        </p>
+      <div class="content">
+        <h2>Kuidas alustada?</h2>
+        <div class="step-item" id="how">
+          <h3>1. Registreeru</h3>
+          <p>Täida lihtne CleanX liitumisvorm ja esita oma andmed.</p>
+        </div>
+        <div class="step-item">
+          <h3>2. Kinnita dokumendid</h3>
+          <p>Lae üles vajalikud dokumendid ja kinnita oma ettevõtlusvorm.</p>
+        </div>
+        <div class="step-item" id="faq">
+          <h3>3. Alusta tööd</h3>
+          <p>
+            Pärast kinnitamist saad kohe pakkumisi ja hakata puhastustöid
+            tegema.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- Registreerimisvorm -->
+    <!-- REGISTREERIMISVORM -->
     <section id="registration" class="fade-in">
-      <h2>Registreerimisvorm</h2>
-      <form
-        action="send_form.php"
-        method="post"
-        enctype="multipart/form-data"
-        autocomplete="off"
-      >
-        <input type="text" name="firstname" placeholder="Eesnimi" required />
-        <input
-          type="text"
-          name="lastname"
-          placeholder="Perekonnanimi"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="E-maili aadress"
-          required
-        />
-        <input
-          type="text"
-          name="referral"
-          placeholder="Soovituskood (valikuline)"
-        />
-        <input
-          type="text"
-          name="birthdate"
-          placeholder="Sünniaeg (PP.KK.AAAA)"
-          maxlength="10"
-          required
-        />
-        <input
-          type="text"
-          name="idcode"
-          placeholder="Isikukood"
-          maxlength="11"
-          required
-        />
-        <select name="documentType" required>
-          <option value="">Vali dokumendi tüüp</option>
-          <option value="Eesti ID-kaart">Eesti ID-kaart</option>
-          <option value="Eesti pass">Eesti pass</option>
-          <option value="Elamisluba">Elamisluba</option>
-        </select>
-        <input type="file" name="file" required />
-        <select name="businessType" required>
-          <option value="">Vali ettevõtlusvorm</option>
-          <option value="FIE">FIE (Füüsilisest isikust ettevõtja)</option>
-          <option value="OÜ">OÜ (Osaühing)</option>
-          <option value="Ettevõtluskonto">Ettevõtluskonto</option>
-        </select>
-        <input
-          type="text"
-          name="iban"
-          placeholder="Pangakonto number (IBAN)"
-          required
-        />
-        <input
-          type="text"
-          name="companyName"
-          placeholder="Ettevõtte nimi (kui OÜ)"
-        />
-        <input
-          type="text"
-          name="companyRegistryCode"
-          placeholder="Registrikood (kui OÜ)"
-        />
-        <button type="submit">Saada</button>
-      </form>
+      <div class="content">
+        <h2>Registreerimisvorm</h2>
+        <form
+          action="send_form.php"
+          method="post"
+          enctype="multipart/form-data"
+          autocomplete="off"
+        >
+          <input type="text" name="firstname" placeholder="Eesnimi" required />
+          <input
+            type="text"
+            name="lastname"
+            placeholder="Perekonnanimi"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="E-maili aadress"
+            required
+          />
+          <input
+            type="text"
+            name="referral"
+            placeholder="Soovituskood (valikuline)"
+          />
+          <input
+            type="text"
+            name="birthdate"
+            placeholder="Sünniaeg (PP.KK.AAAA)"
+            maxlength="10"
+            required
+          />
+          <input
+            type="text"
+            name="idcode"
+            placeholder="Isikukood"
+            maxlength="11"
+            required
+          />
+          <select name="documentType" required>
+            <option value="">Vali dokumendi tüüp</option>
+            <option value="Eesti ID-kaart">Eesti ID-kaart</option>
+            <option value="Eesti pass">Eesti pass</option>
+            <option value="Elamisluba">Elamisluba</option>
+          </select>
+          <input type="file" name="file" required />
+          <select name="businessType" required>
+            <option value="">Vali ettevõtlusvorm</option>
+            <option value="FIE">FIE</option>
+            <option value="OÜ">OÜ</option>
+            <option value="Ettevõtluskonto">Ettevõtluskonto</option>
+          </select>
+          <input
+            type="text"
+            name="iban"
+            placeholder="Pangakonto number (IBAN)"
+            required
+          />
+          <input
+            type="text"
+            name="companyName"
+            placeholder="Ettevõtte nimi (kui OÜ)"
+          />
+          <input
+            type="text"
+            name="companyRegistryCode"
+            placeholder="Registrikood (kui OÜ)"
+          />
+          <button type="submit">Saada</button>
+        </form>
+      </div>
     </section>
 
+    <!-- TESTIMONIALS -->
     <section class="testimonials fade-in">
-      <h2>Mida meie partnerid ütlevad</h2>
-      <div class="testimonial-item">
-        "Tänu CleanX-ile saan töötada just siis, kui ise tahan, ja teenida
-        lisaraha!"<br />
-        <strong>- Mari, Tallinn</strong>
-      </div>
-      <div class="testimonial-item">
-        "Väga mugav ja kiire liitumine, soovitan kõigile!"<br />
-        <strong>- Jaan, Tartu</strong>
+      <div class="content">
+        <h2>Mida meie partnerid ütlevad</h2>
+        <div class="testimonial-item">
+          "Tänu CleanX-ile saan töötada just siis, kui ise tahan, ja teenida
+          lisaraha!"<br />
+          <strong>- Mari, Tallinn</strong>
+        </div>
+        <div class="testimonial-item">
+          "Väga mugav ja kiire liitumine, soovitan kõigile!"<br />
+          <strong>- Jaan, Tartu</strong>
+        </div>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-      © 2025 CleanX - Puhastusteenuste platvorm |
-      <a href="privacy.html" style="color: #3366cc; text-decoration: none"
-        >Privaatsustingimused</a
-      >
-      |
-      <a href="terms.html" style="color: #3366cc; text-decoration: none"
-        >Kasutustingimused</a
-      >
+      <div class="content">
+        © 2025 CleanX - Puhastusteenuste platvorm |
+        <a href="privacy.html">Privaatsustingimused</a> |
+        <a href="terms.html">Kasutustingimused</a>
+      </div>
     </footer>
   </body>
 </html>
