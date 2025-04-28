@@ -92,16 +92,18 @@
       header {
         background: linear-gradient(to right, #3366cc, #6699ff);
         color: white;
-        padding: 80px 20px;
+        padding: 40px 20px; /* Kitsam! */
         text-align: center;
       }
       header h1 {
-        font-size: 36px;
+        font-size: 30px; /* Veidi väiksem ja modernsem */
         margin-bottom: 10px;
       }
       header p {
-        font-size: 18px;
-        margin-bottom: 30px;
+        font-size: 16px;
+        max-width: 500px;
+        margin: 0 auto 20px; /* Tekst on ilusasti tsentreeritud */
+        line-height: 1.5;
       }
       /* Sammud */
       .steps {
@@ -166,13 +168,13 @@
         <a href="#" class="navbar-logo">CleanX</a>
         <div class="navbar-links">
           <a href="#overview" class="btn-link">Ülevaade</a>
-          <a href="#how" class="btn-link">Kuidas see käib</a>
-          <a href="#faq" class="btn-link">KKK</a>
+          <a href="#how" class="btn-link">Kuidas alustada</a>
+          <a href="kkk.html" class="btn-link">KKK</a>
         </div>
       </div>
       <div class="navbar-buttons">
         <a href="#registration" class="btn-secondary">Registreeru</a>
-        <a href="#registration" class="btn-primary">Alusta tööd</a>
+        <a href="#registration" class="btn-primary">Lae alla äpp</a>
       </div>
     </nav>
 
@@ -210,7 +212,12 @@
     <!-- Registreerimisvorm -->
     <section id="registration">
       <h2>Registreerimisvorm</h2>
-      <form action="send_form.php" method="post" enctype="multipart/form-data">
+      <form
+        action="send_form.php"
+        method="post"
+        enctype="multipart/form-data"
+        autocomplete="off"
+      >
         <input type="text" name="firstname" placeholder="Eesnimi" required />
         <input
           type="text"
