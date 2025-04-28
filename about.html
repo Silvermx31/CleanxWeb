@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="et">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CleanX - Meist</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f0f4f8;
+        color: #333;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        background: #fafbfc;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .navbar-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .navbar-logo {
+        font-weight: bold;
+        font-size: 20px;
+        color: #3366cc;
+        text-decoration: none;
+      }
+      .navbar-links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: 20px;
+      }
+      .btn-link {
+        background: #eee;
+        color: #333;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .btn-link:hover {
+        background: #ccc;
+      }
+      .navbar-buttons {
+        display: flex;
+        gap: 10px;
+      }
+      .btn-secondary {
+        background: #333;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .btn-secondary:hover {
+        background: #555;
+      }
+      .btn-primary {
+        background: #3366cc;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .btn-primary:hover {
+        background: #254a99;
+      }
+      .content {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #3366cc;
+      }
+      h2 {
+        text-align: left;
+        color: #3366cc;
+        margin-top: 40px;
+        margin-bottom: 10px;
+      }
+      .section {
+        margin-bottom: 30px;
+      }
+      ul {
+        margin-left: 20px;
+      }
+      footer {
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 14px;
+        color: #666;
+        margin-top: 50px;
+        background: #fafbfc;
+      }
+      footer a {
+        color: #3366cc;
+        text-decoration: none;
+        margin: 0 5px;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="pealeht.html" class="navbar-logo">CleanX</a>
+        <div class="navbar-links">
+          <a href="about.html" class="btn-link">Meist</a>
+          <a href="#how" class="btn-link">Kuidas alustada</a>
+          <a href="kkk.html" class="btn-link">KKK</a>
+        </div>
+      </div>
+      <div class="navbar-buttons">
+        <a href="pealeht.html#registration" class="btn-secondary"
+          >Registreeru</a
+        >
+        <a href="pealeht.html#registration" class="btn-primary">Lae alla äpp</a>
+      </div>
+    </nav>
+
+    <!-- SISU -->
+    <div class="content">
+      <h1>CleanX</h1>
+
+      <div class="section">
+        <h2>Kes me oleme?</h2>
+        <p>
+          <strong>CleanX</strong> on innovatiivne platvorm, mis lahendab
+          talviste autoomanike ühe suurima probleemi — lume ja jää eemaldamise
+          sõidukitelt. Meie eesmärk on muuta auto lumekoristus kiireks, mugavaks
+          ja kättesaadavaks kõigile. Oleme kirglik ja ambitsioonikas tiim, kes
+          arendab kaasaegset tehnoloogilist lahendust, et ühendada autoomanikud
+          ja sõltumatud teenusepakkujad ühele lihtsasti kasutatavale
+          rakendusele.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Mida me pakume?</h2>
+        <p>CleanX rakendusega saad:</p>
+        <ul>
+          <li>
+            <strong>Tellida auto lumekoristusteenust</strong> kiirelt ja
+            mugavalt.
+          </li>
+          <li>
+            <strong>Pakkuda teenust</strong> ja teenida lisaraha — vali ise,
+            millal ja kus töötad.
+          </li>
+          <li>
+            <strong>Reaalajas jälgida</strong> teenuse kulgu: näed puhastaja
+            teekonda ja töö edenemist otse kaardilt.
+          </li>
+          <li>
+            <strong>Tasuda turvaliselt</strong> deebet- ja krediitkaardiga läbi
+            Stripe maksesüsteemi.
+          </li>
+        </ul>
+        <p>
+          Platvorm on loodud olema paindlik, turvaline ja kasutajasõbralik,
+          pakkudes mugavust nii klientidele kui teenusepakkujatele.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Kuidas teenida CleanXiga?</h2>
+        <p>Kui soovid lumekoristajana lisasissetulekut teenida:</p>
+        <ul>
+          <li>Registreeru CleanX platvormil.</li>
+          <li>Võta vastu tellimusi enda valitud ajal ja piirkonnas.</li>
+          <li>
+            Teenid <strong>90% igast tehtud töö tellimuse maksumusest</strong> —
+            CleanX rakendus võtab vaid 10% vahendustasu.
+          </li>
+          <li>
+            Töötada saad nii FIE, OÜ kui ka eraisikuna, olenevalt oma
+            eelistustest ja tulu suurusest.
+          </li>
+        </ul>
+        <p>
+          Nii pakume sulle võimalust teenida lisaraha, juhtida oma aega ise ja
+          töötada seal, kus vajadus on suurim.
+        </p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2025 CleanX - Puhastusteenuste platvorm |
+      <a href="privacy.html">Privaatsustingimused</a> |
+      <a href="terms.html">Kasutustingimused</a>
+    </footer>
+  </body>
+</html>
