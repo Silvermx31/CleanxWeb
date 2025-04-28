@@ -223,6 +223,70 @@
       #registration button:hover {
         background: #254a99;
       }
+      /* Responsiivsus: mobiilisõbralik paigutus */
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 10px 20px;
+        }
+
+        .navbar-left,
+        .navbar-buttons,
+        .navbar-links {
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+          gap: 10px;
+          margin-left: 0;
+        }
+
+        .navbar-links a,
+        .navbar-buttons a {
+          width: 100%;
+          text-align: left;
+          padding: 10px;
+        }
+
+        header {
+          padding: 30px 15px;
+        }
+
+        header h1 {
+          font-size: 24px;
+        }
+
+        header p {
+          font-size: 14px;
+        }
+
+        .steps,
+        .testimonials,
+        #registration {
+          padding: 40px 15px;
+        }
+
+        .steps h2,
+        .testimonials h2 {
+          font-size: 24px;
+        }
+
+        .step-item h3 {
+          font-size: 20px;
+        }
+
+        #registration input,
+        #registration select,
+        #registration button {
+          font-size: 14px;
+          padding: 8px;
+        }
+
+        footer {
+          font-size: 12px;
+          padding: 20px 10px;
+        }
+      }
     </style>
   </head>
 
