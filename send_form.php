@@ -4,6 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $lastname = $_POST['lastname'] ?? '';
     $email = $_POST['email'] ?? '';
     $referral = $_POST['referral'] ?? '';
+    $phone = $_POST['phone'] ?? '';
     $birthdate = $_POST['birthdate'] ?? '';
     $idcode = $_POST['idcode'] ?? '';
     $documentType = $_POST['documentType'] ?? '';
@@ -21,6 +22,7 @@ Eesnimi: $firstname
 Perekonnanimi: $lastname
 E-mail: $email
 Soovituskood: $referral
+Telefon: $phone
 Sünniaeg: $birthdate
 Isikukood: $idcode
 Dokumendi tüüp: $documentType

@@ -13,6 +13,107 @@
         background: #f0f4f8;
         color: #333;
       }
+      .content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      /* Fade-in animatsioon */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 1s ease-out forwards;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      /* Nuppude hover-efekt */
+      .btn-primary:hover,
+      .btn-secondary:hover,
+      .btn-link:hover {
+        transform: scale(1.05);
+      }
+      /* Testimonials */
+      .testimonials {
+        padding: 60px 20px;
+        background: #ffffff;
+        text-align: center;
+      }
+      .testimonials h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+        color: #3366cc;
+      }
+      .testimonial-item {
+        margin-bottom: 30px;
+        font-style: italic;
+        color: #555;
+      }
+      /* Dark mode */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #1c1c1c;
+          color: #eee;
+        }
+        .navbar,
+        footer {
+          background: #2c2c2c;
+        }
+        .btn-primary,
+        .btn-secondary,
+        .btn-link {
+          background: #444;
+          color: white;
+        }
+        .btn-primary:hover,
+        .btn-secondary:hover,
+        .btn-link:hover {
+          background: #555;
+        }
+        .testimonials {
+          background: #2c2c2c;
+        }
+        @media (max-width: 768px) {
+          .navbar {
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 20px;
+          }
+
+          .navbar-left {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+          }
+
+          .navbar-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+          }
+
+          .navbar-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+          }
+
+          .navbar-links a,
+          .navbar-buttons a {
+            flex: 0 0 auto;
+            padding: 10px 20px;
+            text-align: center;
+          }
+        }
+      }
       /* Navbar */
       .navbar {
         display: flex;
@@ -67,7 +168,6 @@
         border-radius: 20px;
         font-size: 14px;
         border: none;
-        text-decoration: none;
         cursor: pointer;
         transition: background 0.3s;
       }
@@ -81,14 +181,13 @@
         border-radius: 20px;
         font-size: 14px;
         border: none;
-        text-decoration: none;
         cursor: pointer;
         transition: background 0.3s;
       }
       .btn-primary:hover {
         background: #254a99;
       }
-      /* Header */
+      /* Päis */
       header {
         background: linear-gradient(to right, #3366cc, #6699ff);
         color: white;
@@ -105,7 +204,7 @@
         margin: 0 auto 20px;
         line-height: 1.5;
       }
-      /* Steps */
+      /* Sammud */
       .steps {
         padding: 60px 20px;
         text-align: center;
@@ -127,7 +226,7 @@
         font-size: 14px;
         color: #666;
       }
-      /* Registration form */
+      /* Registreerimisvorm */
       #registration {
         background: white;
         margin: 40px auto;
