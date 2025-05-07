@@ -438,7 +438,7 @@
               const value = birthdateInput.value.trim();
               if (value.includes(".")) {
                 const [day, month, year] = value.split(".");
-                birthdateInput.value = `${year}-${month}-${day}`;
+                formData.set("birthdate", `${year}-${month}-${day}`);
               }
             }
 
