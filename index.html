@@ -356,7 +356,7 @@
           <input
             type="text"
             name="birthdate"
-            placeholder="Sünniaeg (PP.KK.AAAA)"
+            placeholder="Sünniaeg (AAAA-KK-PP)"
             maxlength="10"
             required
           />
@@ -367,14 +367,14 @@
             maxlength="11"
             required
           />
-          <select name="documentType" required>
+          <select name="document_type" required>
             <option value="">Vali dokumendi tüüp</option>
             <option value="Eesti ID-kaart">Eesti ID-kaart</option>
             <option value="Eesti pass">Eesti pass</option>
             <option value="Elamisluba">Elamisluba</option>
           </select>
-          <input type="file" name="file" required />
-          <select name="businessType" required>
+          <input type="file" name="document_file" required />
+          <select name="business_type" required>
             <option value="">Vali ettevõtlusvorm</option>
             <option value="FIE">FIE</option>
             <option value="OÜ">OÜ</option>
@@ -434,6 +434,12 @@
             e.preventDefault();
             const form = e.target;
             const formData = new FormData(form);
+            const birthdateInput = document.getElementById("birthdate");
+            const value = birthdateInput.value.trim();
+            if (value.includes(".")) {
+              const [day, month, year] = value.split(".");
+              birthdateInput.value = `${year}-${month}-${day}`;
+            }
 
             try {
               const response = await fetch(
