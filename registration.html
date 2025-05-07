@@ -230,98 +230,111 @@
     </div>
 
     <script>
-      function showStep(stepId) {
-        document
-          .querySelectorAll(".step")
-          .forEach((s) => s.classList.remove("active"));
-        document.getElementById(stepId).classList.add("active");
-      }
-
-      function nextStep() {
-        const fields = [
-          "firstname",
-          "lastname",
-          "email",
-          "birthdate",
-          "idcode",
-          "documentType",
-          "fileInput",
-        ];
-        let hasError = false;
-        fields.forEach((id) => {
-          const el = document.getElementById(id);
-          if (
-            !el ||
-            (el.type === "file" ? el.files.length === 0 : !el.value.trim())
-          ) {
-            el.style.border = "1px solid red";
-            hasError = true;
-          } else {
-            el.style.border = "1px solid #ddd";
-          }
-        });
-        if (hasError) {
-          alert("Palun täida kõik vajalikud väljad!");
-        } else {
-          showStep("step2");
+      document.addEventListener("DOMContentLoaded", function () {
+        function showStep(stepId) {
+          document
+            .querySelectorAll(".step")
+            .forEach((s) => s.classList.remove("active"));
+          document.getElementById(stepId).classList.add("active");
         }
-      }
 
-      function handleBusinessType() {
-        const type = document.getElementById("businessType").value;
-        const companyFields = document.getElementById("companyFields");
-        const ibanField = document.getElementById("iban");
-        if (type === "OÜ") {
-          companyFields.classList.remove("hidden");
-          ibanField.classList.remove("hidden");
-        } else if (type === "FIE" || type === "Ettevõtluskonto") {
-          companyFields.classList.add("hidden");
-          ibanField.classList.remove("hidden");
-        } else {
-          companyFields.classList.add("hidden");
-          ibanField.classList.add("hidden");
-        }
-      }
-
-      function formatBirthdate() {
-        const input = document.getElementById("birthdate");
-        let value = input.value.replace(/\D/g, "");
-        if (value.length >= 3 && value.length <= 4) {
-          value = value.slice(0, 2) + "." + value.slice(2);
-        } else if (value.length >= 5 && value.length <= 8) {
-          value =
-            value.slice(0, 2) + "." + value.slice(2, 4) + "." + value.slice(4);
-        }
-        input.value = value;
-      }
-
-      document
-        .getElementById("registrationForm")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
-          const form = e.target;
-          const formData = new FormData(form);
-
-          try {
-            const response = await fetch(
-              "https://ed9f-193-40-225-195.ngrok-free.app/api/provider-applications/",
-              {
-                method: "POST",
-                body: formData,
-              }
-            );
-            if (response.ok) {
-              showStep("thanks");
-              form.reset();
+        function nextStep() {
+          const fields = [
+            "firstname",
+            "lastname",
+            "email",
+            "birthdate",
+            "idcode",
+            "documentType",
+            "fileInput",
+          ];
+          let hasError = false;
+          fields.forEach((id) => {
+            const el = document.getElementById(id);
+            if (
+              !el ||
+              (el.type === "file" ? el.files.length === 0 : !el.value.trim())
+            ) {
+              el.style.border = "1px solid red";
+              hasError = true;
             } else {
-              const errorText = await response.text();
-              alert("⚠️ Midagi läks valesti: " + errorText);
+              el.style.border = "1px solid #ddd";
             }
-          } catch (error) {
-            console.error("❌ Viga:", error);
-            alert("❌ Päringu tegemisel tekkis viga.");
+          });
+          if (hasError) {
+            alert("Palun täida kõik vajalikud väljad!");
+          } else {
+            showStep("step2");
           }
-        });
+        }
+
+        function handleBusinessType() {
+          const type = document.getElementById("businessType").value;
+          const companyFields = document.getElementById("companyFields");
+          const ibanField = document.getElementById("iban");
+          if (type === "OÜ") {
+            companyFields.classList.remove("hidden");
+            ibanField.classList.remove("hidden");
+          } else if (type === "FIE" || type === "Ettevõtluskonto") {
+            companyFields.classList.add("hidden");
+            ibanField.classList.remove("hidden");
+          } else {
+            companyFields.classList.add("hidden");
+            ibanField.classList.add("hidden");
+          }
+        }
+
+        function formatBirthdate() {
+          const input = document.getElementById("birthdate");
+          let value = input.value.replace(/\D/g, "");
+          if (value.length >= 3 && value.length <= 4) {
+            value = value.slice(0, 2) + "." + value.slice(2);
+          } else if (value.length >= 5 && value.length <= 8) {
+            value =
+              value.slice(0, 2) +
+              "." +
+              value.slice(2, 4) +
+              "." +
+              value.slice(4);
+          }
+          input.value = value;
+        }
+
+        // 👉 Kinnita nupp
+        document
+          .getElementById("registrationForm")
+          .addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+
+            try {
+              const response = await fetch(
+                "https://ed9f-193-40-225-195.ngrok-free.app/api/provider-applications/",
+                {
+                  method: "POST",
+                  body: formData,
+                }
+              );
+              if (response.ok) {
+                showStep("thanks");
+                form.reset();
+              } else {
+                const errorText = await response.text();
+                alert("⚠️ Midagi läks valesti: " + errorText);
+              }
+            } catch (error) {
+              console.error("❌ Viga:", error);
+              alert("❌ Päringu tegemisel tekkis viga.");
+            }
+          });
+
+        // 👉 Seon nextStep ja handleBusinessType globaalseteks
+        window.showStep = showStep;
+        window.nextStep = nextStep;
+        window.handleBusinessType = handleBusinessType;
+        window.formatBirthdate = formatBirthdate;
+      });
     </script>
   </body>
 </html>
