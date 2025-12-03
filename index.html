@@ -1177,46 +1177,6 @@
           }
         }
       }
-
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-        normalizeBirthdate(formData);
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Saadan...";
-        regStatus.textContent = "";
-        regStatus.className = "reg-status";
-
-        try {
-          const response = await fetch(API_URL, {
-            method: "POST",
-            body: formData,
-          });
-
-          if (response.ok) {
-            form.reset();
-            regStatus.textContent = "Andmed saadeti edukalt!";
-            regStatus.classList.add("success");
-            showToast("✅ Ankeet on edukalt saadetud!", "success");
-          } else {
-            const errorText = await response.text();
-            console.error("Server error:", errorText);
-            regStatus.textContent = "Midagi läks valesti. Proovi uuesti.";
-            regStatus.classList.add("error");
-            showToast("⚠️ Viga ankeedi saatmisel.", "error");
-          }
-        } catch (err) {
-          console.error("Network error:", err);
-          regStatus.textContent = "Võrguviga. Palun kontrolli ühendust.";
-          regStatus.classList.add("error");
-          showToast("❌ Võrguviga. Proovi hiljem uuesti.", "error");
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Saada ankeet";
-        }
-      });
     </script>
   </body>
 </html>
