@@ -1142,41 +1142,5 @@
 
     <!-- TOAST -->
     <div id="toast" class="toast"></div>
-
-    <script>
-      // ⬇️ Vaheta see oma päris backend URL-i vastu
-      const API_URL =
-        "https://ed9f-193-40-225-195.ngrok-free.app/api/provider-applications/";
-
-      const form = document.getElementById("registrationForm");
-      const regStatus = document.getElementById("regStatus");
-      const submitBtn = document.getElementById("submitBtn");
-      const toast = document.getElementById("toast");
-
-      function showToast(message, type = "success") {
-        toast.textContent = message;
-        toast.className = "toast " + type;
-        toast.style.display = "block";
-        setTimeout(() => {
-          toast.style.display = "none";
-        }, 4000);
-      }
-
-      function normalizeBirthdate(fd) {
-        const raw = fd.get("birthdate");
-        if (!raw) return;
-        const value = String(raw).trim();
-        if (value.includes(".")) {
-          // DD.MM.YYYY -> YYYY-MM-DD
-          const [d, m, y] = value.split(".");
-          if (d && m && y) {
-            fd.set(
-              "birthdate",
-              `${y}-${m.padStart(2, "0")}-${d.padStart(2, "0")}`
-            );
-          }
-        }
-      }
-    </script>
   </body>
 </html>
