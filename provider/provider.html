@@ -377,6 +377,12 @@
         font-size: 18px;
       }
 
+      .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* 🔑 see hoiab kõik keskel */
+      }
+
       .feature-title {
         font-size: 15px;
         font-weight: 600;
@@ -989,10 +995,10 @@
                 Pärast vormi saatmist saadame info edasi meie tiimile, kes
                 vaatab ankeedi üle ja võtab sinuga ühendust 3 tööpäeva jooksul.
               </p>
-            </div>
-            <div class="helper" data-i18n="form_privacy_note">
-              Andmeid kasutatakse ainult CleanX partneriks kandideerimise
-              eesmärgil.
+              <div class="helper" data-i18n="form_privacy_note">
+                Andmeid kasutatakse ainult CleanX partneriks kandideerimise
+                eesmärgil.
+              </div>
             </div>
 
             <form id="registrationForm" class="reg-card">
@@ -1009,11 +1015,8 @@
                 value="https://cleanx.ee/taneme.html"
               />
 
-              <h3 class="reg-title">Alusta siin</h3>
-              <p class="reg-sub">
-                See vorm saadetakse nii CleanX taustsüsteemi kui ka
-                administraatori e-mailile.
-              </p>
+              <h3 class="reg-title" data-i18n="form_start_here"></h3>
+              <p class="reg-sub" data-i18n="form_start_helper"></p>
 
               <div class="reg-grid">
                 <div class="input-row-2">
@@ -1236,22 +1239,17 @@
               </div>
 
               <div class="reg-footer">
-                <div>
-                  Vormiga nõustud CleanX
-                  <a href="privacy.html" target="_blank"
-                    >privaatsustingimustega</a
-                  >.
-                </div>
-                <div>
-                  <strong>Märkus:</strong> ankeet salvestatakse andmebaasi ning
-                  koopia saadetakse administraatori e-mailile.
-                </div>
+                <div data-i18n="form_privacy_footer"></div>
+                <div data-i18n="form_storage_footer"></div>
               </div>
 
               <div class="reg-submit-row">
-                <button type="submit" class="btn-primary" id="submitBtn">
-                  Saada ankeet
-                </button>
+                <button
+                  type="submit"
+                  class="btn-primary"
+                  id="submitBtn"
+                  data-i18n="form_submit"
+                ></button>
                 <div id="regStatus" class="reg-status"></div>
               </div>
             </form>
@@ -1502,6 +1500,14 @@
           doc_residence_permit: "Elamisluba",
           form_privacy_note:
             "Andmeid kasutatakse ainult CleanX partneriks kandideerimise eesmärgil.",
+          form_start_here: "Alusta siin",
+          form_start_helper:
+            "See vorm saadetakse nii CleanX taustsüsteemi kui ka administraatori e-mailile.",
+          form_submit: "Saada ankeet",
+          form_privacy_footer:
+            'Vormiga nõustud CleanX <a href="privacy.html" target="_blank">privaatsustingimustega</a>.',
+          form_storage_footer:
+            "<strong>Märkus:</strong> ankeet salvestatakse andmebaasi ning koopia saadetakse administraatori e-mailile.",
         },
         en: {
           nav_why: "Why CleanX?",
@@ -1591,6 +1597,14 @@
           doc_residence_permit: "Residence permit",
           form_privacy_note:
             "Your data is used solely for applying to become a CleanX partner.",
+          form_start_here: "Start here",
+          form_start_helper:
+            "This form will be submitted to the CleanX internal system and sent to the administrator’s email address.",
+          form_submit: "Submit application",
+          form_privacy_footer:
+            'By submitting this form, you agree to the <a href="privacy.html" target="_blank">CleanX Privacy Policy</a>.',
+          form_storage_footer:
+            "<strong>Note:</strong> Your application will be stored in the database and a copy will be sent to the administrator’s email address.",
         },
       };
 
