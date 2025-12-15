@@ -690,23 +690,17 @@
               <nav class="nav-links">
                 <a href="#why" class="nav-link">Miks CleanX?</a>
                 <a href="#steps" class="nav-link">Kuidas töötab</a>
-                <a href="#form" class="nav-link">Korduma kippuvad</a>
+                <a href="#download" class="nav-link">Lae alla CleanX</a>
               </nav>
             </div>
             <div class="nav-right">
-              <button
-                class="btn-chip"
-                onclick="document.getElementById('form').scrollIntoView({behavior: 'smooth'})"
-              >
-                Logi sisse partnerina
-              </button>
-              <button
-                class="btn-primary"
-                onclick="document.getElementById('form').scrollIntoView({behavior: 'smooth'})"
-              >
-                Alusta registreerimist
+              <a href="provider/provider.html" class="btn-chip">
+                Hakka partneriks
+              </a>
+              <a href="#download" class="btn-primary">
+                Lae Androidi äpp
                 <span>→</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -716,75 +710,90 @@
       <section class="hero">
         <div class="container">
           <div class="hero-inner">
+            <!-- VASAK -->
             <div>
               <div class="hero-tag">
                 <span class="hero-tag-dot"></span>
-                <span>Töö, mis käib sinu graafikuga</span>
+                <span>Auto lumepuhastus ilma ajakuluta</span>
               </div>
+
               <h1 class="hero-title">
-                Teeni lisaraha
-                <span>linna parima</span> puhastustiimiga.
+                Auto lumest puhtaks
+                <span>kiirelt ja odavalt</span>
               </h1>
+
               <p class="hero-text">
-                CleanX ühendab sind klientidega, kes vajavad kiiret auto
-                puhastust. Sina valid, millal töötad ja kui palju teenid.
+                CleanX on mobiilirakendus, millega tellid auto
+                lumepuhastusteenuse sinna, kus auto parasjagu asub – olgu see
+                kodus, tööl või mujal. Professionaalne puhastaja teeb auto (ja
+                soovi korral ka auto ümbruse) lumest puhtaks kiiresti ja
+                mugavalt. Hetkel on rakendus testimisfaasis ning saadaval Saue,
+                Kohila ja Tallinna piirkondades.
               </p>
+
               <div class="hero-actions">
-                <button
-                  class="btn-primary"
-                  onclick="document.getElementById('form').scrollIntoView({behavior: 'smooth'})"
-                >
-                  Täida partneri ankeet
-                </button>
+                <a href="#download" class="btn-primary">
+                  Lae alla Google Play poest
+                </a>
                 <button
                   class="btn-ghost"
-                  onclick="document.getElementById('steps').scrollIntoView({behavior: 'smooth'})"
+                  onclick="document.getElementById('steps').scrollIntoView({behavior:'smooth'})"
                 >
                   Vaata, kuidas see toimib
                 </button>
               </div>
+
               <div class="hero-meta">
-                <div><b>24h</b> – esmane tagasiside</div>
-                <div><b>Paindlik</b> graafik</div>
-                <div><b>Lepinguta</b> alustamine</div>
+                <div><b>Alates</b> 7 €</div>
+                <div><b>Makse</b> äpis</div>
+                <div><b>Android</b> tulevikus ka IOS</div>
               </div>
             </div>
 
-            <aside class="hero-card" aria-label="Tulu näide">
+            <!-- PAREM KAART (ANALOOGNE PROVIDERI “TULU” KAARDILE) -->
+            <aside class="hero-card">
               <div class="hero-card-header">
-                <span class="hero-chip">Näide sinu teenistusest</span>
-                <span class="hero-card-badge">Tallinn · õhtused vahetused</span>
+                <span class="hero-chip">Hind</span>
+                <span class="hero-card-badge">Tallinn · paindlik aeg</span>
               </div>
+
               <div class="hero-stat-main">
-                <span>950 €</span>
-                <span>30 tellimuse eest kuus</span>
+                <span>7–20 €</span>
+                <span>sõltuvalt tellimusest ja koormusest</span>
               </div>
+
               <div class="hero-progress">
                 <div class="hero-progress-bar">
-                  <div class="hero-progress-fill"></div>
+                  <div class="hero-progress-fill" style="width: 65%"></div>
                 </div>
                 <div class="hero-progress-label">
-                  Keskmine teenistus aktiivsetel CleanX partneritel.
+                  Hind kujuneb vastavalt tellimuse tüübile ja nõudlusele.
                 </div>
               </div>
+
               <ul class="hero-list">
                 <li>
                   <span class="hero-list-dot"></span>
-                  <span>Tööpäevad ja kellaajad valid sina ise.</span>
-                </li>
-                <li>
-                  <span
-                    class="hero-list-dot"
-                    style="background: #eab308"
-                  ></span>
-                  <span>Kiired väljamaksed sinu pangakontole.</span>
+                  <span>7 € – Auto lumest puhtaks</span>
                 </li>
                 <li>
                   <span
                     class="hero-list-dot"
                     style="background: #38bdf8"
                   ></span>
-                  <span>Toetav tiim – aitame sul alustada.</span>
+                  <span
+                    >9–20 € – Tellimuse käigus valid, kas puhastatakse ainult
+                    auto või ka auto ümbrus. Vajadusel kasutatakse kliendi
+                    soovil jääsulatusainet klaasidele. Hind kujuneb töö mahu ja
+                    soovitud kiiruse järgi.</span
+                  >
+                </li>
+                <li>
+                  <span
+                    class="hero-list-dot"
+                    style="background: #eab308"
+                  ></span>
+                  <span>Hind on enne kinnitamist alati nähtav.</span>
                 </li>
               </ul>
             </aside>
@@ -796,50 +805,47 @@
       <section id="why" class="section">
         <div class="container">
           <header class="section-header">
-            <h2 class="section-title">Miks tulla CleanX partneriks?</h2>
-            <p class="section-sub">
-              Ehita endale paindlik töö, mis sobib nii põhi- kui
-              lisasissetulekuks.
-            </p>
+            <h2 class="section-title">Miks valida CleanX?</h2>
+            <p class="section-sub">Mugavus, kiirus ja läbipaistvus.</p>
           </header>
+
           <div class="cards-grid">
             <article class="feature-card">
               <div
                 class="feature-icon"
                 style="background: rgba(59, 130, 246, 0.08); color: #2563eb"
               >
-                💰
+                🚗
               </div>
-              <h3 class="feature-title">Stabiilne lisasissetulek</h3>
+              <h3 class="feature-title">Teenus sinu auto asukohta</h3>
               <p class="feature-text">
-                Klientide pidev voog tagab, et tellimusi jätkub. Sina otsustad,
-                kui palju päevas vastu võtad.
+                Puhastaja tuleb täpselt sinna, kus auto parasjagu asub.
               </p>
             </article>
+
             <article class="feature-card">
               <div
                 class="feature-icon"
                 style="background: rgba(16, 185, 129, 0.08); color: #059669"
               >
-                📅
+                ⏱️
               </div>
-              <h3 class="feature-title">Täiesti sinu graafik</h3>
+              <h3 class="feature-title">Ajasääst</h3>
               <p class="feature-text">
-                Pole vahet, kas töötad nädalavahetusel või pärast põhitööd –
-                CleanX sobitub sinu elu järgi.
+                Ei mingit varahommikust või tööjärgset lumerookimist.
               </p>
             </article>
+
             <article class="feature-card">
               <div
                 class="feature-icon"
                 style="background: rgba(234, 179, 8, 0.08); color: #d97706"
               >
-                ✅
+                💳
               </div>
-              <h3 class="feature-title">Lihtne alustada</h3>
+              <h3 class="feature-title">Selge hind</h3>
               <p class="feature-text">
-                Täida allolev ankeet, lae üles vajalik dokument ja me juhendame
-                sind esimestest sammudest alates.
+                Hinna valid ise CleanX rakendustes enne tellimuse kinnitamist.
               </p>
             </article>
           </div>
@@ -850,286 +856,96 @@
       <section id="steps" class="section">
         <div class="container">
           <header class="section-header">
-            <h2 class="section-title">Kuidas liitumine käib?</h2>
-            <p class="section-sub">
-              Mõne lihtsa sammuga oled valmis esimeseks CleanX tellimuseks.
-            </p>
+            <h2 class="section-title">Kuidas CleanX töötab?</h2>
+            <p class="section-sub">Täpselt sama lihtne nagu toidu tellimine</p>
           </header>
+
           <div class="steps-grid">
             <article class="step-card">
               <div class="step-number">1</div>
-              <h3 class="step-title">Täida partneri ankeet</h3>
-              <p class="step-text">
-                Lisa kontaktid, isikuandmed ja info ettevõtlusvormi kohta. See
-                aitab meil sind kiiremini kinnitada.
-              </p>
+              <h3 class="step-title">Sisesta tellimus</h3>
+              <p class="step-text">Lisa asukoht, auto number ja aeg.</p>
             </article>
+
             <article class="step-card">
               <div class="step-number">2</div>
-              <h3 class="step-title">Lae üles dokument</h3>
+              <h3 class="step-title">Puhastaja tuleb</h3>
               <p class="step-text">
-                Kõige sagedamini piisab Eesti ID-kaardist või elamisloast. Kõik
-                andmed on kaitstud.
+                Lähim CleanX partner võtab tellimuse vastu. Saad jägida kogu
+                protsessi.
               </p>
             </article>
+
             <article class="step-card">
               <div class="step-number">3</div>
-              <h3 class="step-title">Alusta tellimustega</h3>
+              <h3 class="step-title">Töö tehtud</h3>
               <p class="step-text">
-                Pärast kinnitamist saad CleanX äpis näha läheduses olevaid töid,
-                võtta need vastu ja kohe teenida.
+                Saad kohese teavituse ja fotod tehtud tööst. Seejärel saad
+                teenust hinnata ja tagasisidet anda.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- REGISTREERIMISVORM -->
-      <section id="form" class="reg-section">
+      <!-- APP DOWNLOAD (ENDISE VORMI ASEMEL) -->
+      <section id="download" class="reg-section">
         <div class="container">
           <div class="reg-layout">
             <div class="reg-info">
-              <h2
-                class="section-title"
-                style="text-align: left; margin-bottom: 8px"
-              >
-                Partneri registreerimisvorm
+              <h2 class="section-title" style="text-align: left">
+                CleanX rakendus
               </h2>
               <p>
-                Täida ankeet võimalikult täpselt. Kasutame sinu andmeid selleks,
-                et hinnata sobivust CleanX partneriks ning võtta sinuga
-                ühendust.<br /><br />
-                <b>Mida võiksid teada enne alustamist?</b>
+                CleanX on hetkel saadaval ainult Android-seadmetele. Tellimine,
+                maksmine ja tellimuse jälgimine toimub rakenduses.
               </p>
               <ul>
-                <li>Sul peab olema kehtiv isikut tõendav dokument.</li>
-                <li>Pangakonto, kuhu väljamakseid teeme.</li>
-                <li>Ettevõtlusvorm – OÜ, FIE või ettevõtluskonto.</li>
+                <li>Tellid teenuse paari minutiga</li>
+                <li>Turvaline makse</li>
+                <li>Hinnangud ja fotod pärast töö lõppu</li>
               </ul>
-              <p>
-                Pärast vormi saatmist saadame info edasi meie tiimile, kes
-                vaatab ankeedi üle ja võtab sinuga ühendust
-                <b>3 tööpäeva jooksul</b>.
-              </p>
             </div>
 
-            <form
-              id="registrationForm"
-              class="reg-card"
-              action="https://formsubmit.co/silvermx31@gmail.com"
-              method="POST"
-              enctype="multipart/form-data"
-            >
-              <input type="hidden" name="_captcha" value="false" />
-              <input
-                type="hidden"
-                name="_next"
-                value="https://cleanx.ee/taneme.html"
-              />
+            <div class="reg-card" style="text-align: center">
+              <h3 class="reg-title">Lae alla Google Playst</h3>
+              <p class="reg-sub">Android 8+ · tasuta allalaadimine</p>
 
-              <h3 class="reg-title">Alusta siin</h3>
-              <p class="reg-sub">
-                See vorm saadetakse nii CleanX taustsüsteemi kui ka
-                administraatori e-mailile.
-              </p>
-
-              <div class="reg-grid">
-                <div class="input-row-2">
-                  <div class="input-group">
-                    <label class="input-label" for="firstname">Eesnimi</label>
-                    <input
-                      id="firstname"
-                      name="firstname"
-                      type="text"
-                      required
-                    />
-                  </div>
-                  <div class="input-group">
-                    <label class="input-label" for="lastname"
-                      >Perekonnanimi</label
-                    >
-                    <input id="lastname" name="lastname" type="text" required />
-                  </div>
-                </div>
-
-                <div class="input-group">
-                  <label class="input-label" for="email">E-mail</label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="nimi@example.com"
-                  />
-                </div>
-
-                <div class="input-row-2">
-                  <div class="input-group">
-                    <label class="input-label" for="phone">Telefon</label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="text"
-                      maxlength="20"
-                      required
-                      placeholder="+372 ..."
-                    />
-                  </div>
-                  <div class="input-group">
-                    <label class="input-label" for="birthdate">Sünniaeg</label>
-                    <input
-                      id="birthdate"
-                      name="birthdate"
-                      type="text"
-                      maxlength="10"
-                      placeholder="PP.KK.AAAA või AAAA-KK-PP"
-                      required
-                    />
-                    <span class="helper">nt 01.05.1995</span>
-                  </div>
-                </div>
-
-                <div class="input-group">
-                  <label class="input-label" for="idcode">Isikukood</label>
-                  <input
-                    id="idcode"
-                    name="idcode"
-                    type="text"
-                    maxlength="25"
-                    required
-                  />
-                </div>
-
-                <div class="input-group">
-                  <label class="input-label" for="referral"
-                    >Soovituskood (valikuline)</label
-                  >
-                  <input
-                    id="referral"
-                    name="referral"
-                    type="text"
-                    placeholder="Kui keegi sind soovitas"
-                  />
-                </div>
-
-                <div class="input-group">
-                  <label class="input-label" for="document_type"
-                    >Dokumendi tüüp</label
-                  >
-                  <select id="document_type" name="document_type" required>
-                    <option value="">Vali dokumendi tüüp</option>
-                    <option value="Eesti ID-kaart">Eesti ID-kaart</option>
-                    <option value="Eesti pass">Eesti pass</option>
-                    <option value="Elamisluba">Elamisluba</option>
-                  </select>
-                </div>
-
-                <div class="input-group">
-                  <label class="input-label" for="document_file"
-                    >Laadi üles foto dokumendist</label
-                  >
-                  <input
-                    id="document_file"
-                    name="document_file"
-                    type="file"
-                    required
-                  />
-                  <span class="helper">
-                    Pilt või PDF. Maksimaalselt mõned megabaidid.
-                  </span>
-                </div>
-
-                <div class="input-group">
-                  <label class="input-label" for="business_type"
-                    >Ettevõtlusvorm</label
-                  >
-                  <select id="business_type" name="business_type" required>
-                    <option value="">Vali ettevõtlusvorm</option>
-                    <option value="FIE">FIE</option>
-                    <option value="OÜ">OÜ</option>
-                    <option value="Ettevõtluskonto">Ettevõtluskonto</option>
-                  </select>
-                </div>
-
-                <div class="input-group">
-                  <label class="input-label" for="iban"
-                    >Pangakonto number (IBAN)</label
-                  >
-                  <input
-                    id="iban"
-                    name="iban"
-                    type="text"
-                    required
-                    placeholder="EE..."
-                  />
-                </div>
-
-                <div class="input-row-2">
-                  <div class="input-group">
-                    <label class="input-label" for="companyName"
-                      >Ettevõtte nimi (kui OÜ)</label
-                    >
-                    <input id="companyName" name="companyName" type="text" />
-                  </div>
-                  <div class="input-group">
-                    <label class="input-label" for="companyRegistryCode"
-                      >Registrikood (kui OÜ)</label
-                    >
-                    <input
-                      id="companyRegistryCode"
-                      name="companyRegistryCode"
-                      type="text"
-                    />
-                  </div>
-                </div>
-              </div>
+              <a href="#" class="btn-primary" style="margin-top: 12px">
+                Ava Google Play
+              </a>
 
               <div class="reg-footer">
-                <div>
-                  Vormiga nõustud CleanX
-                  <a href="privacy.html" target="_blank"
-                    >privaatsustingimustega</a
-                  >.
-                </div>
-                <div>
-                  <strong>Märkus:</strong> ankeet salvestatakse andmebaasi ning
-                  koopia saadetakse administraatori e-mailile.
-                </div>
+                <div>· iOS versioon on tulemas.</div>
               </div>
-
-              <div class="reg-submit-row">
-                <button type="submit" class="btn-primary" id="submitBtn">
-                  Saada ankeet
-                </button>
-                <div id="regStatus" class="reg-status"></div>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- TESTIMONIALS / FOOTER -->
+      <!-- TESTIMONIALS -->
       <section class="testimonials">
         <div class="container">
           <div class="test-grid">
             <article class="test-card">
-              “Tegin CleanXiga algust kõrvaltegevusena, nüüd on see mu peamine
-              sissetulek. Tööaeg on minu kontrolli all.”
-              <div class="test-name">– Mari, Tallinn</div>
+              “Tellisin puhastuse enne tööpäeva lõppu – lumepuhas auto ootas
+              mind täpselt kell 17:00.”
+              <div class="test-name">– Karl, Tallinn</div>
             </article>
             <article class="test-card">
-              “Liitumisprotsess võttis vaid mõne päeva. Tellimusi on piisavalt
-              isegi väiksemas piirkonnas.”
-              <div class="test-name">– Jaan, Saue</div>
+              “Väga mugav. Ei pidanud hommikul varem ärkama selleks, et auto
+              ümbert lund rookima minna.”
+              <div class="test-name">– Laura, Saue</div>
             </article>
           </div>
         </div>
       </section>
 
+      <!-- FOOTER -->
       <footer class="footer">
         <div class="container">
           <div class="footer-inner">
-            <div>© 2025 CleanX – Puhastusteenuste platvorm</div>
+            <div>© CleanX – Puhastusteenuste platvorm</div>
             <div class="footer-links">
               <a href="privacy.html">Privaatsus</a>
               <a href="terms.html">Tingimused</a>
@@ -1139,8 +955,5 @@
         </div>
       </footer>
     </div>
-
-    <!-- TOAST -->
-    <div id="toast" class="toast"></div>
   </body>
 </html>
