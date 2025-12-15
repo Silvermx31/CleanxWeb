@@ -117,6 +117,12 @@
         cursor: pointer;
       }
 
+      .btn-chip.active {
+        background: #e0e7ff;
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+
       .btn-primary {
         font-size: 14px;
         padding: 9px 18px;
@@ -694,12 +700,8 @@
               </nav>
             </div>
             <div class="nav-right">
-              <button
-                class="btn-chip"
-                onclick="document.getElementById('form').scrollIntoView({behavior: 'smooth'})"
-              >
-                Logi sisse partnerina
-              </button>
+              <button class="btn-chip" onclick="setLang('et')">ET</button>
+              <button class="btn-chip" onclick="setLang('en')">EN</button>
               <button
                 class="btn-primary"
                 onclick="document.getElementById('form').scrollIntoView({behavior: 'smooth'})"
@@ -719,21 +721,18 @@
             <div>
               <div class="hero-tag">
                 <span class="hero-tag-dot"></span>
-                <span>Töö, mis käib sinu graafikuga</span>
+                <span data-i18n="hero_tag">Töö, mis käib sinu graafikuga</span>
               </div>
-              <h1 class="hero-title">
-                Teeni lisaraha
-                <span>linna parima</span> puhastustiimiga.
+              <h1 class="hero-title" data-i18n="hero_title">
+                Teeni lisaraha <span>linna parima</span> puhastustiimiga.
               </h1>
-              <p class="hero-text">
+
+              <p class="hero-text" data-i18n="hero_text">
                 CleanX ühendab sind klientidega, kes vajavad kiiret auto
-                puhastust. Sina valid, millal töötad ja kui palju teenid.
+                puhastust.
               </p>
               <div class="hero-actions">
-                <button
-                  class="btn-primary"
-                  onclick="document.getElementById('form').scrollIntoView({behavior: 'smooth'})"
-                >
+                <button class="btn-primary" data-i18n="start_form">
                   Täida partneri ankeet
                 </button>
                 <button
@@ -746,7 +745,7 @@
               <div class="hero-meta">
                 <div><b>24h</b> – esmane tagasiside</div>
                 <div><b>Paindlik</b> graafik</div>
-                <div><b>Lepinguta</b> alustamine</div>
+                <div><b>Lihtne</b> alustamine</div>
               </div>
             </div>
 
@@ -756,8 +755,8 @@
                 <span class="hero-card-badge">Tallinn · õhtused vahetused</span>
               </div>
               <div class="hero-stat-main">
-                <span>950 €</span>
-                <span>30 tellimuse eest kuus</span>
+                <span>kuni 600+ €</span>
+                <span>paindliku koormusega kuus</span>
               </div>
               <div class="hero-progress">
                 <div class="hero-progress-bar">
@@ -860,8 +859,8 @@
               <div class="step-number">1</div>
               <h3 class="step-title">Täida partneri ankeet</h3>
               <p class="step-text">
-                Lisa kontaktid, isikuandmed ja info ettevõtlusvormi kohta. See
-                aitab meil sind kiiremini kinnitada.
+                Lisa kontaktandmed, isikuinfo ja ettevõtlusvorm. See aitab meil
+                sind kiiremini kinnitada.
               </p>
             </article>
             <article class="step-card">
@@ -1142,5 +1141,77 @@
 
     <!-- TOAST -->
     <div id="toast" class="toast"></div>
+    <script>
+      const translations = {
+        et: {
+          hero_tag: "Töö, mis käib sinu graafikuga",
+          hero_title:
+            "Teeni lisaraha <span>linna parima</span> puhastustiimiga.",
+          hero_text:
+            "CleanX ühendab sind klientidega, kes vajavad kiiret auto puhastust. Sina valid, millal töötad ja kui palju teenid.",
+          start_form: "Täida partneri ankeet",
+        },
+        en: {
+          hero_tag: "Work that fits your schedule",
+          hero_title:
+            "Earn extra income with the <span>city’s best</span> cleaning team.",
+          hero_text:
+            "CleanX connects you with customers who need fast car cleaning. You choose when you work and how much you earn.",
+          start_form: "Apply as a partner",
+        },
+      };
+
+      const meta = {
+        et: {
+          title: "CleanX – Tule partneriks",
+          description:
+            "Liitu CleanX partneriks ja teeni lisaraha paindliku tööga.",
+        },
+        en: {
+          title: "CleanX – Become a Partner",
+          description:
+            "Join CleanX as a partner and earn flexible extra income.",
+        },
+      };
+
+      function setLang(lang) {
+        // HTML lang attribute
+        document.documentElement.lang = lang;
+
+        // Text translations
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          if (translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+          }
+        });
+
+        // Meta title & description
+        if (meta[lang]) {
+          document.title = meta[lang].title;
+
+          const desc = document.querySelector('meta[name="description"]');
+          if (desc) {
+            desc.setAttribute("content", meta[lang].description);
+          }
+        }
+
+        // Active language button UI
+        document
+          .querySelectorAll(".btn-chip")
+          .forEach((btn) => btn.classList.remove("active"));
+
+        document
+          .querySelector(`.btn-chip[onclick="setLang('${lang}')"]`)
+          ?.classList.add("active");
+
+        // Save preference
+        localStorage.setItem("lang", lang);
+      }
+
+      // Restore language on load
+      const savedLang = localStorage.getItem("lang") || "et";
+      setLang(savedLang);
+    </script>
   </body>
 </html>
