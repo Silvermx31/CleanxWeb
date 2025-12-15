@@ -708,7 +708,11 @@
             <div class="nav-right">
               <button class="btn-chip" onclick="setLang('et')">ET</button>
               <button class="btn-chip" onclick="setLang('en')">EN</button>
-              <button class="btn-primary" data-i18n="nav_cta">
+              <button
+                class="btn-primary"
+                data-i18n="nav_cta"
+                onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth' })"
+              >
                 Alusta registreerimist
                 <span>→</span>
               </button>
@@ -735,9 +739,14 @@
                 puhastust.
               </p>
               <div class="hero-actions">
-                <button class="btn-primary" data-i18n="start_form">
+                <button
+                  class="btn-primary"
+                  data-i18n="start_form"
+                  onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth' })"
+                >
                   Täida partneri ankeet
                 </button>
+
                 <button
                   class="btn-ghost"
                   onclick="document.getElementById('steps').scrollIntoView({behavior: 'smooth'})"
@@ -953,15 +962,19 @@
                 vaatab ankeedi üle ja võtab sinuga ühendust 3 tööpäeva jooksul.
               </p>
             </div>
+            <div class="helper">
+              Andmeid kasutatakse ainult CleanX partneriks kandideerimise
+              eesmärgil.
+            </div>
 
-            <form
-              id="registrationForm"
-              class="reg-card"
-              action="https://formsubmit.co/silvermx31@gmail.com"
-              method="POST"
-              enctype="multipart/form-data"
-            >
+            <form id="registrationForm" class="reg-card">
               <input type="hidden" name="_captcha" value="false" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="Uus CleanX partneri taotlus"
+              />
+              <input type="hidden" name="_template" value="table" />
               <input
                 type="hidden"
                 name="_next"
@@ -1264,77 +1277,53 @@
           nav_cta: "Alusta registreerimist",
           why_sub:
             "Ehita endale paindlik töö, mis sobib nii põhi- kui lisasissetulekuks.",
-
           why_income_title: "Stabiilne lisasissetulek",
           why_income_text:
             "Klientide pidev voog tagab, et tellimusi jätkub. Sina otsustad, kui palju päevas vastu võtad.",
-
           hero_tag: "Töö, mis käib sinu graafikuga",
           hero_title:
             "Teeni lisaraha <span>linna parima</span> puhastustiimiga.",
           hero_text:
             "CleanX ühendab sind klientidega, kes vajavad kiiret auto puhastust. Sina valid, millal töötad ja kui palju teenid.",
           start_form: "Täida partneri ankeet",
-
           why_schedule_title: "Täiesti sinu graafik",
           why_schedule_text:
             "Pole vahet, kas töötad nädalavahetusel või pärast põhitööd – CleanX sobitub sinu elu järgi.",
-
           why_easy_title: "Lihtne alustada",
           why_easy_text:
             "Täida allolev ankeet, lae üles vajalik dokument ja me juhendame sind esimestest sammudest alates.",
-
           steps_title: "Kuidas liitumine käib?",
           steps_sub:
             "Mõne lihtsa sammuga oled valmis esimeseks CleanX tellimuseks.",
-
           step1_title: "Täida partneri ankeet",
           step1_text:
             "Lisa kontaktandmed, isikuinfo ja ettevõtlusvorm. See aitab meil sind kiiremini kinnitada.",
-
-          step2_title: "Lae üles dokument",
-          step2_text:
-            "Kõige sagedamini piisab Eesti ID-kaardist või elamisloast. Kõik andmed on kaitstud.",
-
           step3_title: "Alusta tellimustega",
           step3_text:
             "Pärast kinnitamist saad CleanX äpis näha läheduses olevaid töid, võtta need vastu ja kohe teenida.",
-
           earnings_example: "Näide sinu teenistusest",
           earnings_location: "Tallinn · õhtused vahetused",
           earnings_amount: "kuni 600+ €",
           earnings_period: "paindliku koormusega kuus",
           earnings_avg: "Keskmine teenistus aktiivsetel CleanX partneritel.",
-
           benefit_schedule: "Tööpäevad ja kellaajad valid sina ise.",
           benefit_payouts: "Kiired väljamaksed sinu pangakontole.",
           benefit_support: "Toetav tiim – aitame sul alustada.",
-
           step2_title: "Lae üles dokument",
           step2_text:
             "Kõige sagedamini piisab Eesti ID-kaardist või elamisloast. Kõik andmed on kaitstud.",
-
-          step3_title: "Alusta tellimustega",
-          step3_text:
-            "Pärast kinnitamist saad CleanX äpis näha läheduses olevaid töid, võtta need vastu ja kohe teenida.",
-
           form_title: "Partneri registreerimisvorm",
           form_intro:
             "Täida ankeet võimalikult täpselt. Kasutame sinu andmeid selleks, et hinnata sobivust CleanX partneriks ning võtta sinuga ühendust.",
           form_before_title: "Mida võiksid teada enne alustamist?",
-
           form_req_id: "Sul peab olema kehtiv isikut tõendav dokument.",
           form_req_bank: "Pangakonto, kuhu väljamakseid teeme.",
           form_req_business: "Ettevõtlusvorm – OÜ, FIE või ettevõtluskonto.",
-
           form_outro:
             "Pärast vormi saatmist saadame info edasi meie tiimile, kes vaatab ankeedi üle ja võtab sinuga ühendust 3 tööpäeva jooksul.",
           hero_meta_1: "<b>24h</b> – esmane tagasiside",
           hero_meta_2: "Paindlik graafik",
           hero_meta_3: "Lihtne alustamine",
-
-          form_title: "Partneri registreerimisvorm",
-
           footer_copy: "© 2025 CleanX – Puhastusteenuste platvorm",
           footer_privacy: "Privaatsus",
           footer_terms: "Tingimused",
@@ -1347,12 +1336,10 @@
           form_birthdate_helper: "nt 01.05.1995",
           form_idcode: "Isikukood",
           form_referral: "Soovituskood (valikuline)",
-
           form_document_type: "Dokumendi tüüp",
           form_document_select: "Vali dokumendi tüüp",
           form_document_upload: "Laadi üles foto dokumendist",
           form_document_helper: "Pilt või PDF. Maksimaalselt mõned megabaidid.",
-
           form_business_type: "Ettevõtlusvorm",
           form_business_select: "Vali ettevõtlusvorm",
           form_iban: "Pangakonto number (IBAN)",
@@ -1370,11 +1357,9 @@
           nav_cta: "Get started",
           why_sub:
             "Build a flexible job that works as your main income or a side hustle.",
-
           why_income_title: "Reliable extra income",
           why_income_text:
             "A steady flow of customers ensures regular orders. You decide how many jobs you accept each day.",
-
           hero_tag: "Work that fits your schedule",
           hero_title:
             "Earn extra income with the <span>city’s best</span> cleaning team.",
@@ -1384,22 +1369,17 @@
           why_schedule_title: "Your schedule, your rules",
           why_schedule_text:
             "Whether you work on weekends or after your main job – CleanX fits around your life.",
-
           why_easy_title: "Easy to get started",
           why_easy_text:
             "Fill in the application, upload the required document and we’ll guide you every step of the way.",
-
           steps_title: "How does joining work?",
           steps_sub: "Get started with CleanX in just a few simple steps.",
-
           step1_title: "Submit the partner application",
           step1_text:
             "Add your contact details, personal information and business type. This helps us review your application faster.",
-
           step2_title: "Upload your document",
           step2_text:
             "In most cases, an Estonian ID card or residence permit is sufficient. All data is securely protected.",
-
           step3_title: "Start accepting jobs",
           step3_text:
             "Once approved, you’ll see nearby jobs in the CleanX app, accept them and start earning immediately.",
@@ -1412,33 +1392,25 @@
           benefit_schedule: "You choose your working days and hours.",
           benefit_payouts: "Fast payouts directly to your bank account.",
           benefit_support: "Supportive team – we help you get started.",
-
           step2_title: "Upload a document",
           step2_text:
             "In most cases, an Estonian ID card or residence permit is sufficient. All data is securely protected.",
-
           step3_title: "Start accepting jobs",
           step3_text:
             "After approval, you can see nearby jobs in the CleanX app, accept them, and start earning immediately.",
-
           form_title: "Partner registration form",
           form_intro:
             "Please complete the form as accurately as possible. We use your information to assess your suitability as a CleanX partner and to contact you.",
           form_before_title: "What you should know before getting started",
-
           form_req_id: "You must have a valid identity document.",
           form_req_bank: "A bank account for receiving payouts.",
           form_req_business:
             "A business form – OÜ (limited company), sole proprietorship, or an entrepreneur account.",
-
           form_outro:
             "After submitting the form, our team will review your application and contact you within 3 business days.",
           hero_meta_1: "<b>24h</b> – first response",
           hero_meta_2: "Flexible schedule",
           hero_meta_3: "Easy onboarding",
-
-          form_title: "Partner registration form",
-
           footer_copy: "© 2025 CleanX – Cleaning services platform",
           footer_privacy: "Privacy",
           footer_terms: "Terms",
@@ -1451,12 +1423,10 @@
           form_birthdate_helper: "e.g. 01/05/1995",
           form_idcode: "Personal ID code",
           form_referral: "Referral code (optional)",
-
           form_document_type: "Document type",
           form_document_select: "Select document type",
           form_document_upload: "Upload a photo of the document",
           form_document_helper: "Image or PDF. Maximum a few megabytes.",
-
           form_business_type: "Business type",
           form_business_select: "Select business type",
           form_iban: "Bank account number (IBAN)",
@@ -1519,6 +1489,65 @@
       // Restore language on load
       const savedLang = localStorage.getItem("lang") || "et";
       setLang(savedLang);
+    </script>
+    <script>
+      const form = document.getElementById("registrationForm");
+      const status = document.getElementById("regStatus");
+      const submitBtn = document.getElementById("submitBtn");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        submitBtn.disabled = true;
+        submitBtn.textContent =
+          document.documentElement.lang === "en"
+            ? "Submitting..."
+            : "Saatmine...";
+
+        status.textContent = "";
+
+        const formData = new FormData(form);
+
+        // AJUTINE – hiljem vahetad URLi backendi vastu@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        const ENDPOINT = "https://formsubmit.co/silvermx31@gmail.com";
+
+        try {
+          const res = await fetch(ENDPOINT, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json",
+            },
+          });
+
+          if (!res.ok) throw new Error("Submit failed");
+
+          const successMsg = {
+            et: "Aitäh! Sinu taotlus on edukalt saadetud.",
+            en: "Thank you! Your application has been successfully submitted.",
+          };
+
+          status.textContent = successMsg[document.documentElement.lang];
+
+          status.className = "reg-status success";
+
+          form.reset();
+        } catch (err) {
+          const errorMsg = {
+            et: "Midagi läks valesti. Palun proovi uuesti.",
+            en: "Something went wrong. Please try again.",
+          };
+
+          status.textContent = errorMsg[document.documentElement.lang];
+          status.className = "reg-status error";
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent =
+            document.documentElement.lang === "en"
+              ? "Submit application"
+              : "Saada ankeet";
+        }
+      });
     </script>
   </body>
 </html>
