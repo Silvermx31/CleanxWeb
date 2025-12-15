@@ -117,6 +117,16 @@
         cursor: pointer;
       }
 
+      #faq .section-title,
+      #faq .section-sub {
+        text-align: center;
+      }
+
+      #faq .section-sub {
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
       .btn-chip.active {
         background: #e0e7ff;
         border-color: var(--primary);
@@ -1258,10 +1268,8 @@
 
       <section id="faq" class="section">
         <div class="container">
-          <header class="section-header">
-            <h2 class="section-title" data-i18n="faq_title"></h2>
-            <p class="section-sub" data-i18n="faq_sub"></p>
-          </header>
+          <h2 class="section-title" data-i18n="faq_title"></h2>
+          <p class="section-sub" data-i18n="faq_sub"></p>
 
           <div class="faq-list">
             <details class="faq-item">
@@ -1270,104 +1278,59 @@
             </details>
 
             <details class="faq-item">
-              <summary>Kuidas saan CleanX Provideriks?</summary>
-              <p>
-                Provideriks saamiseks tuleb täita registreerimisvorm CleanX
-                veebilehel. Pärast andmete ülevaatamist loob CleanX sinu andmete
-                põhjal konto ja saad ligipääsu Provideri rakendusele.
-              </p>
+              <summary data-i18n="faq_q2"></summary>
+              <p data-i18n="faq_a2"></p>
             </details>
 
             <details class="faq-item">
-              <summary>Kas CleanX-is töötamine on lepinguline töö?</summary>
-              <p>
-                Ei. CleanX ei ole tööandja. Provider tegutseb iseseisva
-                teenusepakkujana ning vastutab ise maksude ja seaduslike
-                kohustuste eest.
-              </p>
+              <summary data-i18n="faq_q3"></summary>
+              <p data-i18n="faq_a3"></p>
             </details>
 
             <details class="faq-item">
-              <summary>Millal ja kuidas ma raha kätte saan?</summary>
-              <p>
-                Kliendi makse broneeritakse tellimuse loomisel ning vabastatakse
-                pärast töö lõpetamist ja kliendi kinnitust. Väljamaksed tehakse
-                kord kuus otse sinu IBAN-kontole. Testimise faasis kord nädalas.
-              </p>
+              <summary data-i18n="faq_q4"></summary>
+              <p data-i18n="faq_a4"></p>
             </details>
 
             <details class="faq-item">
-              <summary>Kui suur on minu teenistus?</summary>
-              <p>
-                Tellimuse hind sõltub: teenuse tüübist töö kiireloomulisusest
-                ajast ja asukohast CleanX võtab teenustasu ning ülejäänu
-                kantakse providerile. Iga tellimuse juures on näha sinu teenitav
-                summa.
-              </p>
+              <summary data-i18n="faq_q5"></summary>
+              <p data-i18n="faq_a5"></p>
             </details>
 
             <details class="faq-item">
-              <summary>Mis saab, kui klient ei kinnita tööd?</summary>
-              <p>
-                Kui klient ei kinnita tööd kindla aja jooksul, on mõistlik võtta
-                ühendust meie klienditoega, kirjutades e-mail info@clean.eu.
-                Tellimus vaadatakse üle ja seejärel tehakse vastav otsus.
-              </p>
+              <summary data-i18n="faq_q6"></summary>
+              <p data-i18n="faq_a6"></p>
             </details>
 
             <details class="faq-item">
-              <summary>Kas ma pean pildid üles laadima?</summary>
-              <p>
-                Jah. Pildid kinnitavad töö teostamist ning aitavad vältida
-                vaidlusi. Pildid on kliendile nähtavad.
-              </p>
+              <summary data-i18n="faq_q7"></summary>
+              <p data-i18n="faq_a7"></p>
             </details>
 
             <details class="faq-item">
-              <summary>Kas klient saab mind hinnata?</summary>
-              <p>
-                Jah. Pärast töö lõppu saab ja peab klient hinde jätma "1-5"
-                palli süsteemis ning vajadusel lisama ka kommentaari. Hinnangud
-                aitavad tõsta sinu usaldusväärsust ja saada rohkem tellimusi.
-              </p>
+              <summary data-i18n="faq_q8"></summary>
+              <p data-i18n="faq_a8"></p>
             </details>
 
             <details class="faq-item">
-              <summary>
-                Mis juhtub, kui ma ei saa pooleliolevat tööd lõpetada?
-              </summary>
-              <p>
-                Kui tekib probleem: Võta ühendust CleanX toega. Põhjendamata töö
-                katkestamine võib mõjutada sinu nähtavust platvormil.
-              </p>
+              <summary data-i18n="faq_q9"></summary>
+              <p data-i18n="faq_a9"></p>
             </details>
 
             <details class="faq-item">
-              <summary>Kas ma saan ise valida, millal töötan?</summary>
-              <p>
-                Jah. Saad ise määrata: millal oled „tööl“ ning millal ei soovi
-                tellimusi vastu võtta. Puudub miinimumtundide kohustus.
-              </p>
+              <summary data-i18n="faq_q10"></summary>
+              <p data-i18n="faq_a10"></p>
             </details>
 
             <details class="faq-item">
-              <summary>Milliseid seadmeid ja oskusi ma vajan?</summary>
-              <p>
-                Vajalikud on: android nutitelefon, CleanX Provider rakendus
-                teenuse osutamiseks, sobivad töövahendid - labidas, korrektne ja
-                viisakas suhtlus kliendiga. Alustav provider saab jääsulatusaine
-                ja lumeharja meie poolt.
-              </p>
+              <summary data-i18n="faq_q11"></summary>
+              <p data-i18n="faq_a11"></p>
             </details>
 
             <details class="faq-item">
-              <summary>Kas CleanX kasutamine on tasuline?</summary>
-              <p>
-                Providerile ei ole kuutasu. Teenustasu arvestatakse ainult
-                tehtud tellimustelt.
-              </p>
+              <summary data-i18n="faq_q12"></summary>
+              <p data-i18n="faq_a12"></p>
             </details>
-            <!-- lisa ülejäänud samas vormis -->
           </div>
         </div>
       </section>
