@@ -1,0 +1,128 @@
+🇪🇪 CLEANX ÜLDTINGIMUSED (KLIENDILE)
+
+Kehtivad alates: [lisatakse]
+Teenusepakkuja: CleanX OÜ (Eesti)
+Registrikood: [lisatakse]
+Aadress: [lisatakse]
+E-post: [lisatakse]
+
+1. Mõisted
+
+1.1. CleanX – platvorm, mis vahendab sõidukite puhastusteenuseid klientide ja sõltumatute teenusepakkujate (“Providerid”) vahel.
+1.2. Klient – füüsiline või juriidiline isik, kes tellib teenuse CleanX platvormi kaudu.
+1.3. Provider – iseseisev teenusepakkuja, kes osutab puhastusteenust.
+1.4. Tellimus – kliendi poolt CleanX platvormil esitatud teenusetaotlus.
+
+2. CleanX roll
+
+2.1. CleanX ei osuta puhastusteenust ise, vaid tegutseb vahendajana kliendi ja provideri vahel.
+2.2. Teenuse tegeliku osutamise eest vastutab Provider.
+
+3. Tellimuse loomine
+
+3.1. Tellimus loetakse looduks pärast makse autoriseerimist ja tellimuse salvestamist süsteemi.
+3.2. Tellimuse staatused võivad olla mh: pending, accepted, in_progress, awaiting_confirmation, completed.
+
+4. Makse ja arveldamine
+
+4.1. CleanX kasutab Stripe’i makseteenust.
+4.2. Tellimuse loomisel autoriseeritakse summa kliendi maksemeetodil (raha broneeritakse).
+4.3. Raha võetakse lõplikult maha alles pärast kliendi kinnitust, et töö on tehtud.
+4.4. Kui Provider ei alusta tööd või tellimus ei jõua lõpetamiseni, võib autoriseering aeguda ning raha vabastatakse kliendile automaatselt.
+4.5. Stripe’i teenustasu katab CleanX.
+
+5. Tühistamine
+
+5.1. Tellimuse automaatne tühistamine kliendi või provideri poolt ei ole võimalik.
+5.2. Tühistamine toimub ainult CleanX klienditoe kaudu.
+5.3. Tagasimakse tingimused otsustab CleanX juhtumipõhiselt.
+
+6. Pildid ja tõendamine
+
+6.1. Provider võib ja peab lisama tellimuse juurde pildid enne ja pärast töö tegemist.
+6.2. Pilte kasutatakse töö tõendamiseks ja vaidluste lahendamiseks.
+6.3. Pildid ei ole avalikud ega kasutata muul eesmärgil.
+
+7. Vastutus
+
+7.1. CleanX ei vastuta teenuse kvaliteedi eest, mille osutab Provider.
+7.2. CleanX ei vastuta kaudsete kahjude eest.
+7.3. CleanX vastutab üksnes platvormi tehnilise toimimise eest mõistlikus ulatuses.
+
+8. Vaidlused
+
+8.1. Vaidlused lahendatakse esmalt CleanX klienditoe kaudu.
+8.2. Kohaldub Eesti Vabariigi õigus.
+
+________________-
+🇪🇪 CLEANX PROVIDERI TINGIMUSED
+1. Üldsätted
+
+1.1. Provider on iseseisev ettevõtja või füüsiline isik.
+1.2. CleanX ei ole provideri tööandja.
+
+2. Töö vastuvõtmine
+
+2.1. Tellimuse aktsepteerimine (“accept”) tähendab kohustust tellimus täita.
+2.2. Provider peab ilmuma tellimuse asukohta kokkulepitud ajal.
+
+3. Kohale ilmumata jätmine
+
+3.1. Kui Provider ei ilmu kohale, võib CleanX:
+
+vabastada kliendi makse
+
+piirata või lõpetada provideri ligipääsu platvormile
+
+4. Töö tegemine ja pildid
+
+4.1. Provider peab lisama pildid enne ja pärast töö tegemist.
+4.2. Piltide puudumisel võib CleanX keelduda tasu väljamaksmisest.
+
+5. Tasu
+
+5.1. Provideri tasu on 70% tellimuse hinnast.
+5.2. CleanX teenustasu on 30%.
+5.3. Stripe’i teenustasu ei vähenda provideri tasu.
+
+6. Vastutus
+
+6.1. Provider vastutab täielikult töö kvaliteedi ja kahjude eest.
+6.2. Provider kohustub hüvitama kahju, mis tuleneb hooletusest või kohustuste rikkumisest.
+
+7. Lepingu lõpetamine
+
+7.1. CleanX võib lepingu lõpetada koheselt, kui Provider rikub tingimusi.
+_________________________________
+🇬🇧 CLEANX TERMS AND CONDITIONS (CUSTOMERS)
+
+Effective from: [to be added]
+Service Provider: CleanX OÜ (Estonia)
+
+1. Role of CleanX
+
+CleanX acts solely as a platform connecting customers and independent service providers.
+
+2. Orders and Payments
+
+Payments are authorized upon order creation and captured only after customer confirmation of completed work.
+
+3. Cancellations
+
+Orders can only be cancelled via CleanX support. Refund decisions are made case-by-case.
+
+4. Provider No-Show
+
+If the provider does not perform the service, the payment authorization may expire and funds released.
+
+5. Images
+
+Before and after images are used as proof of service completion and for dispute resolution.
+
+6. Liability
+
+CleanX is not responsible for the actual service performed by providers.
+________________________________________-
+🇬🇧 CLEANX PROVIDER TERMS
+
+Providers are independent contractors responsible for fulfilling accepted orders, attending on time, and uploading proof images. Failure to comply may result in removal from the platform.

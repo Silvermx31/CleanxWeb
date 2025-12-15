@@ -2,195 +2,381 @@
 <html lang="et">
   <head>
     <meta charset="UTF-8" />
-    <title>CleanX - Kasutustingimused</title>
+    <title>CleanX – Kasutustingimused</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <style>
+      :root {
+        --primary: #0052ff;
+        --primary-dark: #0037b3;
+        --accent: #00c2a8;
+        --bg: #f4f6fb;
+        --text-main: #111827;
+        --text-muted: #6b7280;
+        --card-bg: #ffffff;
+        --radius-lg: 20px;
+        --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f0f4f8;
-        color: #333;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: var(--bg);
+        color: var(--text-main);
       }
-      .navbar {
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .page {
+        min-height: 100vh;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 30px;
-        background: #fafbfc;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        flex-direction: column;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+
+      /* NAVBAR */
+      .navbar {
         position: sticky;
         top: 0;
-        z-index: 1000;
+        z-index: 20;
+        background: rgba(244, 246, 251, 0.9);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.2);
       }
-      .navbar-logo {
-        font-weight: bold;
-        font-size: 20px;
-        color: #3366cc;
-        text-decoration: none;
-      }
-      .navbar-links {
+
+      .navbar-inner {
         display: flex;
         align-items: center;
-        gap: 20px;
+        justify-content: space-between;
+        padding: 14px 0;
       }
-      .navbar-links a {
-        color: #666;
-        text-decoration: none;
-        font-size: 16px;
+
+      .logo {
+        font-weight: 800;
+        font-size: 20px;
+        color: var(--primary);
+        letter-spacing: 0.03em;
       }
-      .navbar-links a:hover {
-        color: #254a99;
+
+      .nav-links {
+        display: flex;
+        gap: 10px;
       }
-      .content {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 20px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      h1,
-      h2 {
-        text-align: center;
-        color: #3366cc;
-      }
-      .terms-item {
-        margin-bottom: 30px;
-      }
-      .terms-item h3 {
-        font-size: 22px;
-        color: #254a99;
-      }
-      .terms-item p {
-        font-size: 16px;
-        line-height: 1.6;
-      }
-      footer {
-        text-align: center;
-        padding: 30px 20px;
+
+      .nav-link {
+        padding: 8px 14px;
+        border-radius: 999px;
         font-size: 14px;
-        color: #666;
-        margin-top: 50px;
+        color: var(--text-muted);
+      }
+
+      .nav-link:hover {
+        background: rgba(99, 102, 241, 0.06);
+        color: var(--primary);
+      }
+
+      /* CONTENT */
+      .section {
+        padding: 48px 0;
+      }
+
+      .terms-card {
+        background: var(--card-bg);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-soft);
+        padding: 32px 28px;
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+
+      .meta {
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-bottom: 28px;
+      }
+
+      .terms-section {
+        margin-bottom: 26px;
+      }
+
+      .terms-section h2 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: var(--primary-dark);
+      }
+
+      .terms-section p,
+      .terms-section li {
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .terms-section ul {
+        padding-left: 18px;
+        margin-top: 8px;
+      }
+
+      /* FOOTER */
+      .footer {
+        border-top: 1px solid rgba(148, 163, 184, 0.35);
+        padding: 18px 0;
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: auto;
+      }
+
+      .footer-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 12px;
+      }
+
+      .footer-links a {
+        color: var(--text-muted);
+      }
+
+      @media (max-width: 720px) {
+        .terms-card {
+          padding: 22px 18px;
+        }
       }
     </style>
   </head>
+
   <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <a href="index.html" class="navbar-logo">CleanX</a>
-      <div class="navbar-links">
-        <a href="index.html#overview">Ülevaade</a>
-        <a href="index.html#how">Kuidas alustada</a>
-        <a href="kkk.html">KKK</a>
-      </div>
-    </nav>
+    <div class="page">
+      <!-- NAVBAR -->
+      <header class="navbar">
+        <div class="container">
+          <div class="navbar-inner">
+            <a href="index.html" class="logo">CleanX</a>
+            <nav class="nav-links">
+              <a href="index.html" class="nav-link">Avaleht</a>
+              <a href="kkk.html" class="nav-link">KKK</a>
+            </nav>
+          </div>
+        </div>
+      </header>
 
-    <!-- TERMS CONTENT -->
-    <div class="content">
-      <h1>Kasutustingimused</h1>
+      <!-- TERMS -->
+      <section class="section">
+        <div class="container">
+          <div class="terms-card">
+            <h1>Kasutustingimused</h1>
+            <div class="meta">
+              Kehtivad alates: <b>[lisatakse]</b><br />
+              Teenusepakkuja: <b>CleanX OÜ (Eesti)</b>
+            </div>
 
-      <div class="terms-item">
-        <p>
-          Need kasutustingimused kehtivad CleanX rakendusele (edaspidi
-          "Rakendus"), mille lõi CleanX (edaspidi "Teenusepakkuja") ja mis on
-          mõeldud tasuta kasutamiseks.
-        </p>
-        <p>
-          Rakenduse allalaadimise või kasutamisega nõustud automaatselt
-          järgmiste tingimustega. Palun loe need hoolikalt läbi enne kasutamist.
-        </p>
-        <p>
-          Rakenduse, selle osade või Teenusepakkuja kaubamärkide kopeerimine,
-          muutmine, lähtekoodi hankimine, tõlkimine või tuletatud versioonide
-          loomine on keelatud.
-        </p>
-      </div>
+            <div class="terms-section">
+              <h2>1. Üldsätted</h2>
+              <p>
+                Käesolevad kasutustingimused reguleerivad CleanX veebilehe,
+                mobiilirakenduste ja nendega seotud teenuste kasutamist. CleanX
+                tegutseb puhastusteenuste vahendusplatvormina klientide ja
+                sõltumatute teenusepakkujate (edaspidi „Providerid“) vahel.
+              </p>
+            </div>
 
-      <div class="terms-item">
-        <h3>Isikuandmete töötlemine</h3>
-        <p>
-          Rakendus salvestab ja töötleb isikuandmeid (nagu nimi ja e-posti
-          aadress), mille oled esitanud Teenusepakkujale teenuse pakkumise
-          eesmärgil.
-        </p>
-      </div>
+            <div class="terms-section">
+              <h2>2. CleanX roll</h2>
+              <p>
+                CleanX ei osuta puhastusteenust ise ega ole Provideri tööandja.
+                Teenuse tegeliku osutamise ja kvaliteedi eest vastutab Provider.
+              </p>
+            </div>
 
-      <div class="terms-item">
-        <h3>Asukohateenuste kasutamine</h3>
-        <p>
-          CleanX rakendus kasutab seadme asukohaandmeid, et kuvada sinu lähimad
-          töövõimalused ja pakkuda sobivaid teenuseid. Asukohaandmeid
-          töödeldakse kooskõlas privaatsuspoliitikaga ja neid ei jagata
-          kolmandate osapooltega ilma kasutaja nõusolekuta.
-        </p>
-      </div>
+            <div class="terms-section">
+              <h2>3. Tellimuse loomine ja staatused</h2>
+              <ul>
+                <li>pending</li>
+                <li>accepted</li>
+                <li>in_progress</li>
+                <li>awaiting_confirmation</li>
+                <li>completed</li>
+              </ul>
+              <p>
+                Provideri poolne tellimuse vastuvõtmine tähendab kohustust
+                tellimus täita.
+              </p>
+            </div>
 
-      <div class="terms-item">
-        <h3>Internetiühendus ja vastutus</h3>
-        <p>
-          Rakenduse korrektseks toimimiseks on vajalik internetiühendus.
-          Teenusepakkuja ei vastuta, kui seoses internetiühenduse puudumisega
-          või muude seadmega seotud probleemidega ei saa rakendust kasutada.
-        </p>
-      </div>
+            <div class="terms-section">
+              <h2>4. Makse ja arveldamine</h2>
+              <p>
+                Makseid töödeldakse Stripe’i kaudu. Tellimuse loomisel
+                autoriseeritakse summa kliendi maksemeetodil (raha
+                broneeritakse).
+              </p>
+              <p>
+                Raha võetakse lõplikult maha alles pärast seda, kui klient on
+                kinnitanud töö valmimise.
+              </p>
+              <p>
+                Kui teenust ei osutata, võib autoriseering aeguda ning raha
+                vabastatakse kliendile. Stripe’i teenustasu katab CleanX.
+              </p>
+            </div>
 
-      <div class="terms-item">
-        <h3>Vastutus piirang</h3>
-        <p>
-          Kuigi Teenusepakkuja püüab tagada, et rakendus oleks ajakohane ja
-          korrektne, ei võta ta vastutust kahjude eest, mis võivad tekkida
-          rakenduse kasutamisel või selle funktsionaalsusele tuginemisel.
-        </p>
-      </div>
+            <div class="terms-section">
+              <h2>5. Tühistamine ja tagasimaksed</h2>
+              <p>
+                Tellimusi ei saa automaatselt tühistada. Kõik tühistamise ja
+                tagasimaksega seotud otsused teeb CleanX klienditugi
+                juhtumipõhiselt.
+              </p>
+            </div>
 
-      <div class="terms-item">
-        <h3>Rakenduse uuendused ja lõpetamine</h3>
-        <p>
-          Teenusepakkuja võib rakendust aeg-ajalt uuendada või lõpetada selle
-          pakkumise ilma ette teatamata. Uuenduste saamiseks tuleb kasutajatel
-          rakendus uuesti alla laadida.
-        </p>
-      </div>
+            <div class="terms-section">
+              <h2>6. Provideri kohustused</h2>
+              <ul>
+                <li>Ilmuda tellimuse asukohta kokkulepitud ajal</li>
+                <li>Teostada töö professionaalselt ja heas usus</li>
+                <li>Lisada pildid enne ja pärast töö tegemist</li>
+              </ul>
+              <p>
+                Kui Provider ei ilmu kohale pärast tellimuse vastuvõtmist, on
+                CleanX-il õigus vabastada kliendi makse ning piirata või
+                lõpetada Provideri ligipääs platvormile.
+              </p>
+            </div>
 
-      <div class="terms-item">
-        <h3>Kolmandate osapoolte teenused</h3>
-        <p>
-          Rakendus kasutab kolmandate osapoolte teenuseid, millel on omaenda
-          kasutustingimused, näiteks:
-        </p>
-        <ul>
-          <li>Google Play Services</li>
-          <li>Facebook</li>
-          <li>Expo</li>
-        </ul>
-      </div>
+            <div class="terms-section">
+              <h2>7. Tasu ja jaotus</h2>
+              <p>
+                Provider teenib 70% tellimuse hinnast. CleanX teenustasu on 30%.
+              </p>
+            </div>
 
-      <div class="terms-item">
-        <h3>Muudatused tingimustes</h3>
-        <p>
-          Teenusepakkuja jätab endale õiguse tingimusi aeg-ajalt uuendada.
-          Muudatused avaldatakse sellel lehel.
-        </p>
-      </div>
+            <div class="terms-section">
+              <h2>8. Vastutus</h2>
+              <p>
+                CleanX ei vastuta teenuse kvaliteedi ega Provideri tegevusest
+                tulenevate kahjude eest ning vastutab üksnes platvormi tehnilise
+                toimimise eest mõistlikus ulatuses.
+              </p>
+            </div>
 
-      <div class="terms-item">
-        <h3>Kontakt</h3>
-        <p>
-          Kui sul on küsimusi nende tingimuste kohta, võta palun ühendust
-          aadressil:
-          <a href="mailto:info@cleanx.com">info@cleanx.com</a>
-        </p>
-      </div>
+            <div class="terms-section">
+              <h2>9. Kohaldatav õigus</h2>
+              <p>
+                Tingimustele kohaldub Eesti Vabariigi õigus. Vaidlused püütakse
+                lahendada esmajärjekorras läbirääkimiste teel.
+              </p>
+            </div>
+            <div class="terms-section">
+              <h2>Sõiduki seisukord ja vastutus</h2>
+              <p>
+                Klient vastutab selle eest, et sõiduk ja selle ümbrus on teenuse
+                osutamiseks ohutus ja ligipääsetav. Klient kohustub teavitama
+                Providerit ja CleanX-i kõigist sõiduki eripäradest, sealhulgas
+                olemasolevatest kahjustustest, õrnadest detailidest või muudest
+                asjaoludest, mis võivad mõjutada teenuse osutamist.
+              </p>
+              <p>
+                CleanX ega Provider ei vastuta sõiduki varasemate kahjustuste,
+                varjatud defektide ega tavapärasest kulumisest tulenevate
+                kahjustuste eest.
+              </p>
+              <p>
+                Enne ja pärast teenust tehtud pildid võivad olla aluseks sõiduki
+                seisukorra hindamisel ja võimalike vaidluste lahendamisel.
+              </p>
+            </div>
+            <div class="terms-section">
+              <h2>Vääramatu jõud (Force majeure)</h2>
+              <p>
+                CleanX ei vastuta kohustuste mittetäitmise või viivituse eest,
+                kui see tuleneb asjaoludest, mis ei allu CleanX-i mõistlikule
+                kontrollile, sealhulgas, kuid mitte ainult: loodusõnnetused,
+                tulekahjud, üleujutused, sõjad, rahutused, streigid, pandeemiad,
+                ametiasutuste tegevus, elektri- või sidekatkestused, kolmandate
+                osapoolte teenuste rike (sealhulgas makseteenused) või muud
+                vääramatu jõu asjaolud.
+              </p>
+              <p>
+                Vääramatu jõu esinemisel loetakse CleanX-i kohustuste täitmine
+                peatunuks vääramatu jõu kestuse ajaks.
+              </p>
+            </div>
 
-      <p style="text-align: center; font-size: 13px; color: #888">
-        Käesolevad tingimused on jõus alates 11.04.2025
-      </p>
+            <div class="terms-section">
+              <h2>Kehtetuse eraldatavus (Severability)</h2>
+              <p>
+                Kui mõni käesolevate kasutustingimuste säte osutub kehtetuks,
+                ebaseaduslikuks või jõustamatuks, ei mõjuta see ülejäänud sätete
+                kehtivust ega jõustatavust.
+              </p>
+              <p>
+                Kehtetu säte asendatakse võimalikult sarnase kehtiva sättega,
+                mis vastab kõige enam algse sätte eesmärgile ja majanduslikule
+                sisule.
+              </p>
+            </div>
+            <div class="terms-section">
+              <h2>Kogu leping (Entire Agreement)</h2>
+              <p>
+                Käesolevad kasutustingimused koos privaatsustingimuste ja muude
+                CleanX-i poolt viidatud dokumentidega moodustavad täieliku ja
+                ammendava lepingu CleanX-i ja kasutaja vahel ning asendavad kõik
+                varasemad kokkulepped, lubadused, arusaamad ja suhtluse,
+                sõltumata nende vormist.
+              </p>
+              <p>
+                Ühtegi kõrvalkokkulepet ei loeta kehtivaks, kui see ei ole
+                esitatud kirjalikult ja CleanX-i poolt kinnitatud.
+              </p>
+            </div>
+            <div class="terms-section">
+              <h2>Lepingu keel (Governing Language)</h2>
+              <p>
+                Käesolevad kasutustingimused on koostatud eesti ja inglise
+                keeles. Tõlgendamise või vastuolu korral keeleversioonide vahel
+                on määravaks eesti keel, kui ei ole sõnaselgelt sätestatud
+                teisiti.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-inner">
+            <div>© 2025 CleanX – Puhastusteenuste platvorm</div>
+            <div class="footer-links">
+              <a href="privacy.html">Privaatsus</a>
+              <a href="terms.html">Tingimused</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-
-    <!-- FOOTER -->
-    <footer>
-      © 2025 CleanX - Puhastusteenuste platvorm |
-      <a href="privacy.html">Privaatsustingimused</a> |
-      <a href="terms.html">Kasutustingimused</a>
-    </footer>
   </body>
 </html>
