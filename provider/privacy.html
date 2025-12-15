@@ -97,21 +97,31 @@
       <div class="container">
         <div class="navbar-inner">
           <div class="nav-left">
-            <a href="#" class="logo">CleanX</a>
+            <a href="../index.html" class="logo">CleanX</a>
+
             <nav class="nav-links">
-              <a href="#why" class="nav-link">Miks CleanX?</a>
-              <a href="#steps" class="nav-link">Kuidas töötab</a>
-              <a href="#download" class="nav-link">Lae alla CleanX</a>
+              <a href="#why" class="nav-link" data-i18n="nav_why">
+                Miks CleanX?
+              </a>
+              <a href="#steps" class="nav-link" data-i18n="nav_steps">
+                Kuidas töötab
+              </a>
+              <a href="#form" class="nav-link" data-i18n="nav_faq">
+                Korduma kippuvad
+              </a>
             </nav>
           </div>
           <div class="nav-right">
-            <a href="provider/provider.html" class="btn-chip">
-              Hakka partneriks
-            </a>
-            <a href="#download" class="btn-primary">
-              Lae Androidi äpp
+            <button class="btn-chip" onclick="setLang('et')">ET</button>
+            <button class="btn-chip" onclick="setLang('en')">EN</button>
+            <button
+              class="btn-primary"
+              data-i18n="nav_cta"
+              onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth' })"
+            >
+              Alusta registreerimist
               <span>→</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>
