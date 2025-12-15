@@ -1085,7 +1085,7 @@
                     id="referral"
                     name="referral"
                     type="text"
-                    placeholder="Kui keegi sind soovitas"
+                    placeholder=" "
                   />
                 </div>
 
@@ -1101,9 +1101,18 @@
                     <option value="" data-i18n="form_document_select">
                       Vali dokumendi tüüp
                     </option>
-                    <option value="Eesti ID-kaart">Eesti ID-kaart</option>
-                    <option value="Eesti pass">Eesti pass</option>
-                    <option value="Elamisluba">Elamisluba</option>
+
+                    <option value="Eesti ID-kaart" data-i18n="doc_id_card">
+                      Eesti ID-kaart
+                    </option>
+
+                    <option value="Eesti pass" data-i18n="doc_passport">
+                      Eesti pass
+                    </option>
+
+                    <option value="Elamisluba" data-i18n="doc_residence_permit">
+                      Elamisluba
+                    </option>
                   </select>
                 </div>
 
@@ -1349,6 +1358,9 @@
           form_iban: "Pangakonto number (IBAN)",
           form_company_name: "Ettevõtte nimi (kui OÜ)",
           form_company_code: "Registrikood (kui OÜ)",
+          doc_id_card: "Eesti ID-kaart",
+          doc_passport: "Eesti pass",
+          doc_residence_permit: "Elamisluba",
         },
         en: {
           nav_why: "Why CleanX?",
@@ -1450,6 +1462,9 @@
           form_iban: "Bank account number (IBAN)",
           form_company_name: "Company name (if LLC)",
           form_company_code: "Company registration code (if LLC)",
+          doc_id_card: "Estonian ID card",
+          doc_passport: "Estonian passport",
+          doc_residence_permit: "Residence permit",
         },
       };
 
