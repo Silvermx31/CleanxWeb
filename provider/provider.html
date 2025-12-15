@@ -746,9 +746,11 @@
                 </button>
               </div>
               <div class="hero-meta">
-                <div><b>24h</b> – esmane tagasiside</div>
-                <div><b>Paindlik</b> graafik</div>
-                <div><b>Lihtne</b> alustamine</div>
+                <div data-i18n="hero_meta_1">
+                  <b>24h</b> – esmane tagasiside
+                </div>
+                <div data-i18n="hero_meta_2">Paindlik graafik</div>
+                <div data-i18n="hero_meta_3">Lihtne alustamine</div>
               </div>
             </div>
 
@@ -919,7 +921,11 @@
         <div class="container">
           <div class="reg-layout">
             <div class="reg-info">
-              <h2 class="section-title" data-i18n="form_title">
+              <h2
+                class="section-title"
+                style="text-align: left; margin-bottom: 8px"
+                data-i18n="form_title"
+              >
                 Partneri registreerimisvorm
               </h2>
               <p data-i18n="form_intro">
@@ -1164,12 +1170,14 @@
       <footer class="footer">
         <div class="container">
           <div class="footer-inner">
-            <div>© 2025 CleanX – Puhastusteenuste platvorm</div>
-            <div class="footer-links">
-              <a href="privacy.html">Privaatsus</a>
-              <a href="terms.html">Tingimused</a>
-              <a href="mailto:silvermx31@gmail.com">Kontakt</a>
+            <div data-i18n="footer_copy">
+              © 2025 CleanX – Puhastusteenuste platvorm
             </div>
+            <a href="privacy.html" data-i18n="footer_privacy">Privaatsus</a>
+            <a href="terms.html" data-i18n="footer_terms">Tingimused</a>
+            <a href="mailto:silvermx31@gmail.com" data-i18n="footer_contact"
+              >Kontakt</a
+            >
           </div>
         </div>
       </footer>
@@ -1252,6 +1260,16 @@
 
           form_outro:
             "Pärast vormi saatmist saadame info edasi meie tiimile, kes vaatab ankeedi üle ja võtab sinuga ühendust 3 tööpäeva jooksul.",
+          hero_meta_1: "<b>24h</b> – esmane tagasiside",
+          hero_meta_2: "Paindlik graafik",
+          hero_meta_3: "Lihtne alustamine",
+
+          form_title: "Partneri registreerimisvorm",
+
+          footer_copy: "© 2025 CleanX – Puhastusteenuste platvorm",
+          footer_privacy: "Privaatsus",
+          footer_terms: "Tingimused",
+          footer_contact: "Kontakt",
         },
         en: {
           nav_why: "Why CleanX?",
@@ -1324,6 +1342,16 @@
 
           form_outro:
             "After submitting the form, our team will review your application and contact you within 3 business days.",
+          hero_meta_1: "<b>24h</b> – first response",
+          hero_meta_2: "Flexible schedule",
+          hero_meta_3: "Easy onboarding",
+
+          form_title: "Partner registration form",
+
+          footer_copy: "© 2025 CleanX – Cleaning services platform",
+          footer_privacy: "Privacy",
+          footer_terms: "Terms",
+          footer_contact: "Contact",
         },
       };
 
