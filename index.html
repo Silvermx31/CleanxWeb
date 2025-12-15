@@ -246,99 +246,6 @@
         align-items: center;
       }
 
-      /* PRICE CARD */
-      .price-card {
-        background: #ffffff;
-        border-radius: 20px;
-        padding: 22px 22px 20px;
-        border: 1px solid rgba(15, 23, 42, 0.08);
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08),
-          inset 0 1px 0 rgba(255, 255, 255, 0.7);
-      }
-
-      /* HEADER */
-      .price-card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 14px;
-      }
-
-      .price-eyebrow {
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: #2563eb;
-      }
-
-      .price-location {
-        font-size: 13px;
-        color: #64748b;
-      }
-
-      /* MAIN PRICE */
-      .price-main {
-        margin-bottom: 16px;
-      }
-
-      .price-range {
-        font-size: 40px;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        color: #0f172a;
-      }
-
-      .price-sub {
-        margin-top: 4px;
-        font-size: 14px;
-        color: #475569;
-        max-width: 40ch;
-      }
-
-      /* DIVIDER */
-      .price-divider {
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          rgba(15, 23, 42, 0.12),
-          transparent
-        );
-        margin: 16px 0;
-      }
-
-      /* DETAILS */
-      .price-details {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .price-details li {
-        display: grid;
-        grid-template-columns: 70px 1fr;
-        gap: 12px;
-        align-items: start;
-        margin-bottom: 10px;
-        font-size: 14px;
-        color: #334155;
-      }
-
-      .price-details strong {
-        font-weight: 600;
-        color: #0f172a;
-      }
-
-      /* NOTE */
-      .price-note {
-        grid-template-columns: 1fr;
-        margin-top: 6px;
-        padding-top: 10px;
-        font-size: 13px;
-        color: #64748b;
-      }
-
       .hero-tag {
         display: inline-flex;
         align-items: center;
@@ -999,37 +906,49 @@
             </div>
 
             <!-- PAREM KAART (ANALOOGNE PROVIDERI “TULU” KAARDILE) -->
-            <aside class="price-card">
-              <div class="price-card-header">
-                <span class="price-eyebrow">Hinnastamine</span>
-                <span class="price-location">Tallinn · paindlik aeg</span>
+            <aside class="hero-card">
+              <div class="hero-card-header">
+                <span class="hero-chip">Hind</span>
+                <span class="hero-card-badge">Tallinn · paindlik aeg</span>
               </div>
 
-              <div class="price-main">
-                <div class="price-range">7–20 €</div>
-                <div class="price-sub">
-                  Lõplik hind sõltub töö mahust ja soovitud kiirusest
+              <div class="hero-stat-main">
+                <span>7–20 €</span>
+                <span>sõltuvalt tellimusest ja koormusest</span>
+              </div>
+
+              <div class="hero-progress">
+                <div class="hero-progress-bar">
+                  <div class="hero-progress-fill" style="width: 65%"></div>
+                </div>
+                <div class="hero-progress-label">
+                  Hind kujuneb vastavalt tellimuse tüübile ja nõudlusele.
                 </div>
               </div>
 
-              <div class="price-divider"></div>
-
-              <ul class="price-details">
+              <ul class="hero-list">
                 <li>
-                  <strong>7 €</strong>
-                  <span>Auto lumest puhtaks</span>
+                  <span class="hero-list-dot"></span>
+                  <span>7 € – Auto lumest puhtaks</span>
                 </li>
-
                 <li>
-                  <strong>9–20 €</strong>
-                  <span>
-                    Auto + ümbrus, lisatööd ja kiirem teenus vastavalt
-                    vajadusele
-                  </span>
+                  <span
+                    class="hero-list-dot"
+                    style="background: #38bdf8"
+                  ></span>
+                  <span
+                    >9–20 € – Tellimuse käigus valid, kas puhastatakse ainult
+                    auto või ka auto ümbrus. Vajadusel kasutatakse kliendi
+                    soovil jääsulatusainet klaasidele. Hind kujuneb töö mahu ja
+                    soovitud kiiruse järgi.</span
+                  >
                 </li>
-
-                <li class="price-note">
-                  Hind on alati nähtav enne tellimuse kinnitamist
+                <li>
+                  <span
+                    class="hero-list-dot"
+                    style="background: #eab308"
+                  ></span>
+                  <span>Hind on enne kinnitamist alati nähtav.</span>
                 </li>
               </ul>
             </aside>
@@ -1150,7 +1069,7 @@
                 muutuda ning esineda üksikuid tõrkeid. <br /><br />
                 Oleme väga tänulikud sinu tagasiside eest – kui märkad viga või
                 sul on ettepanek, kirjuta meile:
-                <a href="mailto:info@cleanx.com">info@cleanx.eu</a>.
+                <a href="mailto:info@cleanx.com">info@cleanx.com</a>.
               </div>
             </div>
 
