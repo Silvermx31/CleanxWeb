@@ -149,6 +149,64 @@
           filter 0.12s ease;
       }
 
+      /* REG INFO CARD */
+      .reg-info-card {
+        background: #ffffff;
+        border-radius: 22px;
+        padding: 28px 30px;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: regFloat 7s ease-in-out infinite;
+      }
+
+      .reg-info-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 60px rgba(0, 0, 0, 0.14);
+      }
+
+      /* SUBTLE FLOAT */
+      @keyframes regFloat {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-4px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      /* BETA NOTE INSIDE CARD */
+      .beta-note {
+        margin-top: 18px;
+        padding: 14px 16px;
+        background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+        border: 1px solid #bae6fd;
+        border-radius: 14px;
+        font-size: 13px;
+        color: #0f172a;
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+      .beta-icon {
+        font-size: 18px;
+        line-height: 1;
+      }
+
+      /* HOOLITSE, ET LISTID ON ILUSAD */
+      .reg-info-card ul {
+        padding-left: 18px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+      }
+
+      .reg-info-card li {
+        margin-bottom: 6px;
+      }
+
       .btn-primary:hover {
         transform: translateY(-1px);
         filter: brightness(1.05);
@@ -972,7 +1030,7 @@
       <section id="form" class="reg-section">
         <div class="container">
           <div class="reg-layout">
-            <div class="reg-info">
+            <div class="reg-info reg-info-card">
               <h2
                 class="section-title"
                 style="text-align: left; margin-bottom: 8px"
@@ -980,15 +1038,17 @@
               >
                 Partneri registreerimisvorm
               </h2>
+
               <p data-i18n="form_intro">
                 Täida ankeet võimalikult täpselt. Kasutame sinu andmeid selleks,
                 et hinnata sobivust CleanX partneriks ning võtta sinuga
                 ühendust.
               </p>
 
-              <b data-i18n="form_before_title"
-                >Mida võiksid teada enne alustamist?</b
-              >
+              <b data-i18n="form_before_title">
+                Mida võiksid teada enne alustamist?
+              </b>
+
               <ul>
                 <li data-i18n="form_req_id">
                   Sul peab olema kehtiv isikut tõendav dokument.
@@ -1000,13 +1060,24 @@
                   Ettevõtlusvorm – OÜ, FIE või ettevõtluskonto.
                 </li>
               </ul>
+
               <p data-i18n="form_outro">
                 Pärast vormi saatmist saadame info edasi meie tiimile, kes
                 vaatab ankeedi üle ja võtab sinuga ühendust 3 tööpäeva jooksul.
               </p>
+
               <div class="helper" data-i18n="form_privacy_note">
                 Andmeid kasutatakse ainult CleanX partneriks kandideerimise
                 eesmärgil.
+              </div>
+
+              <!-- UUS: varajase versiooni info KASTI SEES -->
+              <div class="beta-note">
+                <span class="beta-icon">🚧</span>
+                <span data-i18n="beta_note">
+                  CleanX on hetkel aktiivses arendus- ja testimisfaasis. Mõned
+                  funktsioonid võivad muutuda. Täname mõistva suhtumise eest.
+                </span>
               </div>
             </div>
 
