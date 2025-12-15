@@ -4,207 +4,481 @@
     <meta charset="UTF-8" />
     <title>CleanX - Privacy Policy</title>
     <style>
+      :root {
+        --primary: #0052ff;
+        --bg: #f4f6fb;
+        --text-main: #111827;
+        --text-muted: #6b7280;
+        --card-bg: #ffffff;
+        --border: #e5e7eb;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f0f4f8;
-        color: #333;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text-main);
       }
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px;
-        background: #fafbfc;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+      a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* ---------- NAVBAR ---------- */
+      header {
+        background: #fff;
+        border-bottom: 1px solid var(--border);
         position: sticky;
         top: 0;
         z-index: 1000;
       }
-      .navbar-left {
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .navbar-inner {
         display: flex;
         align-items: center;
-        gap: 20px;
+        justify-content: space-between;
+        height: 64px;
       }
-      .navbar-logo {
-        font-weight: bold;
+
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .logo {
+        font-weight: 800;
         font-size: 20px;
-        color: #3366cc;
-        text-decoration: none;
+        color: var(--primary);
       }
-      .navbar-links {
+
+      .nav-links {
+        display: flex;
+        gap: 16px;
+      }
+
+      .nav-link {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .nav-link:hover {
+        color: var(--text-main);
+      }
+
+      .nav-right {
         display: flex;
         align-items: center;
         gap: 10px;
-        margin-left: 20px;
       }
-      .btn-link {
-        background: #eee;
-        color: #333;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-size: 14px;
-        text-decoration: none;
-        border: none;
+
+      .btn-chip {
+        border: 1px solid var(--border);
+        background: #fff;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 12px;
         cursor: pointer;
-        transition: background 0.3s;
       }
-      .btn-link:hover {
-        background: #ccc;
-      }
-      .content {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 20px;
-        background: white;
+
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        padding: 10px 16px;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      h1 {
-        text-align: center;
-        color: #3366cc;
-      }
-      h2 {
-        text-align: left;
-        color: #3366cc;
-        margin-top: 40px;
-        margin-bottom: 10px;
-      }
-      .section {
-        margin-bottom: 30px;
-      }
-      footer {
-        text-align: center;
-        padding: 30px 20px;
         font-size: 14px;
-        color: #666;
-        margin-top: 50px;
+        cursor: pointer;
       }
-      footer a {
-        color: #3366cc;
-        text-decoration: none;
-        margin: 0 5px;
+
+      /* ---------- CONTENT ---------- */
+      main {
+        padding: 48px 0;
       }
-      footer a:hover {
-        text-decoration: underline;
+
+      .policy-card {
+        max-width: 820px;
+        margin: 0 auto;
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      }
+
+      .policy-card h1 {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .policy-card h2 {
+        margin-top: 32px;
+        margin-bottom: 12px;
+        font-size: 18px;
+      }
+
+      .policy-card p,
+      .policy-card li {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--text-muted);
+      }
+
+      .policy-card ul {
+        padding-left: 18px;
+      }
+
+      /* ---------- FOOTER ---------- */
+      footer {
+        border-top: 1px solid var(--border);
+        background: #fff;
+        padding: 24px 0;
+        margin-top: 60px;
+      }
+
+      .footer-inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .footer-sep {
+        color: #9ca3af;
       }
     </style>
   </head>
 
   <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-      <div class="navbar-left">
-        <a href="index-en.html" class="navbar-logo">CleanX</a>
-        <div class="navbar-links">
-          <a href="index-en.html#overview" class="btn-link">Overview</a>
-          <a href="index-en.html#how" class="btn-link">How to Start</a>
-          <a href="faq-en.html" class="btn-link">FAQ</a>
+    <!-- NAVBAR (SAMA MIS AVALEHEL) -->
+    <header class="navbar">
+      <div class="container">
+        <div class="navbar-inner">
+          <div class="nav-left">
+            <a href="../index.html" class="logo">CleanX</a>
+
+            <nav class="nav-links">
+              <a href="../index.html#why" class="nav-link">Why CleanX?</a>
+              <a href="../index.html#steps" class="nav-link">How it works</a>
+              <a href="../index.html#faq" class="nav-link">FAQ</a>
+            </nav>
+          </div>
+
+          <div class="nav-right">
+            <button class="btn-chip" onclick="setLang('et')">ET</button>
+            <button class="btn-chip" onclick="setLang('en')">EN</button>
+            <button class="btn-primary">Get started →</button>
+          </div>
         </div>
       </div>
-    </nav>
+    </header>
 
     <!-- CONTENT -->
     <div class="content">
-      <h1>Privacy Policy</h1>
-
       <div class="section">
-        <p>
-          This Privacy Policy applies to the CleanX mobile application
-          ("Application") provided by CleanX ("Service Provider") as a free
-          service. The service is intended for use "AS IS".
+        <p class="meta">
+          Effective as of: <b>01 January 2025</b><br />
+          Data Controller: <b>CleanX OÜ (Estonia)</b>
         </p>
-      </div>
 
-      <div class="section">
-        <h2>Data Collection and Use</h2>
+        <h1>Privacy Policy</h1>
+
         <p>
-          The application collects data when you download and use it. Collected
-          data may include:
+          This Privacy Policy describes how CleanX (the
+          <strong>Service Provider</strong>) collects, uses, and protects
+          personal data in connection with the use of the CleanX mobile
+          application and related web services (the <strong>Services</strong>).
+        </p>
+
+        <p>
+          CleanX processes personal data in accordance with the EU General Data
+          Protection Regulation (GDPR) and applicable laws of the Republic of
+          Estonia.
+        </p>
+
+        <h2>1. Data Controller</h2>
+        <p>
+          Data controller: CleanX OÜ (Estonia)<br />
+          Contact: <a href="mailto:info@cleanx.com">info@cleanx.com</a>
+        </p>
+
+        <h2>2. Personal Data We Collect</h2>
+        <p>
+          When using the Services, we may collect the following personal data:
         </p>
         <ul>
-          <li>Your device's IP address</li>
-          <li>Visited pages within the app, time and duration of visit</li>
-          <li>Operating system used</li>
+          <li>name, email address, and phone number</li>
+          <li>user account and profile information</li>
+          <li>order and payment-related data</li>
+          <li>device and technical data (e.g. IP address, operating system)</li>
+          <li>usage logs and interaction data</li>
+          <li>location data, where required to provide the Services</li>
+        </ul>
+
+        <h2>3. Location Data</h2>
+        <p>
+          Location data is collected only when necessary to provide the
+          Services, such as determining the location of an order or displaying
+          nearby service providers.
+        </p>
+        <p>
+          Location access is based on the user’s consent and can be disabled at
+          any time via the device settings.
+        </p>
+
+        <h2>4. Purposes and Legal Basis of Processing</h2>
+        <p>Personal data is processed for the following purposes:</p>
+        <ul>
+          <li>
+            providing and managing the Services (performance of a contract)
+          </li>
+          <li>processing orders and payments</li>
+          <li>customer support and communication</li>
+          <li>improving and developing the Services (legitimate interest)</li>
+          <li>complying with legal obligations</li>
+        </ul>
+
+        <h2>5. Third-Party Services</h2>
+        <p>
+          CleanX may use third-party service providers, including but not
+          limited to:
+        </p>
+        <ul>
+          <li>Google (e.g. Google Maps, Google Play Services)</li>
+          <li>Firebase</li>
+          <li>payment service providers (e.g. Stripe)</li>
+          <li>cloud hosting and analytics providers</li>
         </ul>
         <p>
-          The application may collect and process your device’s approximate or
-          exact location data to provide location-based features (e.g.,
-          determining the location of orders and displaying nearby job offers).
-          Location data is collected only while actively using the app and
-          solely to improve service quality. The user can enable or disable
-          location services in device settings.
+          These providers process personal data only to the extent necessary to
+          deliver their services and in accordance with their own privacy
+          policies.
         </p>
-        <p>
-          The Service Provider may occasionally use your data to send important
-          information, notifications, and marketing offers.
-        </p>
-        <p>
-          Personal data (e.g., name and email) is stored and used in accordance
-          with this Privacy Policy.
-        </p>
-      </div>
 
-      <div class="section">
-        <h2>Third Parties</h2>
+        <h2>6. Transfers Outside the European Union</h2>
         <p>
-          The application uses third-party services (Google Play Services,
-          Facebook, Expo), each of which has its own Privacy Policy.
+          Some service providers may be located outside the European Union. In
+          such cases, CleanX ensures appropriate safeguards in accordance with
+          GDPR requirements, including standard contractual clauses.
         </p>
-        <p>
-          Data is shared only as required by law or with trusted partners who
-          adhere to confidentiality requirements.
-        </p>
-      </div>
 
-      <div class="section">
-        <h2>Data Retention</h2>
+        <h2>7. Data Retention</h2>
         <p>
-          Data is retained as long as you use the app and for a reasonable
-          period afterward. To request data deletion, please contact:
-          <a href="mailto:info@cleanx.com">info@cleanx.com</a>.
+          Personal data is retained only for as long as necessary to provide the
+          Services, comply with legal obligations, or protect legitimate
+          interests.
         </p>
-      </div>
+        <p>
+          Account data is generally retained until the account is deleted.
+          Certain data may be retained longer where required by law.
+        </p>
 
-      <div class="section">
-        <h2>Children's Privacy</h2>
+        <h2>8. User Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li>access your personal data</li>
+          <li>request correction of inaccurate data</li>
+          <li>request deletion or restriction of processing</li>
+          <li>object to processing based on legitimate interests</li>
+          <li>withdraw consent at any time</li>
+        </ul>
         <p>
-          The application does not knowingly collect personal data from children
-          under 13 years of age. If you are a parent and you discover that your
-          child has provided personal information, please contact us.
+          To exercise your rights, please contact:
+          <a href="mailto:info@cleanx.com">info@cleanx.com</a>
         </p>
-      </div>
 
-      <div class="section">
-        <h2>Security</h2>
+        <h2>9. Children’s Privacy</h2>
         <p>
-          The Service Provider implements physical, electronic, and procedural
-          safeguards to protect your data.
+          The Services are not intended for individuals under the age of 13.
+          CleanX does not knowingly collect personal data from children.
         </p>
-      </div>
 
-      <div class="section">
-        <h2>Changes</h2>
+        <h2>10. Security</h2>
         <p>
-          This Privacy Policy may be updated. We recommend checking this page
-          regularly.
+          CleanX implements appropriate technical and organizational measures to
+          protect personal data against unauthorized access, disclosure,
+          alteration, or destruction.
         </p>
-      </div>
 
-      <div class="section">
-        <h2>Consent</h2>
+        <h2>11. Changes to This Privacy Policy</h2>
         <p>
-          By using the application, you consent to the processing of your
-          information according to this Privacy Policy.
+          CleanX may update this Privacy Policy from time to time. Users will be
+          informed of material changes via the Services or the website.
         </p>
-      </div>
 
-      <div class="section">
-        <h2>Contact</h2>
+        <h2>12. Contact</h2>
         <p>
-          If you have any questions, please contact:
-          <a href="mailto:info@cleanx.com">info@cleanx.com</a>.
+          If you have questions regarding this Privacy Policy or personal data
+          processing, please contact:
+          <a href="mailto:info@cleanx.com">info@cleanx.com</a>
         </p>
+
+        <h1>Terms and Conditions</h1>
+
+        <div class="meta">
+          Effective as of: <b>01 January 2025</b><br />
+          Service Provider: <b>CleanX OÜ (Estonia)</b>
+        </div>
+
+        <div class="terms-section">
+          <h2>1. General Provisions</h2>
+          <p>
+            These Terms and Conditions (the <strong>Terms</strong>) govern the
+            use of the CleanX website, mobile applications, and related services
+            (the <strong>Services</strong>).
+          </p>
+          <p>
+            CleanX operates as a marketplace platform connecting customers
+            (<strong>Customers</strong>) with independent service providers
+            (<strong>Providers</strong>).
+          </p>
+          <p>
+            By using the Services, the user confirms acceptance of these Terms.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>2. Role of CleanX</h2>
+          <p>
+            CleanX does not provide cleaning services itself and is not the
+            employer, agent, or contractor of any Provider. Providers act
+            independently and are solely responsible for the services they
+            perform.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>3. User Accounts</h2>
+          <p>
+            Use of the Services may require creating a user account. Users are
+            responsible for maintaining the confidentiality of their account
+            credentials and the accuracy of their information.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>4. Orders and Statuses</h2>
+          <p>Orders may have the following statuses:</p>
+          <ul>
+            <li>pending – order created</li>
+            <li>accepted – order accepted by a Provider</li>
+            <li>in_progress – service in progress</li>
+            <li>awaiting_confirmation – awaiting customer confirmation</li>
+            <li>completed – order completed</li>
+          </ul>
+          <p>
+            Acceptance of an order constitutes a commitment by the Provider to
+            perform the service in good faith.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>5. Payments</h2>
+          <p>
+            Payments are processed via third-party payment service providers
+            (e.g. Stripe). Upon order creation, the order amount is authorized
+            on the Customer’s payment method.
+          </p>
+          <p>
+            The payment is captured once the service is completed and confirmed
+            by the Customer or after the confirmation period expires.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>6. Cancellations and Refunds</h2>
+          <p>
+            Orders are not cancelled automatically. Cancellation and refund
+            decisions are handled on a case-by-case basis by CleanX customer
+            support.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>7. Provider Obligations</h2>
+          <ul>
+            <li>arrive at the agreed location and time</li>
+            <li>perform services professionally and in good faith</li>
+            <li>comply with applicable laws and safety requirements</li>
+            <li>upload photos before and after service completion</li>
+          </ul>
+        </div>
+
+        <div class="terms-section">
+          <h2>8. Fees and Revenue Share</h2>
+          <p>
+            Providers receive 70% of the order price. CleanX retains a 30%
+            service fee for platform operation and development.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>9. Vehicle Condition and Liability</h2>
+          <p>
+            Customers are responsible for ensuring that the vehicle and
+            surrounding area are safe and accessible. CleanX and Providers are
+            not liable for pre-existing damage, hidden defects, or normal wear
+            and tear.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>10. Limitation of Liability</h2>
+          <p>
+            CleanX is not liable for indirect damages, loss of profit, or
+            damages arising from the actions of Providers. CleanX is responsible
+            only for the technical operation of the platform to a reasonable
+            extent.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>11. Force Majeure</h2>
+          <p>
+            CleanX shall not be liable for failure or delay in performance
+            caused by events beyond its reasonable control, including natural
+            disasters, pandemics, government actions, or third-party service
+            outages.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>12. Governing Law and Disputes</h2>
+          <p>
+            These Terms are governed by the laws of the Republic of Estonia.
+            Disputes shall be resolved primarily through negotiation.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>13. Final Provisions</h2>
+          <p>
+            If any provision of these Terms is found invalid, the remaining
+            provisions shall remain in effect.
+          </p>
+          <p>
+            These Terms, together with the Privacy Policy, constitute the entire
+            agreement between CleanX and the user.
+          </p>
+        </div>
       </div>
     </div>
 
