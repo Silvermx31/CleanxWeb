@@ -783,10 +783,9 @@
 
                 <button
                   class="btn-ghost"
+                  data-i18n="hero_how_it_works"
                   onclick="document.getElementById('steps').scrollIntoView({behavior: 'smooth'})"
-                >
-                  Vaata, kuidas see toimib
-                </button>
+                ></button>
               </div>
               <div class="hero-meta">
                 <div data-i18n="hero_meta_1">
@@ -1259,23 +1258,13 @@
 
       <section id="faq" class="section">
         <div class="container">
-          <header class="section-header">
-            <h2 class="section-title">❓ Korduma kippuvad küsimused</h2>
-            <p class="section-sub">
-              Vastused levinumatele küsimustele CleanX Provideriks olemise kohta
-            </p>
-          </header>
+          <h2 class="section-title" data-i18n="faq_title"></h2>
+          <p class="section-sub" data-i18n="faq_sub"></p>
 
           <div class="faq-list">
             <details class="faq-item">
-              <summary>Mis on CleanX ja kuidas see töötab?</summary>
-              <p>
-                CleanX on platvorm, mis ühendab kliendid ja teenusepakkujad
-                autode puhastus- ja hooldusteenuste osutamiseks. Providerina
-                näed rakenduses saadaolevaid tellimusi, valid sobiva töö, teed
-                teenuse ära ning saad tasu registreerimistaotluses märgitud IBAN
-                kontole.
-              </p>
+              <summary data-i18n="faq_q1"></summary>
+              <p data-i18n="faq_a1"></p>
             </details>
 
             <details class="faq-item">
@@ -1508,6 +1497,58 @@
             'Vormiga nõustud CleanX <a href="privacy.html" target="_blank">privaatsustingimustega</a>.',
           form_storage_footer:
             "<strong>Märkus:</strong> ankeet salvestatakse andmebaasi ning koopia saadetakse administraatori e-mailile.",
+          hero_how_it_works: "Vaata, kuidas see toimib",
+          faq_title: "❓ Korduma kippuvad küsimused",
+          faq_sub:
+            "Vastused levinumatele küsimustele CleanX Provideriks olemise kohta",
+
+          faq_q1: "Mis on CleanX ja kuidas see töötab?",
+          faq_a1:
+            "CleanX on platvorm, mis ühendab kliendid ja teenusepakkujad autode puhastus- ja hooldusteenuste osutamiseks. Providerina näed rakenduses saadaolevaid tellimusi, valid sobiva töö, teed teenuse ära ning saad tasu registreerimistaotluses märgitud IBAN kontole.",
+
+          faq_q2: "Kuidas saan CleanX Provideriks?",
+          faq_a2:
+            "Provideriks saamiseks tuleb täita registreerimisvorm CleanX veebilehel. Pärast andmete ülevaatamist loob CleanX sinu andmete põhjal konto ja saad ligipääsu Provideri rakendusele.",
+
+          faq_q3: "Kas CleanX-is töötamine on lepinguline töö?",
+          faq_a3:
+            "Ei. CleanX ei ole tööandja. Provider tegutseb iseseisva teenusepakkujana ning vastutab ise maksude ja seaduslike kohustuste eest.",
+
+          faq_q4: "Millal ja kuidas ma raha kätte saan?",
+          faq_a4:
+            "Kliendi makse broneeritakse tellimuse loomisel ning vabastatakse pärast töö lõpetamist ja kliendi kinnitust. Väljamaksed tehakse kord kuus otse sinu IBAN-kontole. Testimise faasis kord nädalas.",
+
+          faq_q5: "Kui suur on minu teenistus?",
+          faq_a5:
+            "Tellimuse hind sõltub teenuse tüübist, töö kiireloomulisusest, ajast ja asukohast. CleanX võtab teenustasu ning ülejäänu kantakse providerile. Iga tellimuse juures on näha sinu teenitav summa.",
+
+          faq_q6: "Mis saab, kui klient ei kinnita tööd?",
+          faq_a6:
+            "Kui klient ei kinnita tööd kindla aja jooksul, palume võtta ühendust CleanX klienditoega e-posti teel. Tellimus vaadatakse üle ja tehakse vastav otsus.",
+
+          faq_q7: "Kas ma pean pildid üles laadima?",
+          faq_a7:
+            "Jah. Pildid kinnitavad töö teostamist ning aitavad vältida vaidlusi. Pildid on kliendile nähtavad.",
+
+          faq_q8: "Kas klient saab mind hinnata?",
+          faq_a8:
+            "Jah. Pärast töö lõppu saab klient jätta hinnangu 1–5 palli süsteemis ning vajadusel lisada kommentaari. Hinnangud aitavad tõsta sinu usaldusväärsust ja saada rohkem tellimusi.",
+
+          faq_q9: "Mis juhtub, kui ma ei saa pooleliolevat tööd lõpetada?",
+          faq_a9:
+            "Kui tekib probleem, võta ühendust CleanX toega. Põhjendamata töö katkestamine võib mõjutada sinu nähtavust platvormil.",
+
+          faq_q10: "Kas ma saan ise valida, millal töötan?",
+          faq_a10:
+            "Jah. Saad ise määrata, millal oled tööl ja millal ei soovi tellimusi vastu võtta. Puudub miinimumtundide kohustus.",
+
+          faq_q11: "Milliseid seadmeid ja oskusi ma vajan?",
+          faq_a11:
+            "Vajalikud on Android nutitelefon, CleanX Provider rakendus, sobivad töövahendid ning korrektne ja viisakas suhtlus kliendiga. Alustav provider saab jääsulatusaine ja lumeharja CleanX poolt.",
+
+          faq_q12: "Kas CleanX kasutamine on tasuline?",
+          faq_a12:
+            "Providerile ei ole kuutasu. Teenustasu arvestatakse ainult tehtud tellimustelt.",
         },
         en: {
           nav_why: "Why CleanX?",
@@ -1605,6 +1646,58 @@
             'By submitting this form, you agree to the <a href="privacy.html" target="_blank">CleanX Privacy Policy</a>.',
           form_storage_footer:
             "<strong>Note:</strong> Your application will be stored in the database and a copy will be sent to the administrator’s email address.",
+          hero_how_it_works: "See how it works",
+          faq_title: "❓ Frequently asked questions",
+          faq_sub:
+            "Answers to the most common questions about becoming a CleanX Provider",
+
+          faq_q1: "What is CleanX and how does it work?",
+          faq_a1:
+            "CleanX is a platform that connects customers with service providers for car cleaning and maintenance services. As a provider, you can see available jobs in the app, choose suitable work, complete the service and receive payment to the IBAN specified in your application.",
+
+          faq_q2: "How can I become a CleanX Provider?",
+          faq_a2:
+            "To become a provider, you need to fill out the registration form on the CleanX website. After reviewing your details, CleanX will create your account and grant access to the Provider app.",
+
+          faq_q3: "Is working with CleanX an employment contract?",
+          faq_a3:
+            "No. CleanX is not an employer. Providers operate as independent service providers and are responsible for their own taxes and legal obligations.",
+
+          faq_q4: "When and how do I get paid?",
+          faq_a4:
+            "The customer’s payment is authorized when the order is created and released after the job is completed and confirmed by the customer. Payouts are made monthly directly to your IBAN account. During the testing phase, payouts may be weekly.",
+
+          faq_q5: "How much can I earn?",
+          faq_a5:
+            "The order price depends on the service type, urgency, time and location. CleanX takes a service fee and the remaining amount is paid to the provider. Your earnings are always visible for each order.",
+
+          faq_q6: "What happens if the customer does not confirm the job?",
+          faq_a6:
+            "If the customer does not confirm the job within a certain time, please contact CleanX support by email. The order will be reviewed and a decision will be made.",
+
+          faq_q7: "Do I need to upload photos?",
+          faq_a7:
+            "Yes. Photos confirm that the work was completed and help prevent disputes. The photos are visible to the customer.",
+
+          faq_q8: "Can the customer rate me?",
+          faq_a8:
+            "Yes. After the job is completed, the customer can and should leave a rating on a 1–5 scale and optionally add a comment. Ratings help increase your trustworthiness and get more orders.",
+
+          faq_q9: "What if I cannot complete an ongoing job?",
+          faq_a9:
+            "If an issue occurs, contact CleanX support immediately. Unjustified cancellation of work may affect your visibility on the platform.",
+
+          faq_q10: "Can I choose when I work?",
+          faq_a10:
+            "Yes. You can decide when you are available for work and when you do not wish to receive orders. There is no minimum working hours requirement.",
+
+          faq_q11: "What equipment and skills do I need?",
+          faq_a11:
+            "You need an Android smartphone, the CleanX Provider app, suitable work equipment, and polite communication with customers. New providers receive de-icing solution and a snow brush from CleanX.",
+
+          faq_q12: "Is using CleanX free?",
+          faq_a12:
+            "There is no monthly fee for providers. A service fee is applied only to completed orders.",
         },
       };
 
