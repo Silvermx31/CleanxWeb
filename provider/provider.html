@@ -694,18 +694,21 @@
             <div class="nav-left">
               <a href="#" class="logo">CleanX</a>
               <nav class="nav-links">
-                <a href="#why" class="nav-link">Miks CleanX?</a>
-                <a href="#steps" class="nav-link">Kuidas töötab</a>
-                <a href="#form" class="nav-link">Korduma kippuvad</a>
+                <a href="#why" class="nav-link" data-i18n="nav_why">
+                  Miks CleanX?
+                </a>
+                <a href="#steps" class="nav-link" data-i18n="nav_steps">
+                  Kuidas töötab
+                </a>
+                <a href="#form" class="nav-link" data-i18n="nav_faq">
+                  Korduma kippuvad
+                </a>
               </nav>
             </div>
             <div class="nav-right">
               <button class="btn-chip" onclick="setLang('et')">ET</button>
               <button class="btn-chip" onclick="setLang('en')">EN</button>
-              <button
-                class="btn-primary"
-                onclick="document.getElementById('form').scrollIntoView({behavior: 'smooth'})"
-              >
+              <button class="btn-primary" data-i18n="nav_cta">
                 Alusta registreerimist
                 <span>→</span>
               </button>
@@ -751,39 +754,51 @@
 
             <aside class="hero-card" aria-label="Tulu näide">
               <div class="hero-card-header">
-                <span class="hero-chip">Näide sinu teenistusest</span>
-                <span class="hero-card-badge">Tallinn · õhtused vahetused</span>
+                <span class="hero-chip" data-i18n="earnings_example">
+                  Näide sinu teenistusest
+                </span>
+                <span class="hero-card-badge" data-i18n="earnings_location">
+                  Tallinn · õhtused vahetused
+                </span>
               </div>
               <div class="hero-stat-main">
-                <span>kuni 600+ €</span>
-                <span>paindliku koormusega kuus</span>
+                <span data-i18n="earnings_amount">kuni 600+ €</span>
+                <span data-i18n="earnings_period"
+                  >paindliku koormusega kuus</span
+                >
               </div>
               <div class="hero-progress">
                 <div class="hero-progress-bar">
                   <div class="hero-progress-fill"></div>
                 </div>
-                <div class="hero-progress-label">
+                <div class="hero-progress-label" data-i18n="earnings_avg">
                   Keskmine teenistus aktiivsetel CleanX partneritel.
                 </div>
               </div>
               <ul class="hero-list">
                 <li>
                   <span class="hero-list-dot"></span>
-                  <span>Tööpäevad ja kellaajad valid sina ise.</span>
+                  <span data-i18n="benefit_schedule">
+                    Tööpäevad ja kellaajad valid sina ise.
+                  </span>
                 </li>
                 <li>
                   <span
                     class="hero-list-dot"
                     style="background: #eab308"
                   ></span>
-                  <span>Kiired väljamaksed sinu pangakontole.</span>
+                  <span data-i18n="benefit_payouts">
+                    Kiired väljamaksed sinu pangakontole.
+                  </span>
                 </li>
                 <li>
                   <span
                     class="hero-list-dot"
                     style="background: #38bdf8"
                   ></span>
-                  <span>Toetav tiim – aitame sul alustada.</span>
+                  <span data-i18n="benefit_support">
+                    Toetav tiim – aitame sul alustada.
+                  </span>
                 </li>
               </ul>
             </aside>
@@ -877,16 +892,20 @@
             </article>
             <article class="step-card">
               <div class="step-number">2</div>
-              <h3 class="step-title">Lae üles dokument</h3>
-              <p class="step-text">
+              <h3 class="step-title" data-i18n="step2_title">
+                Lae üles dokument
+              </h3>
+              <p class="step-text" data-i18n="step2_text">
                 Kõige sagedamini piisab Eesti ID-kaardist või elamisloast. Kõik
                 andmed on kaitstud.
               </p>
             </article>
             <article class="step-card">
               <div class="step-number">3</div>
-              <h3 class="step-title">Alusta tellimustega</h3>
-              <p class="step-text">
+              <h3 class="step-title" data-i18n="step3_title">
+                Alusta tellimustega
+              </h3>
+              <p class="step-text" data-i18n="step3_text">
                 Pärast kinnitamist saad CleanX äpis näha läheduses olevaid töid,
                 võtta need vastu ja kohe teenida.
               </p>
@@ -900,27 +919,32 @@
         <div class="container">
           <div class="reg-layout">
             <div class="reg-info">
-              <h2
-                class="section-title"
-                style="text-align: left; margin-bottom: 8px"
-              >
+              <h2 class="section-title" data-i18n="form_title">
                 Partneri registreerimisvorm
               </h2>
-              <p>
+              <p data-i18n="form_intro">
                 Täida ankeet võimalikult täpselt. Kasutame sinu andmeid selleks,
                 et hinnata sobivust CleanX partneriks ning võtta sinuga
-                ühendust.<br /><br />
-                <b>Mida võiksid teada enne alustamist?</b>
+                ühendust.
               </p>
+
+              <b data-i18n="form_before_title"
+                >Mida võiksid teada enne alustamist?</b
+              >
               <ul>
-                <li>Sul peab olema kehtiv isikut tõendav dokument.</li>
-                <li>Pangakonto, kuhu väljamakseid teeme.</li>
-                <li>Ettevõtlusvorm – OÜ, FIE või ettevõtluskonto.</li>
+                <li data-i18n="form_req_id">
+                  Sul peab olema kehtiv isikut tõendav dokument.
+                </li>
+                <li data-i18n="form_req_bank">
+                  Pangakonto, kuhu väljamakseid teeme.
+                </li>
+                <li data-i18n="form_req_business">
+                  Ettevõtlusvorm – OÜ, FIE või ettevõtluskonto.
+                </li>
               </ul>
-              <p>
+              <p data-i18n="form_outro">
                 Pärast vormi saatmist saadame info edasi meie tiimile, kes
-                vaatab ankeedi üle ja võtab sinuga ühendust
-                <b>3 tööpäeva jooksul</b>.
+                vaatab ankeedi üle ja võtab sinuga ühendust 3 tööpäeva jooksul.
               </p>
             </div>
 
@@ -1156,7 +1180,11 @@
     <script>
       const translations = {
         et: {
+          nav_why: "Miks CleanX?",
+          nav_steps: "Kuidas töötab",
+          nav_faq: "Korduma kippuvad",
           why_title: "Miks tulla CleanX partneriks?",
+          nav_cta: "Alusta registreerimist",
           why_sub:
             "Ehita endale paindlik töö, mis sobib nii põhi- kui lisasissetulekuks.",
 
@@ -1194,9 +1222,43 @@
           step3_title: "Alusta tellimustega",
           step3_text:
             "Pärast kinnitamist saad CleanX äpis näha läheduses olevaid töid, võtta need vastu ja kohe teenida.",
+
+          earnings_example: "Näide sinu teenistusest",
+          earnings_location: "Tallinn · õhtused vahetused",
+          earnings_amount: "kuni 600+ €",
+          earnings_period: "paindliku koormusega kuus",
+          earnings_avg: "Keskmine teenistus aktiivsetel CleanX partneritel.",
+
+          benefit_schedule: "Tööpäevad ja kellaajad valid sina ise.",
+          benefit_payouts: "Kiired väljamaksed sinu pangakontole.",
+          benefit_support: "Toetav tiim – aitame sul alustada.",
+
+          step2_title: "Lae üles dokument",
+          step2_text:
+            "Kõige sagedamini piisab Eesti ID-kaardist või elamisloast. Kõik andmed on kaitstud.",
+
+          step3_title: "Alusta tellimustega",
+          step3_text:
+            "Pärast kinnitamist saad CleanX äpis näha läheduses olevaid töid, võtta need vastu ja kohe teenida.",
+
+          form_title: "Partneri registreerimisvorm",
+          form_intro:
+            "Täida ankeet võimalikult täpselt. Kasutame sinu andmeid selleks, et hinnata sobivust CleanX partneriks ning võtta sinuga ühendust.",
+          form_before_title: "Mida võiksid teada enne alustamist?",
+
+          form_req_id: "Sul peab olema kehtiv isikut tõendav dokument.",
+          form_req_bank: "Pangakonto, kuhu väljamakseid teeme.",
+          form_req_business: "Ettevõtlusvorm – OÜ, FIE või ettevõtluskonto.",
+
+          form_outro:
+            "Pärast vormi saatmist saadame info edasi meie tiimile, kes vaatab ankeedi üle ja võtab sinuga ühendust 3 tööpäeva jooksul.",
         },
         en: {
+          nav_why: "Why CleanX?",
+          nav_steps: "How it works",
+          nav_faq: "FAQ",
           why_title: "Why become a CleanX partner?",
+          nav_cta: "Get started",
           why_sub:
             "Build a flexible job that works as your main income or a side hustle.",
 
@@ -1232,6 +1294,36 @@
           step3_title: "Start accepting jobs",
           step3_text:
             "Once approved, you’ll see nearby jobs in the CleanX app, accept them and start earning immediately.",
+          earnings_example: "Example of your earnings",
+          earnings_location: "Tallinn · Evening shifts",
+          earnings_amount: "up to €600+",
+          earnings_period: "per month with a flexible workload",
+          earnings_avg: "Average earnings of active CleanX partners.",
+
+          benefit_schedule: "You choose your working days and hours.",
+          benefit_payouts: "Fast payouts directly to your bank account.",
+          benefit_support: "Supportive team – we help you get started.",
+
+          step2_title: "Upload a document",
+          step2_text:
+            "In most cases, an Estonian ID card or residence permit is sufficient. All data is securely protected.",
+
+          step3_title: "Start accepting jobs",
+          step3_text:
+            "After approval, you can see nearby jobs in the CleanX app, accept them, and start earning immediately.",
+
+          form_title: "Partner registration form",
+          form_intro:
+            "Please complete the form as accurately as possible. We use your information to assess your suitability as a CleanX partner and to contact you.",
+          form_before_title: "What you should know before getting started",
+
+          form_req_id: "You must have a valid identity document.",
+          form_req_bank: "A bank account for receiving payouts.",
+          form_req_business:
+            "A business form – OÜ (limited company), sole proprietorship, or an entrepreneur account.",
+
+          form_outro:
+            "After submitting the form, our team will review your application and contact you within 3 business days.",
         },
       };
 
