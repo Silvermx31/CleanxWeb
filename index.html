@@ -71,6 +71,68 @@
         padding: 14px 0;
       }
 
+      .cookie-banner {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        max-width: 960px;
+        margin: 0 auto;
+        background: #111827;
+        color: #fff;
+        padding: 16px 20px;
+        border-radius: 16px;
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        z-index: 9999;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      .cookie-text {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .cookie-text a {
+        color: #93c5fd;
+      }
+
+      .cookie-actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn-cookie {
+        border: none;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .btn-cookie.primary {
+        background: #2563eb;
+        color: #fff;
+      }
+
+      .btn-cookie.secondary {
+        background: #374151;
+        color: #fff;
+      }
+
+      @media (max-width: 640px) {
+        .cookie-banner {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .cookie-actions {
+          justify-content: flex-end;
+        }
+      }
+
       .nav-left {
         display: flex;
         align-items: center;
@@ -955,5 +1017,51 @@
         </div>
       </footer>
     </div>
+    <div id="cookie-banner" class="cookie-banner">
+      <div class="cookie-text">
+        Kasutame küpsiseid, et tagada veebilehe toimimine ja parandada teenuse
+        kvaliteeti. Lisainfo:
+        <a href="provider/privacy.html">Privaatsustingimused</a>
+        ja
+        <a href="provider/terms.html">Kasutustingimused</a>.
+      </div>
+      <div class="cookie-actions">
+        <button class="btn-cookie secondary" onclick="rejectCookies()">
+          Keeldu
+        </button>
+        <button class="btn-cookie primary" onclick="acceptCookies()">
+          Nõustu
+        </button>
+      </div>
+    </div>
+    <script>
+      const COOKIE_KEY = "cleanx_cookie_consent";
+
+      function acceptCookies() {
+        localStorage.setItem(COOKIE_KEY, "accepted");
+        hideCookieBanner();
+        // siia saab hiljem lisada analytics init
+      }
+
+      function rejectCookies() {
+        localStorage.setItem(COOKIE_KEY, "rejected");
+        hideCookieBanner();
+      }
+
+      function hideCookieBanner() {
+        const banner = document.getElementById("cookie-banner");
+        if (banner) banner.style.display = "none";
+      }
+
+      function showCookieBannerIfNeeded() {
+        const consent = localStorage.getItem(COOKIE_KEY);
+        if (!consent) {
+          const banner = document.getElementById("cookie-banner");
+          if (banner) banner.style.display = "flex";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", showCookieBannerIfNeeded);
+    </script>
   </body>
 </html>
