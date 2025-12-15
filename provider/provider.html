@@ -977,7 +977,13 @@
               <div class="reg-grid">
                 <div class="input-row-2">
                   <div class="input-group">
-                    <label class="input-label" for="firstname">Eesnimi</label>
+                    <label
+                      class="input-label"
+                      for="firstname"
+                      data-i18n="form_firstname"
+                    >
+                      Eesnimi
+                    </label>
                     <input
                       id="firstname"
                       name="firstname"
@@ -986,15 +992,21 @@
                     />
                   </div>
                   <div class="input-group">
-                    <label class="input-label" for="lastname"
-                      >Perekonnanimi</label
+                    <label
+                      class="input-label"
+                      for="lastname"
+                      data-i18n="form_lastname"
                     >
+                      Perekonnanimi
+                    </label>
                     <input id="lastname" name="lastname" type="text" required />
                   </div>
                 </div>
 
                 <div class="input-group">
-                  <label class="input-label" for="email">E-mail</label>
+                  <label class="input-label" for="email" data-i18n="form_email">
+                    E-mail
+                  </label>
                   <input
                     id="email"
                     name="email"
@@ -1006,7 +1018,13 @@
 
                 <div class="input-row-2">
                   <div class="input-group">
-                    <label class="input-label" for="phone">Telefon</label>
+                    <label
+                      class="input-label"
+                      for="phone"
+                      data-i18n="form_phone"
+                    >
+                      Telefon
+                    </label>
                     <input
                       id="phone"
                       name="phone"
@@ -1017,7 +1035,13 @@
                     />
                   </div>
                   <div class="input-group">
-                    <label class="input-label" for="birthdate">Sünniaeg</label>
+                    <label
+                      class="input-label"
+                      for="birthdate"
+                      data-i18n="form_birthdate"
+                    >
+                      Sünniaeg
+                    </label>
                     <input
                       id="birthdate"
                       name="birthdate"
@@ -1026,12 +1050,20 @@
                       placeholder="PP.KK.AAAA või AAAA-KK-PP"
                       required
                     />
-                    <span class="helper">nt 01.05.1995</span>
+                    <span class="helper" data-i18n="form_birthdate_helper">
+                      nt 01.05.1995
+                    </span>
                   </div>
                 </div>
 
                 <div class="input-group">
-                  <label class="input-label" for="idcode">Isikukood</label>
+                  <label
+                    class="input-label"
+                    for="idcode"
+                    data-i18n="form_idcode"
+                  >
+                    Isikukood
+                  </label>
                   <input
                     id="idcode"
                     name="idcode"
@@ -1042,9 +1074,13 @@
                 </div>
 
                 <div class="input-group">
-                  <label class="input-label" for="referral"
-                    >Soovituskood (valikuline)</label
+                  <label
+                    class="input-label"
+                    for="referral"
+                    data-i18n="form_referral"
                   >
+                    Soovituskood (valikuline)
+                  </label>
                   <input
                     id="referral"
                     name="referral"
@@ -1054,11 +1090,17 @@
                 </div>
 
                 <div class="input-group">
-                  <label class="input-label" for="document_type"
-                    >Dokumendi tüüp</label
+                  <label
+                    class="input-label"
+                    for="document_type"
+                    data-i18n="form_document_type"
                   >
+                    Dokumendi tüüp
+                  </label>
                   <select id="document_type" name="document_type" required>
-                    <option value="">Vali dokumendi tüüp</option>
+                    <option value="" data-i18n="form_document_select">
+                      Vali dokumendi tüüp
+                    </option>
                     <option value="Eesti ID-kaart">Eesti ID-kaart</option>
                     <option value="Eesti pass">Eesti pass</option>
                     <option value="Elamisluba">Elamisluba</option>
@@ -1066,26 +1108,36 @@
                 </div>
 
                 <div class="input-group">
-                  <label class="input-label" for="document_file"
-                    >Laadi üles foto dokumendist</label
+                  <label
+                    class="input-label"
+                    for="document_file"
+                    data-i18n="form_document_upload"
                   >
+                    Laadi üles foto dokumendist
+                  </label>
                   <input
                     id="document_file"
                     name="document_file"
                     type="file"
                     required
                   />
-                  <span class="helper">
+                  <span class="helper" data-i18n="form_document_helper">
                     Pilt või PDF. Maksimaalselt mõned megabaidid.
                   </span>
                 </div>
 
                 <div class="input-group">
-                  <label class="input-label" for="business_type"
-                    >Ettevõtlusvorm</label
+                  <label
+                    class="input-label"
+                    for="business_type"
+                    data-i18n="form_business_type"
                   >
+                    Ettevõtlusvorm
+                  </label>
                   <select id="business_type" name="business_type" required>
-                    <option value="">Vali ettevõtlusvorm</option>
+                    <option value="" data-i18n="form_business_select">
+                      Vali ettevõtlusvorm
+                    </option>
                     <option value="FIE">FIE</option>
                     <option value="OÜ">OÜ</option>
                     <option value="Ettevõtluskonto">Ettevõtluskonto</option>
@@ -1093,9 +1145,9 @@
                 </div>
 
                 <div class="input-group">
-                  <label class="input-label" for="iban"
-                    >Pangakonto number (IBAN)</label
-                  >
+                  <label class="input-label" for="iban" data-i18n="form_iban">
+                    Pangakonto number (IBAN)
+                  </label>
                   <input
                     id="iban"
                     name="iban"
@@ -1107,15 +1159,23 @@
 
                 <div class="input-row-2">
                   <div class="input-group">
-                    <label class="input-label" for="companyName"
-                      >Ettevõtte nimi (kui OÜ)</label
+                    <label
+                      class="input-label"
+                      for="companyName"
+                      data-i18n="form_company_name"
                     >
+                      Ettevõtte nimi (kui OÜ)
+                    </label>
                     <input id="companyName" name="companyName" type="text" />
                   </div>
                   <div class="input-group">
-                    <label class="input-label" for="companyRegistryCode"
-                      >Registrikood (kui OÜ)</label
+                    <label
+                      class="input-label"
+                      for="companyRegistryCode"
+                      data-i18n="form_company_code"
                     >
+                      Registrikood (kui OÜ)
+                    </label>
                     <input
                       id="companyRegistryCode"
                       name="companyRegistryCode"
@@ -1270,6 +1330,25 @@
           footer_privacy: "Privaatsus",
           footer_terms: "Tingimused",
           footer_contact: "Kontakt",
+          form_firstname: "Eesnimi",
+          form_lastname: "Perekonnanimi",
+          form_email: "E-mail",
+          form_phone: "Telefon",
+          form_birthdate: "Sünniaeg",
+          form_birthdate_helper: "nt 01.05.1995",
+          form_idcode: "Isikukood",
+          form_referral: "Soovituskood (valikuline)",
+
+          form_document_type: "Dokumendi tüüp",
+          form_document_select: "Vali dokumendi tüüp",
+          form_document_upload: "Laadi üles foto dokumendist",
+          form_document_helper: "Pilt või PDF. Maksimaalselt mõned megabaidid.",
+
+          form_business_type: "Ettevõtlusvorm",
+          form_business_select: "Vali ettevõtlusvorm",
+          form_iban: "Pangakonto number (IBAN)",
+          form_company_name: "Ettevõtte nimi (kui OÜ)",
+          form_company_code: "Registrikood (kui OÜ)",
         },
         en: {
           nav_why: "Why CleanX?",
@@ -1352,6 +1431,25 @@
           footer_privacy: "Privacy",
           footer_terms: "Terms",
           footer_contact: "Contact",
+          form_firstname: "First name",
+          form_lastname: "Last name",
+          form_email: "Email",
+          form_phone: "Phone number",
+          form_birthdate: "Date of birth",
+          form_birthdate_helper: "e.g. 01/05/1995",
+          form_idcode: "Personal ID code",
+          form_referral: "Referral code (optional)",
+
+          form_document_type: "Document type",
+          form_document_select: "Select document type",
+          form_document_upload: "Upload a photo of the document",
+          form_document_helper: "Image or PDF. Maximum a few megabytes.",
+
+          form_business_type: "Business type",
+          form_business_select: "Select business type",
+          form_iban: "Bank account number (IBAN)",
+          form_company_name: "Company name (if LLC)",
+          form_company_code: "Company registration code (if LLC)",
         },
       };
 
