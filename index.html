@@ -47,6 +47,16 @@
         flex-direction: column;
       }
 
+      .play-badge {
+        height: 44px;
+        width: auto;
+      }
+
+      .play-badge-link {
+        display: inline-flex;
+        align-items: center;
+      }
+
       .container {
         width: 100%;
         max-width: 1120px;
@@ -759,9 +769,17 @@
               <a href="provider/provider.html" class="btn-chip">
                 Hakka partneriks
               </a>
-              <a href="#download" class="btn-primary">
-                Lae alla rakendus
-                <span>→</span>
+              <a
+                href="https://play.google.com/store/apps/details?id=YOUR_APP_ID"
+                target="_blank"
+                rel="noopener"
+                class="play-badge-link"
+              >
+                <img
+                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  alt="Get it on Google Play"
+                  class="play-badge"
+                />
               </a>
             </div>
           </div>
@@ -973,13 +991,41 @@
               <h3 class="reg-title">Lae alla Google Playst</h3>
               <p class="reg-sub">Android 8+ · tasuta allalaadimine</p>
 
-              <a href="#" class="btn-primary" style="margin-top: 12px">
-                Ava Google Play
+              <a
+                href="https://play.google.com/store/apps/details?id=YOUR_APP_ID"
+                target="_blank"
+                rel="noopener"
+                style="display: inline-block; margin-top: 12px"
+              >
+                <img
+                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  alt="Get it on Google Play"
+                  style="height: 48px"
+                />
               </a>
 
-              <div class="reg-footer">
-                <div>· iOS versioon on tulemas.</div>
-              </div>
+              <section id="download" class="section">
+                <div class="container" style="text-align: center">
+                  <h2>Lae alla CleanX rakendus</h2>
+                  <p>Saadaval Androidile · iOS varsti tulekul</p>
+
+                  <a
+                    href="https://play.google.com/store/apps/details?id=YOUR_APP_ID"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <img
+                      src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                      alt="Get it on Google Play"
+                      style="height: 56px; margin-top: 16px"
+                    />
+                  </a>
+
+                  <p style="margin-top: 12px; color: #6b7280">
+                    · iOS versioon on tulemas
+                  </p>
+                </div>
+              </section>
             </div>
           </div>
         </div>
