@@ -1128,7 +1128,7 @@
                   <span class="hero-list-dot"></span>
                   <span>
                     <strong>7 € – Kiirpuhastus</strong><br />
-                    Klaasid, küljepeeglid ja juhi ukse ümbrus – saad ohutult
+                    Klaasid, küljepeeglid ja juhi ukse ümbrus – saad mugavalt
                     autosse ja liikuma.
                   </span>
                 </li>
@@ -1559,6 +1559,14 @@
           faqContent.classList.toggle("open");
         });
       }
+      const hint = faqToggle.querySelector(".faq-hint");
+
+      faqToggle.addEventListener("click", () => {
+        const open = faqContent.classList.toggle("open");
+        if (hint) {
+          hint.textContent = open ? "Sulge küsimused" : "Ava küsimused";
+        }
+      });
     </script>
   </body>
 </html>
