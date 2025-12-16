@@ -1559,14 +1559,6 @@
           faqContent.classList.toggle("open");
         });
       }
-      const hint = faqToggle.querySelector(".faq-hint");
-
-      faqToggle.addEventListener("click", () => {
-        const open = faqContent.classList.toggle("open");
-        if (hint) {
-          hint.textContent = open ? "Sulge küsimused" : "Ava küsimused";
-        }
-      });
     </script>
   </body>
 </html>
