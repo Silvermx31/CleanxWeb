@@ -1037,6 +1037,50 @@
         line-height: 1.4;
       }
 
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .social-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px;
+        margin-top: 10px;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s ease;
+      }
+
+      .social-link:hover {
+        background: #f1f5f9;
+        transform: translateY(-2px);
+      }
+
+      .social-icon {
+        font-size: 28px;
+      }
+
+      .social-text strong {
+        font-size: 16px;
+      }
+
+      @media (max-width: 768px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       /* RESPONSIVE */
       @media (max-width: 960px) {
         .hero-inner,
@@ -1434,7 +1478,8 @@
                 aktiivses arendus- ja testimisfaasis. Mõned funktsioonid võivad
                 muutuda ning esineda üksikuid tõrkeid. <br /><br />
                 Oleme väga tänulikud sinu tagasiside eest – kui märkad viga või
-                sul on ettepanek, kirjuta meile:
+                sul on ettepanek, kirjuta meile, kasutades allpool toodud
+                kontaktvormi või saada e-mail aadressile:
                 <a href="mailto:info@cleanx.com">info@cleanx.com</a>.
               </div>
             </div>
@@ -1631,22 +1676,47 @@
 
       <section id="contact" class="section section-soft">
         <div class="container">
-          <div class="contact-card">
-            <h2 class="contact-title">Võta meiega ühendust</h2>
-            <p class="contact-sub">
-              Küsimuste või probleemi tekkimise korral kirjuta meile
-            </p>
-
-            <form class="contact-form">
-              <input type="email" placeholder="Sinu e-post" required />
-
-              <textarea rows="4" placeholder="Sinu sõnum" required></textarea>
-
-              <button type="submit" class="btn-primary">Saada sõnum</button>
-              <p class="form-privacy-note">
-                Vormi kaudu edastatud andmeid kasutatakse ainult vastamiseks.
+          <div class="contact-grid">
+            <!-- KONTAKT -->
+            <div class="contact-card">
+              <h2 class="contact-title">Võta meiega ühendust</h2>
+              <p class="contact-sub">
+                Küsimus enne tellimist? Kirjuta julgelt.
               </p>
-            </form>
+
+              <form class="contact-form">
+                <input type="email" placeholder="Sinu e-post" required />
+
+                <textarea rows="4" placeholder="Sinu sõnum" required></textarea>
+
+                <button type="submit" class="btn-primary">Saada sõnum</button>
+
+                <p class="form-privacy-note">
+                  Vormi kaudu edastatud andmeid kasutatakse ainult vastamiseks.
+                </p>
+              </form>
+            </div>
+
+            <!-- SOTSIAALMEEDIA -->
+            <div class="contact-card social-card">
+              <h2 class="contact-title">Jälgi meid sotsiaalmeedias</h2>
+              <p class="contact-sub">
+                Uudised, teated ja värsked arengud CleanX-ist.
+              </p>
+
+              <a
+                href="https://www.facebook.com/profile.php?id=61576692571161"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+              >
+                <span class="social-icon">📘</span>
+                <div class="social-text">
+                  <strong>CleanX</strong><br />
+                  Facebooki ametlik leht
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </section>
