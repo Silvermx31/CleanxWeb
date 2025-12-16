@@ -892,6 +892,28 @@
         list-style: none;
       }
 
+      /* FAQ toggle */
+      .faq-toggle {
+        cursor: pointer;
+      }
+
+      .faq-toggle:hover .section-title {
+        text-decoration: underline;
+      }
+
+      /* KKK sisu alguses peidus */
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+
+      /* avatud olek */
+      .faq-content.open {
+        max-height: 2000px; /* piisavalt suur */
+        margin-top: 32px;
+      }
+
       .faq-item summary::-webkit-details-marker {
         display: none;
       }
@@ -1491,6 +1513,17 @@
       }
 
       document.addEventListener("DOMContentLoaded", showCookieBannerIfNeeded);
+    </script>
+
+    <script>
+      const faqToggle = document.querySelector(".faq-toggle");
+      const faqContent = document.querySelector(".faq-content");
+
+      if (faqToggle && faqContent) {
+        faqToggle.addEventListener("click", () => {
+          faqContent.classList.toggle("open");
+        });
+      }
     </script>
   </body>
 </html>
