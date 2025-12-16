@@ -1049,6 +1049,35 @@
         justify-content: center;
       }
 
+      .company-info p {
+        margin: 6px 0;
+        font-size: 14px;
+      }
+
+      .company-info a {
+        color: #2563eb;
+        text-decoration: none;
+      }
+
+      .company-info a:hover {
+        text-decoration: underline;
+      }
+
+      .muted {
+        color: #6b7280;
+      }
+
+      .card-divider {
+        border: none;
+        border-top: 1px solid #e5e7eb;
+        margin: 18px 0;
+      }
+
+      .social-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
       .social-link.facebook {
         border-color: rgba(24, 119, 242, 0.25);
       }
@@ -1711,30 +1740,44 @@
 
             <!-- SOTSIAALMEEDIA -->
             <div class="contact-card social-card">
-              <h2 class="contact-title">Jälgi CleanX-i sotsiaalmeedias</h2>
-              <p class="contact-sub">
-                Uudised, teated ja värsked arengud CleanX-ist.
-              </p>
+              <h2 class="contact-title">CleanX OÜ</h2>
+
+              <div class="company-info">
+                <p>
+                  <strong>Registrikood:</strong>
+                  <span class="muted">lisamisel</span>
+                </p>
+                <p>
+                  <strong>E-post:</strong>
+                  <a href="mailto:info@cleanx.eu">info@cleanx.eu</a>
+                </p>
+              </div>
+
+              <hr class="card-divider" />
+
+              <h3 class="social-title">Jälgi meid sotsiaalmeedias</h3>
 
               <a
                 href="https://www.facebook.com/profile.php?id=61576692571161"
                 target="_blank"
                 rel="noopener"
-                class="social-link"
+                class="social-link facebook"
               >
                 <span class="social-icon">
+                  <!-- Facebook SVG -->
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    width="28"
-                    height="28"
+                    width="26"
+                    height="26"
                   >
                     <path
                       d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.692V11.01h3.129V8.309c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.587l-.467 3.696h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z"
                     />
                   </svg>
                 </span>
+
                 <div class="social-text">
                   <strong>CleanX</strong><br />
                   Facebook
