@@ -924,6 +924,35 @@
         line-height: 1.6;
         color: #4b5563;
       }
+      /* FAQ floating card */
+
+      .faq-toggle-card {
+        cursor: pointer;
+        margin: 0 auto;
+        max-width: 760px;
+      }
+
+      .faq-card-inner {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 24px 22px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .faq-toggle-card:hover .faq-card-inner {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+      }
+
+      .faq-hint {
+        display: inline-block;
+        margin-top: 8px;
+        font-size: 12px;
+        color: #2563eb;
+        font-weight: 600;
+      }
 
       /* RESPONSIVE */
       @media (max-width: 960px) {
@@ -1378,12 +1407,14 @@
 
       <section id="faq" class="section">
         <div class="container">
-          <header class="section-header faq-toggle">
-            <h2 class="section-title">Korduma kippuvad küsimused</h2>
-            <p class="section-sub">
-              Siit leiad vastused kõige sagedasematele küsimustele CleanX
-              teenuse kohta.
-            </p>
+          <header class="section-header faq-toggle-card">
+            <div class="faq-card-inner">
+              <h2 class="section-title">Korduma kippuvad küsimused</h2>
+              <p class="section-sub">
+                Siit leiad vastused kõige sagedasematele küsimustele.
+              </p>
+              <span class="faq-hint">Ava küsimused</span>
+            </div>
           </header>
 
           <div class="faq-content">
