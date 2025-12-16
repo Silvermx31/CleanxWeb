@@ -623,6 +623,34 @@
         line-height: 1.6;
         color: #475569;
       }
+      /* CUSTOM PRICE CARD */
+      .price-card-custom {
+        border: 2px solid #f57c00;
+        background: linear-gradient(
+          180deg,
+          rgba(245, 124, 0, 0.06),
+          rgba(255, 255, 255, 0.9)
+        );
+        box-shadow: 0 12px 30px rgba(245, 124, 0, 0.15);
+      }
+
+      /* Custom badge */
+      .price-card-custom .price-badge {
+        background: #f57c00;
+        color: #ffffff;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+
+      /* Custom price emphasis */
+      .price-card-custom .price-main {
+        color: #c2410c; /* sügavam oranž/pruun */
+      }
+
+      /* Custom list checkmarks (kui kasutad ::before või ✔) */
+      .price-card-custom .price-list li {
+        color: #92400e;
+      }
 
       /* SECTION: STEPS */
       .steps-grid {
@@ -1269,7 +1297,7 @@
             </article>
 
             <!-- KIIR / ERITELLIMUS -->
-            <article class="price-card">
+            <article class="price-card price-card-custom">
               <div class="price-badge">Custom</div>
               <div class="price-main">al 10 € kuni 20 €</div>
               <h3 class="price-title">Kiir- või eritellimus</h3>
