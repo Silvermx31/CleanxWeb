@@ -2,217 +2,356 @@
 <html lang="et">
   <head>
     <meta charset="UTF-8" />
-    <title>CleanX - Privaatsuspoliitika</title>
+    <title>CleanX – Privaatsuspoliitika</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ÜHINE STIIL (sama loogika nagu pealehel) -->
     <style>
+      :root {
+        --primary: #0052ff;
+        --bg: #f4f6fb;
+        --text-main: #111827;
+        --text-muted: #6b7280;
+        --card-bg: #ffffff;
+        --border: #e5e7eb;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f0f4f8;
-        color: #333;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text-main);
       }
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px;
-        background: #fafbfc;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+      a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* ---------- NAVBAR ---------- */
+      header {
+        background: #fff;
+        border-bottom: 1px solid var(--border);
         position: sticky;
         top: 0;
         z-index: 1000;
       }
-      .navbar-left {
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .navbar-inner {
         display: flex;
         align-items: center;
-        gap: 20px;
+        justify-content: space-between;
+        height: 64px;
       }
-      .navbar-logo {
-        font-weight: bold;
+
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .logo {
+        font-weight: 800;
         font-size: 20px;
-        color: #3366cc;
-        text-decoration: none;
+        color: var(--primary);
       }
-      .navbar-links {
+
+      .nav-links {
+        display: flex;
+        gap: 16px;
+      }
+
+      .nav-link {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .nav-link:hover {
+        color: var(--text-main);
+      }
+
+      .nav-right {
         display: flex;
         align-items: center;
         gap: 10px;
-        margin-left: 20px;
       }
-      .btn-link {
-        background: #eee;
-        color: #333;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-size: 14px;
-        text-decoration: none;
-        border: none;
+
+      .btn-chip {
+        border: 1px solid var(--border);
+        background: #fff;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 12px;
         cursor: pointer;
-        transition: background 0.3s;
       }
-      .btn-link:hover {
-        background: #ccc;
-      }
-      .content {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 20px;
-        background: white;
+
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        padding: 10px 16px;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      h1 {
-        text-align: center;
-        color: #3366cc;
-      }
-      h2 {
-        text-align: left;
-        color: #3366cc;
-        margin-top: 40px;
-        margin-bottom: 10px;
-      }
-      .section {
-        margin-bottom: 30px;
-      }
-      footer {
-        text-align: center;
-        padding: 30px 20px;
         font-size: 14px;
-        color: #666;
-        margin-top: 50px;
+        cursor: pointer;
       }
-      footer a {
-        color: #3366cc;
-        text-decoration: none;
-        margin: 0 5px;
+
+      /* ---------- CONTENT ---------- */
+      main {
+        padding: 48px 0;
       }
-      footer a:hover {
-        text-decoration: underline;
+
+      .policy-card {
+        max-width: 820px;
+        margin: 0 auto;
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      }
+
+      .policy-card h1 {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .policy-card h2 {
+        margin-top: 32px;
+        margin-bottom: 12px;
+        font-size: 18px;
+      }
+
+      .policy-card p,
+      .policy-card li {
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--text-muted);
+      }
+
+      .policy-card ul {
+        padding-left: 18px;
+      }
+
+      /* ---------- FOOTER ---------- */
+      footer {
+        border-top: 1px solid var(--border);
+        background: #fff;
+        padding: 24px 0;
+        margin-top: 60px;
+      }
+
+      .footer-inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .footer-sep {
+        color: #9ca3af;
       }
     </style>
   </head>
 
   <body>
     <!-- NAVBAR -->
-    <nav class="navbar">
-      <div class="navbar-left">
-        <a href="index.html" class="navbar-logo">CleanX</a>
-        <div class="navbar-links">
-          <a href="index.html#overview" class="btn-link">Ülevaade</a>
-          <a href="index.html#how" class="btn-link">Kuidas alustada</a>
-          <a href="kkk.html" class="btn-link">KKK</a>
+    <header>
+      <div class="container">
+        <div class="navbar-inner">
+          <div class="nav-left">
+            <a href="../index.html" class="logo">CleanX</a>
+
+            <nav class="nav-links">
+              <a href="../index.html#why" class="nav-link">Miks CleanX?</a>
+              <a href="../index.html#steps" class="nav-link">Kuidas töötab</a>
+              <a href="../index.html#faq" class="nav-link">KKK</a>
+            </nav>
+          </div>
+
+          <div class="nav-right">
+            <button class="btn-chip">ET</button>
+            <button class="btn-chip">EN</button>
+            <a href="../index.html#form">
+              <button class="btn-primary">Alusta registreerimist</button>
+            </a>
+          </div>
         </div>
       </div>
-    </nav>
+    </header>
 
-    <!-- SISU -->
-    <div class="content">
-      <h1>Privaatsuspoliitika</h1>
+    <!-- CONTENT -->
+    <main>
+      <div class="container">
+        <div class="policy-card">
+          <h1>Privaatsuspoliitika</h1>
 
-      <div class="section">
-        <p>
-          See privaatsuspoliitika kehtib CleanX mobiilirakenduse („Rakendus“)
-          kohta, mida pakub CleanX („Teenusepakkuja“) tasuta teenusena. Teenus
-          on mõeldud kasutamiseks "NII, NAGU ON".
-        </p>
+          <p>
+            Käesolev privaatsuspoliitika kirjeldab, kuidas CleanX (edaspidi
+            <strong>Teenusepakkuja</strong>) töötleb isikuandmeid seoses CleanX
+            mobiilirakenduse ja veebiteenuste (edaspidi
+            <strong>Teenused</strong>) kasutamisega.
+          </p>
+
+          <p>
+            Teenusepakkuja austab sinu privaatsust ning töötleb isikuandmeid
+            vastavalt Euroopa Liidu isikuandmete kaitse üldmäärusele (GDPR) ja
+            kohalduvatele Eesti Vabariigi õigusaktidele.
+          </p>
+
+          <h2>1. Andmetöötleja</h2>
+          <p>
+            Andmetöötlejaks on CleanX.<br />
+            Kontakt: <a href="mailto:info@cleanx.com">info@cleanx.eu</a>
+          </p>
+
+          <h2>2. Milliseid andmeid kogume</h2>
+          <p>Teenuste kasutamisel võime koguda järgmisi isikuandmeid:</p>
+          <ul>
+            <li>nimi, e-posti aadress ja telefoninumber</li>
+            <li>kasutajakonto ja profiiliandmed</li>
+            <li>maksete ja tellimustega seotud andmed</li>
+            <li>
+              seadme tehnilised andmed (nt IP-aadress, operatsioonisüsteem)
+            </li>
+            <li>rakenduse kasutusandmed ja logid</li>
+            <li>asukohateave (kui see on vajalik teenuse osutamiseks)</li>
+          </ul>
+
+          <h2>3. Asukohaandmed</h2>
+          <p>
+            Asukohaandmeid kogutakse ainult juhul, kui see on vajalik Teenuse
+            osutamiseks (nt tellimuse asukoha määramiseks või lähedal asuvate
+            teenusepakkujate kuvamiseks).
+          </p>
+          <p>
+            Asukohaandmete kogumine toimub ainult sinu nõusolekul ning kasutaja
+            saab asukohateenuste kasutamise igal ajal oma seadme seadetes
+            keelata.
+          </p>
+
+          <h2>4. Andmete töötlemise eesmärgid ja õiguslik alus</h2>
+          <p>Isikuandmeid töödeldakse järgmistel eesmärkidel:</p>
+          <ul>
+            <li>
+              Teenuste osutamine ja kasutajakonto haldamine (lepingu täitmine)
+            </li>
+            <li>tellimuste ja maksete töötlemine</li>
+            <li>klienditugi ja suhtlus kasutajaga</li>
+            <li>Teenuste arendamine ja parandamine (õigustatud huvi)</li>
+            <li>seadusest tulenevate kohustuste täitmine</li>
+          </ul>
+
+          <h2>5. Kolmandad osapooled</h2>
+          <p>
+            Teenusepakkuja võib kasutada kolmandate osapoolte teenuseid,
+            sealhulgas kuid mitte ainult:
+          </p>
+          <ul>
+            <li>Google (nt Google Maps, Google Play Services)</li>
+            <li>Firebase</li>
+            <li>makseteenuse pakkujad (nt Stripe)</li>
+            <li>pilve- ja analüütikateenused</li>
+          </ul>
+          <p>
+            Need teenusepakkujad võivad töödelda isikuandmeid vastavalt oma
+            privaatsustingimustele ning ainult Teenuse osutamiseks vajalikus
+            ulatuses.
+          </p>
+
+          <h2>6. Andmete edastamine väljapoole Euroopa Liitu</h2>
+          <p>
+            Mõned Teenusepakkuja kasutatavad teenused võivad asuda väljaspool
+            Euroopa Liitu. Sellisel juhul tagatakse isikuandmete kaitse
+            vastavalt GDPR-i nõuetele (nt standardsete lepingutingimuste kaudu).
+          </p>
+
+          <h2>7. Andmete säilitamine</h2>
+          <p>
+            Isikuandmeid säilitatakse ainult nii kaua, kui see on vajalik
+            Teenuste osutamiseks, õiguslike kohustuste täitmiseks või õigustatud
+            huvide kaitsmiseks.
+          </p>
+          <p>
+            Kasutajakonto andmeid säilitatakse kuni konto kustutamiseni ning
+            teatud andmeid võidakse säilitada kauem, kui see on seadusest
+            tulenevalt kohustuslik.
+          </p>
+
+          <h2>8. Kasutaja õigused</h2>
+          <p>Sul on õigus:</p>
+          <ul>
+            <li>saada teavet oma isikuandmete töötlemise kohta</li>
+            <li>taotleda ligipääsu oma isikuandmetele</li>
+            <li>nõuda ebaõigete andmete parandamist</li>
+            <li>taotleda andmete kustutamist või töötlemise piiramist</li>
+            <li>esitada vastuväiteid andmete töötlemisele</li>
+            <li>võtta tagasi oma nõusolek</li>
+          </ul>
+          <p>
+            Õiguste kasutamiseks palume võtta ühendust:
+            <a href="mailto:info@cleanx.com">info@cleanx.eu</a>
+          </p>
+
+          <h2>9. Laste privaatsus</h2>
+          <p>
+            Teenused ei ole suunatud alla 13-aastastele lastele ning
+            Teenusepakkuja ei kogu teadlikult selliste isikute isikuandmeid.
+          </p>
+
+          <h2>10. Turvalisus</h2>
+          <p>
+            Teenusepakkuja rakendab asjakohaseid tehnilisi ja
+            organisatsioonilisi turvameetmeid, et kaitsta isikuandmeid loata
+            juurdepääsu, avalikustamise või hävimise eest.
+          </p>
+
+          <h2>11. Muudatused privaatsuspoliitikas</h2>
+          <p>
+            Teenusepakkuja jätab endale õiguse käesolevat privaatsuspoliitikat
+            ajakohastada. Muudatustest teavitatakse Teenuste kaudu või
+            veebilehel.
+          </p>
+
+          <h2>12. Kontakt</h2>
+          <p>
+            Kui sul on küsimusi käesoleva privaatsuspoliitika või isikuandmete
+            töötlemise kohta, võta meiega ühendust:
+            <a href="mailto:info@cleanx.com">info@cleanx.eu</a>
+          </p>
+        </div>
       </div>
-
-      <div class="section">
-        <h2>Andmete kogumine ja kasutamine</h2>
-        <p>
-          Rakendus kogub andmeid, kui sa seda alla laadid ja kasutad. Kogutavad
-          andmed võivad sisaldada:
-        </p>
-        <ul>
-          <li>Sinu seadme IP-aadress</li>
-          <li>Rakenduse külastatud lehed, külastuse aeg ja kestus</li>
-          <li>Kasutatud operatsioonisüsteem</li>
-        </ul>
-        <p>
-          Rakendus võib koguda ja töödelda seadme ligikaudset või täpset
-          asukohaandmeid, et pakkuda asukohapõhiseid funktsioone (nt tellimuste
-          asukoha määramine ja lähimate tööpakkumiste kuvamine). Asukohateavet
-          kogutakse ainult rakenduse aktiivsel kasutamisel ja ainult teenuse
-          kvaliteedi parandamiseks. Kasutaja saab seadetes asukohateenuste
-          kasutamise lubada või keelata.
-        </p>
-        <p>
-          Teenusepakkuja võib aeg-ajalt kasutada sinu andmeid olulise teabe,
-          teavituste ja turunduspakkumiste edastamiseks.
-        </p>
-        <p>
-          Isikuandmeid (nt nimi ja e-post) säilitatakse ja kasutatakse vastavalt
-          käesolevale privaatsuspoliitikale.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>Kolmandad osapooled</h2>
-        <p>
-          Rakendus kasutab kolmandate osapoolte teenuseid (Google Play Services,
-          Facebook, Expo), kellel on oma privaatsuspoliitikad.
-        </p>
-        <p>
-          Andmeid jagatakse ainult seadusest tulenevalt või usaldusväärsete
-          partneritega, kes järgivad konfidentsiaalsusnõudeid.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>Andmete säilitamine</h2>
-        <p>
-          Andmeid säilitatakse seni, kuni kasutad rakendust, ja mõistliku aja
-          jooksul pärast seda. Andmete kustutamiseks võta ühendust:
-          <a href="mailto:info@cleanx.com">info@cleanx.com</a>.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>Laste privaatsus</h2>
-        <p>
-          Rakendus ei kogu teadlikult andmeid alla 13-aastastelt lastelt. Kui
-          oled lapsevanem ja avastad, et su laps on edastanud isikuandmeid,
-          palume kontakteeruda.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>Turvalisus</h2>
-        <p>
-          Teenusepakkuja rakendab füüsilisi, elektroonilisi ja protseduurilisi
-          meetmeid, et kaitsta sinu andmeid.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>Muudatused</h2>
-        <p>
-          Privaatsuspoliitikat võidakse ajakohastada. Soovitame seda lehekülge
-          regulaarselt kontrollida.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>Nõusolek</h2>
-        <p>
-          Rakendust kasutades nõustud oma andmete töötlemisega vastavalt
-          käesolevale privaatsuspoliitikale.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>Kontakt</h2>
-        <p>
-          Küsimuste korral kirjuta:
-          <a href="mailto:info@cleanx.com">info@cleanx.com</a>.
-        </p>
-      </div>
-    </div>
+    </main>
 
     <!-- FOOTER -->
-    <footer>
-      © 2025 CleanX - Puhastusteenuste platvorm |
-      <a href="privacy.html">Privaatsustingimused</a> |
-      <a href="terms.html">Kasutustingimused</a>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner footer-left">
+          <span data-i18n="footer_copy"></span>
+          <span class="footer-sep">·</span>
+          <a href="privacy.html" data-i18n="footer_privacy"></a>
+          <span class="footer-sep">·</span>
+          <a href="terms.html" data-i18n="footer_terms"></a>
+          <span class="footer-sep">·</span>
+          <a href="mailto:silvermx31@gmail.com" data-i18n="footer_contact"></a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

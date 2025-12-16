@@ -47,6 +47,16 @@
         flex-direction: column;
       }
 
+      .play-badge {
+        height: 44px;
+        width: auto;
+      }
+
+      .play-badge-link {
+        display: inline-flex;
+        align-items: center;
+      }
+
       .container {
         width: 100%;
         max-width: 1120px;
@@ -69,6 +79,68 @@
         align-items: center;
         justify-content: space-between;
         padding: 14px 0;
+      }
+
+      .cookie-banner {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        max-width: 960px;
+        margin: 0 auto;
+        background: #111827;
+        color: #fff;
+        padding: 16px 20px;
+        border-radius: 16px;
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        z-index: 9999;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      .cookie-text {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .cookie-text a {
+        color: #93c5fd;
+      }
+
+      .cookie-actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn-cookie {
+        border: none;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .btn-cookie.primary {
+        background: #2563eb;
+        color: #fff;
+      }
+
+      .btn-cookie.secondary {
+        background: #374151;
+        color: #fff;
+      }
+
+      @media (max-width: 640px) {
+        .cookie-banner {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .cookie-actions {
+          justify-content: flex-end;
+        }
       }
 
       .nav-left {
@@ -151,6 +223,22 @@
         padding: 40px 0 56px;
       }
 
+      .info-note {
+        margin-top: 20px;
+        padding: 16px 18px;
+        background: #f0f9ff;
+        border: 1px solid #bae6fd;
+        border-radius: 14px;
+        font-size: 14px;
+        color: #0f172a;
+        line-height: 1.6;
+      }
+
+      .info-note a {
+        color: #2563eb;
+        font-weight: 500;
+      }
+
       .hero-inner {
         display: grid;
         grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
@@ -176,6 +264,64 @@
         height: 7px;
         border-radius: 999px;
         background: #22c55e;
+      }
+
+      /* STEPS GRID */
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+      }
+
+      /* STEP CARD */
+      .step-card {
+        position: relative;
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 32px 24px 28px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      /* hover = “elav” */
+      .step-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+      }
+
+      /* NUMBER CIRCLE */
+      .step-number {
+        position: absolute;
+        top: -16px;
+        left: 24px;
+        width: 44px;
+        height: 44px;
+        background: linear-gradient(135deg, #2563eb, #4f46e5);
+        color: #fff;
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+      }
+
+      /* TITLE */
+      .step-title {
+        margin-top: 20px;
+        margin-bottom: 8px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #111827;
+      }
+
+      /* TEXT */
+      .step-text {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #4b5563;
       }
 
       .hero-title {
@@ -697,9 +843,18 @@
               <a href="provider/provider.html" class="btn-chip">
                 Hakka partneriks
               </a>
-              <a href="#download" class="btn-primary">
-                Lae Androidi äpp
-                <span>→</span>
+              <a
+                href="https://play.google.com/store/apps/details?id=YOUR_APP_ID"
+                target="_blank"
+                rel="noopener"
+                class="play-badge-link"
+              >
+                <div class="play-badge-disabled"></div>
+                <img
+                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  alt="Get it on Google Play"
+                  class="play-badge"
+                />
               </a>
             </div>
           </div>
@@ -875,7 +1030,7 @@
               <div class="step-number">2</div>
               <h3 class="step-title">Puhastaja tuleb</h3>
               <p class="step-text">
-                Lähim CleanX partner võtab tellimuse vastu. Saad jägida kogu
+                Lähim CleanX partner võtab tellimuse vastu. Saad jälgida kogu
                 protsessi.
               </p>
             </article>
@@ -884,8 +1039,7 @@
               <div class="step-number">3</div>
               <h3 class="step-title">Töö tehtud</h3>
               <p class="step-text">
-                Saad kohese teavituse ja fotod tehtud tööst. Seejärel saad
-                teenust hinnata ja tagasisidet anda.
+                Saad teavituse ja fotod tehtud tööst ning jätad hinnangu.
               </p>
             </article>
           </div>
@@ -900,28 +1054,53 @@
               <h2 class="section-title" style="text-align: left">
                 CleanX rakendus
               </h2>
+
               <p>
                 CleanX on hetkel saadaval ainult Android-seadmetele. Tellimine,
                 maksmine ja tellimuse jälgimine toimub rakenduses.
               </p>
+
               <ul>
                 <li>Tellid teenuse paari minutiga</li>
                 <li>Turvaline makse</li>
                 <li>Hinnangud ja fotod pärast töö lõppu</li>
               </ul>
+
+              <!-- UUS -->
+              <div class="info-note">
+                🚧 <strong>Varajane versioon:</strong> CleanX on hetkel
+                aktiivses arendus- ja testimisfaasis. Mõned funktsioonid võivad
+                muutuda ning esineda üksikuid tõrkeid. <br /><br />
+                Oleme väga tänulikud sinu tagasiside eest – kui märkad viga või
+                sul on ettepanek, kirjuta meile:
+                <a href="mailto:info@cleanx.com">info@cleanx.com</a>.
+              </div>
             </div>
 
             <div class="reg-card" style="text-align: center">
-              <h3 class="reg-title">Lae alla Google Playst</h3>
-              <p class="reg-sub">Android 8+ · tasuta allalaadimine</p>
+              <section id="download" class="section">
+                <div class="container" style="text-align: center">
+                  <h2>Lae alla CleanX rakendus</h2>
+                  <p>Saadaval Androidile</p>
 
-              <a href="#" class="btn-primary" style="margin-top: 12px">
-                Ava Google Play
-              </a>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=YOUR_APP_ID"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <div class="play-badge-disabled"></div>
+                    <img
+                      src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                      alt="Get it on Google Play"
+                      style="height: 56px; margin-top: 16px"
+                    />
+                  </a>
 
-              <div class="reg-footer">
-                <div>· iOS versioon on tulemas.</div>
-              </div>
+                  <p style="margin-top: 12px; color: #6b7280">
+                    · iOS versioon on tulemas
+                  </p>
+                </div>
+              </section>
             </div>
           </div>
         </div>
@@ -951,13 +1130,60 @@
           <div class="footer-inner">
             <div>© CleanX – Puhastusteenuste platvorm</div>
             <div class="footer-links">
-              <a href="privacy.html">Privaatsus</a>
-              <a href="terms.html">Tingimused</a>
+              <a href="provider/privacy.html">Privaatsus</a>
+              <a href="provider/terms.html">Tingimused</a>
+              <a href="provider/privacy-en.html">Privacy Policy (EN)</a> |
+              <a href="provider/terms-en.html">Terms & Conditions (EN)</a>
               <a href="mailto:silvermx31@gmail.com">Kontakt</a>
             </div>
           </div>
         </div>
       </footer>
     </div>
+    <div id="cookie-banner" class="cookie-banner">
+      <div class="cookie-text">
+        Kasutame küpsiseid, et tagada veebilehe toimimine ja parandada teenuse
+        kvaliteeti. Lisainfo:
+        <a href="provider/privacy.html">Privaatsustingimused</a>
+        ja
+        <a href="provider/terms.html">Kasutustingimused</a>.
+      </div>
+      <div class="cookie-actions">
+        <button class="btn-cookie secondary" onclick="rejectCookies()">
+          Keeldu
+        </button>
+        <button class="btn-cookie primary" onclick="acceptCookies()">
+          Nõustu
+        </button>
+      </div>
+    </div>
+    <script>
+      const COOKIE_KEY = "cleanx_cookie_consent";
+
+      function acceptCookies() {
+        localStorage.setItem(COOKIE_KEY, "accepted");
+        hideCookieBanner();
+      }
+
+      function rejectCookies() {
+        localStorage.setItem(COOKIE_KEY, "rejected");
+        hideCookieBanner();
+      }
+
+      function hideCookieBanner() {
+        const banner = document.getElementById("cookie-banner");
+        if (banner) banner.style.display = "none";
+      }
+
+      function showCookieBannerIfNeeded() {
+        const consent = localStorage.getItem(COOKIE_KEY);
+        if (!consent) {
+          const banner = document.getElementById("cookie-banner");
+          if (banner) banner.style.display = "flex";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", showCookieBannerIfNeeded);
+    </script>
   </body>
 </html>
