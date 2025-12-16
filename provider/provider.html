@@ -698,6 +698,68 @@
         justify-content: flex-start;
         gap: 10px;
       }
+      /* PROVIDER PROCESS CARD */
+      .process-card {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 32px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .process-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+
+      .process-sub {
+        text-align: center;
+        color: #6b7280;
+        margin-bottom: 28px;
+      }
+
+      .process-list {
+        list-style: none;
+        counter-reset: step;
+        padding: 0;
+      }
+
+      .process-list li {
+        counter-increment: step;
+        padding-left: 44px;
+        position: relative;
+        margin-bottom: 20px;
+        color: #374151;
+        line-height: 1.6;
+      }
+
+      .process-list li::before {
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #2563eb;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .process-note {
+        margin-top: 24px;
+        font-size: 14px;
+        color: #6b7280;
+        text-align: center;
+      }
 
       .footer-links {
         display: flex;
@@ -1338,56 +1400,63 @@
       </section>
 
       <!-- KUIDAS TEENIMINE TOIMIB -->
-      <section class="section">
+      <section id="provider-process" class="section">
         <div class="container">
-          <header class="section-header">
-            <h2 class="section-title">
-              Kuidas teenimine ja väljamaksed toimivad?
-            </h2>
-            <p class="section-sub">
-              Selge ja läbipaistev – tead alati, mille eest ja millal raha saad.
+          <div class="process-card">
+            <h2 class="process-title">Kuidas see Providerile töötab?</h2>
+            <p class="process-sub">
+              Selge ja läbipaistev protsess registreerimisest kuni tasu
+              kättesaamiseni.
             </p>
-          </header>
 
-          <div class="steps-grid">
-            <article class="step-card">
-              <div class="step-number">1</div>
-              <h3 class="step-title">Võta tellimus vastu</h3>
-              <p class="step-text">
-                Näed rakenduses tellimusi koos hinnaga ja oma teenistusega.
-                Otsustad ise, millise töö vastu võtad.
-              </p>
-            </article>
+            <ol class="process-list">
+              <li>
+                <strong>Registreerumine ja konto aktiveerimine</strong><br />
+                Provider täidab registreerimisvormi. CleanX kontrollib andmed ja
+                otsustab konto aktiveerimise üle.
+              </li>
 
-            <article class="step-card">
-              <div class="step-number">2</div>
-              <h3 class="step-title">Tee töö ära ja lae pildid</h3>
-              <p class="step-text">
-                Pärast töö lõpetamist laed üles fotod, mis kinnitavad teenuse
-                teostamist. See kaitseb nii sind kui klienti.
-              </p>
-            </article>
+              <li>
+                <strong>Vajalikud töövahendid ja valmisolek</strong><br />
+                Provider tagab ise teenuse osutamiseks vajalikud töövahendid,
+                varustuse ja ohutuse.
+              </li>
 
-            <article class="step-card">
-              <div class="step-number">3</div>
-              <h3 class="step-title">Klient kinnitab töö</h3>
-              <p class="step-text">
-                Klient kinnitab töö äpis. Kui kinnitust ei tule, sekkub
-                vajadusel CleanX tugi.
-              </p>
-            </article>
+              <li>
+                <strong>Tellimuste vastuvõtmine</strong><br />
+                Aktiivne Provider näeb rakenduses tellimusi koos hinna ja
+                asukohaga ning otsustab ise, millised tööd vastu võtta.
+              </li>
 
-            <article class="step-card">
-              <div class="step-number">4</div>
-              <h3 class="step-title">Raha kantakse sinu kontole</h3>
-              <p class="step-text">
-                Teenitud summa kantakse sinu IBAN-kontole vastavalt väljamaksete
-                graafikule. Testperioodil kord nädalas, hiljem kord kuus.
-              </p>
-            </article>
+              <li>
+                <strong>Teenuse osutamine</strong><br />
+                Teenus osutatakse iseseisvalt vastavalt tellimuse sisule ja
+                heale tavale. Provider vastutab töö kvaliteedi eest.
+              </li>
+
+              <li>
+                <strong>Töö kinnitamine ja pildid</strong><br />
+                Pärast töö lõpetamist märgib Provider tellimuse tehtuks ja lisab
+                pildid teenuse tõendamiseks.
+              </li>
+
+              <li>
+                <strong>Tasu arvestus ja väljamaksmine</strong><br />
+                Tasu arvestatakse pärast tellimuse lõplikku kinnitamist ning
+                makstakse Providerile välja vastavalt kehtivale väljamaksete
+                korrale.
+              </li>
+            </ol>
+
+            <p class="process-note">
+              Provider tegutseb iseseisva teenusepakkujana ega ole CleanX
+              töötaja.
+            </p>
           </div>
         </div>
       </section>
+
+      <!-- KORDUMA KIPPUVAD KÜSIMUSED -->
 
       <section id="faq" class="section">
         <div class="container">
