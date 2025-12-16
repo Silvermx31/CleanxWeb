@@ -760,6 +760,85 @@
         color: #6b7280;
         text-align: center;
       }
+      /* ACCORDION CARD (shared) */
+      .accordion-card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        max-width: 900px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .accordion-header {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 28px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .accordion-header h2 {
+        margin: 0;
+        font-size: 26px;
+      }
+
+      .accordion-icon {
+        font-size: 26px;
+        font-weight: 300;
+        transition: transform 0.3s ease;
+      }
+
+      /* Content */
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.45s ease;
+        padding: 0 32px;
+      }
+
+      .accordion-card.open .accordion-content {
+        max-height: 1200px; /* piisav pikk sisu jaoks */
+        padding-bottom: 32px;
+      }
+
+      .accordion-card.open .accordion-icon {
+        transform: rotate(45deg); /* + → × */
+      }
+
+      /* Process list (reuse from before) */
+      .process-list {
+        list-style: none;
+        counter-reset: step;
+        padding: 0;
+      }
+
+      .process-list li {
+        counter-increment: step;
+        position: relative;
+        padding-left: 44px;
+        margin-bottom: 18px;
+      }
+
+      .process-list li::before {
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #2563eb;
+        color: #fff;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
       .footer-links {
         display: flex;
@@ -1402,56 +1481,52 @@
       <!-- KUIDAS TEENIMINE TOIMIB -->
       <section id="provider-process" class="section">
         <div class="container">
-          <div class="process-card">
-            <h2 class="process-title">Kuidas see Providerile töötab?</h2>
-            <p class="process-sub">
-              Selge ja läbipaistev protsess registreerimisest kuni tasu
-              kättesaamiseni.
-            </p>
+          <div class="accordion-card">
+            <button class="accordion-header">
+              <h2>Kuidas see Providerile töötab?</h2>
+              <span class="accordion-icon">+</span>
+            </button>
 
-            <ol class="process-list">
-              <li>
-                <strong>Registreerumine ja konto aktiveerimine</strong><br />
-                Provider täidab registreerimisvormi. CleanX kontrollib andmed ja
-                otsustab konto aktiveerimise üle.
-              </li>
+            <div class="accordion-content">
+              <ol class="process-list">
+                <li>
+                  <strong>Registreerumine ja konto aktiveerimine</strong><br />
+                  Provider täidab registreerimisvormi. CleanX kontrollib andmed
+                  ja otsustab konto aktiveerimise üle.
+                </li>
 
-              <li>
-                <strong>Vajalikud töövahendid ja valmisolek</strong><br />
-                Provider tagab ise teenuse osutamiseks vajalikud töövahendid,
-                varustuse ja ohutuse.
-              </li>
+                <li>
+                  <strong>Vajalikud töövahendid ja valmisolek</strong><br />
+                  Provider tagab ise teenuse osutamiseks vajalikud töövahendid,
+                  varustuse ja ohutuse.
+                </li>
 
-              <li>
-                <strong>Tellimuste vastuvõtmine</strong><br />
-                Aktiivne Provider näeb rakenduses tellimusi koos hinna ja
-                asukohaga ning otsustab ise, millised tööd vastu võtta.
-              </li>
+                <li>
+                  <strong>Tellimuste vastuvõtmine</strong><br />
+                  Provider otsustab ise, millised tellimused vastu võtta.
+                </li>
 
-              <li>
-                <strong>Teenuse osutamine</strong><br />
-                Teenus osutatakse iseseisvalt vastavalt tellimuse sisule ja
-                heale tavale. Provider vastutab töö kvaliteedi eest.
-              </li>
+                <li>
+                  <strong>Teenuse osutamine</strong><br />
+                  Teenus osutatakse iseseisvalt vastavalt tellimuse sisule.
+                </li>
 
-              <li>
-                <strong>Töö kinnitamine ja pildid</strong><br />
-                Pärast töö lõpetamist märgib Provider tellimuse tehtuks ja lisab
-                pildid teenuse tõendamiseks.
-              </li>
+                <li>
+                  <strong>Töö kinnitamine ja pildid</strong><br />
+                  Pärast töö lõpetamist lisatakse pildid teenuse tõendamiseks.
+                </li>
 
-              <li>
-                <strong>Tasu arvestus ja väljamaksmine</strong><br />
-                Tasu arvestatakse pärast tellimuse lõplikku kinnitamist ning
-                makstakse Providerile välja vastavalt kehtivale väljamaksete
-                korrale.
-              </li>
-            </ol>
+                <li>
+                  <strong>Tasu arvestus ja väljamaksmine</strong><br />
+                  Tasu makstakse välja vastavalt kehtivale väljamaksete korrale.
+                </li>
+              </ol>
 
-            <p class="process-note">
-              Provider tegutseb iseseisva teenusepakkujana ega ole CleanX
-              töötaja.
-            </p>
+              <p class="process-note">
+                Provider tegutseb iseseisva teenusepakkujana ega ole CleanX
+                töötaja.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -1967,6 +2042,14 @@
               ? "Submit application"
               : "Saada ankeet";
         }
+      });
+    </script>
+    <script>
+      document.querySelectorAll(".accordion-header").forEach((header) => {
+        header.addEventListener("click", () => {
+          const card = header.closest(".accordion-card");
+          card.classList.toggle("open");
+        });
       });
     </script>
   </body>
