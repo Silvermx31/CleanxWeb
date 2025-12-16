@@ -322,6 +322,80 @@
         box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
       }
 
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+      }
+
+      .price-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 28px 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        position: relative;
+      }
+
+      .price-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+      }
+
+      .price-card.featured {
+        border: 2px solid #2563eb;
+      }
+
+      .price-badge {
+        position: absolute;
+        top: -12px;
+        left: 20px;
+        background: #e5e7eb;
+        color: #111827;
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 999px;
+      }
+
+      .featured-badge {
+        background: #2563eb;
+        color: #fff;
+      }
+
+      .price-main {
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+
+      .price-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .price-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 14px;
+        font-size: 14px;
+      }
+
+      .price-list li {
+        margin-bottom: 6px;
+      }
+
+      .price-list .muted {
+        color: #9ca3af;
+      }
+
+      .price-note {
+        font-size: 13px;
+        color: #6b7280;
+        line-height: 1.5;
+      }
+
       /* TITLE */
       .step-title {
         margin-top: 20px;
@@ -1036,6 +1110,73 @@
               <h3 class="feature-title">Selge hind</h3>
               <p class="feature-text">
                 Hinna valid ise CleanX rakendustes enne tellimuse kinnitamist.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="pricing" class="section">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="section-title">Hinnad ja teenused</h2>
+            <p class="section-sub">
+              Vali sobiv teenus – hind on alati enne kinnitamist nähtav.
+            </p>
+          </header>
+
+          <div class="pricing-grid">
+            <!-- KIIRPUHASTUS -->
+            <article class="price-card">
+              <div class="price-badge">Alates</div>
+              <div class="price-main">7 €</div>
+              <h3 class="price-title">Kiirpuhastus</h3>
+
+              <ul class="price-list">
+                <li>✔ Esiklaas</li>
+                <li>✔ Küljepeeglid</li>
+                <li>✔ Juhi ukse ümbrus</li>
+                <li class="muted">✖ Katus ja kapott</li>
+                <li class="muted">✖ Auto ümbrus</li>
+              </ul>
+
+              <p class="price-note">
+                Tagab, et saad ohutult autosse ja liikuma.
+              </p>
+            </article>
+
+            <!-- TÄISTEENUS -->
+            <article class="price-card featured">
+              <div class="price-badge featured-badge">Soovitatud</div>
+              <div class="price-main">9–20 €</div>
+              <h3 class="price-title">Täisteenus</h3>
+
+              <ul class="price-list">
+                <li>✔ Kõik klaasid</li>
+                <li>✔ Katus, kapott, pagass</li>
+                <li>✔ Uksed ja peeglid</li>
+                <li>✔ Soovi korral auto ümbrus</li>
+                <li>✔ Jääsulatusaine (vajadusel)</li>
+              </ul>
+
+              <p class="price-note">
+                Hind sõltub töö mahust ja teenuse kiirusest.
+              </p>
+            </article>
+
+            <!-- KIIR / ERITELLIMUS -->
+            <article class="price-card">
+              <div class="price-badge">Paindlik</div>
+              <div class="price-main">al 12 €</div>
+              <h3 class="price-title">Kiir- või eritellimus</h3>
+
+              <ul class="price-list">
+                <li>✔ Täisteenus</li>
+                <li>✔ Kiirem reageerimine</li>
+                <li>✔ Suur lumi / eritingimused</li>
+              </ul>
+
+              <p class="price-note">
+                Sobib, kui teenust on vaja kiiresti või töö on mahukas.
               </p>
             </article>
           </div>
