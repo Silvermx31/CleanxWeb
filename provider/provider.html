@@ -1481,7 +1481,7 @@
       <!-- KUIDAS TEENIMINE TOIMIB -->
       <section id="provider-process" class="section">
         <div class="container">
-          <div class="accordion-card">
+          <div class="accordion-card" id="provider-process-card">
             <button class="accordion-header">
               <h2 data-i18n="provider_process_title"></h2>
               <span class="accordion-icon">+</span>
@@ -2102,6 +2102,41 @@
           card.classList.toggle("open");
         });
       });
+    </script>
+    <script>
+      function openAccordionByHash() {
+        const hash = window.location.hash;
+        if (!hash) return;
+
+        const target = document.querySelector(hash);
+        if (!target) return;
+
+        const card = target.classList.contains("accordion-card")
+          ? target
+          : target.closest(".accordion-card");
+
+        if (!card) return;
+
+        // Ava accordion, kui pole avatud
+        if (!card.classList.contains("open")) {
+          card.classList.add("open");
+        }
+
+        // Väike viivitus, et CSS jõuaks avaneda, siis scroll
+        setTimeout(() => {
+          card.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+
+      // Kui klikitakse sama lehe ankru peale
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", () => {
+          setTimeout(openAccordionByHash, 0);
+        });
+      });
+
+      // Kui leht avatakse otse URL-iga #hash
+      window.addEventListener("load", openAccordionByHash);
     </script>
   </body>
 </html>
