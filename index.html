@@ -864,6 +864,44 @@
       .toast.error {
         background: rgba(220, 38, 38, 0.95);
       }
+      .faq-list {
+        max-width: 760px;
+        margin: 40px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .faq-item {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 14px 18px;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+        transition: box-shadow 0.25s ease;
+      }
+
+      .faq-item[open] {
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
+      }
+
+      .faq-item summary {
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 15px;
+        color: #111827;
+        list-style: none;
+      }
+
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .faq-item p {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #4b5563;
+      }
 
       /* RESPONSIVE */
       @media (max-width: 960px) {
@@ -1150,7 +1188,7 @@
             <!-- TÄISTEENUS -->
             <article class="price-card featured">
               <div class="price-badge featured-badge">Full · Soovitatud</div>
-              <div class="price-main">9–20 €</div>
+              <div class="price-main">10 €</div>
               <h3 class="price-title">Täisteenus</h3>
 
               <ul class="price-list">
@@ -1169,7 +1207,7 @@
             <!-- KIIR / ERITELLIMUS -->
             <article class="price-card">
               <div class="price-badge">Custom</div>
-              <div class="price-main">al 10 €</div>
+              <div class="price-main">al 10 € kuni 20 €</div>
               <h3 class="price-title">Kiir- või eritellimus</h3>
 
               <ul class="price-list">
@@ -1297,6 +1335,82 @@
               ümbert lund rookima minna.”
               <div class="test-name">– Laura, Saue</div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+
+      <section id="faq" class="section">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="section-title">Korduma kippuvad küsimused</h2>
+            <p class="section-sub">Selgitame hinnad ja teenused ausalt lahti</p>
+          </header>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Mida sisaldab Light (7 €)?</summary>
+              <p>
+                Light on kiirpuhastus, mis tagab, et saad ohutult autosse ja
+                liikuma. Teenus sisaldab esiklaasi, küljepeeglite ja juhi ukse
+                ümbruse puhastamist. Katus, kapott ja auto ümbrus ei kuulu Light
+                paketti.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Mida sisaldab Full (10 €)?</summary>
+              <p>
+                Full pakett tähendab kogu auto puhastamist: kõik klaasid, katus,
+                kapott, pagass, peeglid ja uksed. See on kõige populaarsem ja
+                soovitatav valik tavapärase lumekatte korral.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Mis on Custom (10–20 €)?</summary>
+              <p>
+                Custom pakett võimaldab sul ise hinna valida vastavalt töö
+                mahule ja soovitud kiirusele. Sobib, kui lund on palju, auto
+                ümbrus vajab puhastamist või teenust on vaja kiiremini kui
+                tavaliselt.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Miks hind võib Custom paketi puhul suurem olla?</summary>
+              <p>
+                Hind sõltub töö mahust (nt paks lumi, suur auto, ümbruse
+                puhastamine) ja sellest, kui kiiresti teenust soovid. Lõplik
+                hind on alati enne tellimuse kinnitamist rakenduses nähtav.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Kas hind võib pärast tellimist muutuda?</summary>
+              <p>
+                Ei. Kui oled tellimuse kinnitanud, jääb hind samaks. Mingeid
+                lisatasusid pärast tellimist ei lisandu.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Kas puhastaja kasutab jääsulatusainet?</summary>
+              <p>
+                Jääsulatusainet kasutatakse ainult juhul, kui see on tellimuses
+                märgitud või kliendiga kokku lepitud. Light pakett seda
+                vaikimisi ei sisalda.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Kus CleanX teenus on saadaval?</summary>
+              <p>
+                Hetkel on CleanX saadaval Saue, Kohila ja Tallinna piirkondades.
+                Teenusepiirkond laieneb järk-järgult.
+              </p>
+            </details>
           </div>
         </div>
       </section>
