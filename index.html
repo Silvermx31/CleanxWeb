@@ -39,6 +39,56 @@
         text-decoration: none;
         color: inherit;
       }
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+        margin-top: 48px;
+      }
+
+      .step-card {
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 18px;
+        padding: 28px 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+      }
+
+      .step-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      /* NUMBRI RING */
+      .step-number {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        box-shadow: 0 6px 16px rgba(14, 165, 233, 0.35);
+      }
+
+      /* TEKST */
+      .step-title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #0f172a;
+      }
+
+      .step-text {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #475569;
+      }
 
       /* LAYOUT HELPERS */
       .page {
@@ -494,39 +544,43 @@
 
       .cards-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 18px;
+        margin-top: 48px;
       }
 
       .feature-card {
-        background: var(--card-bg);
-        border-radius: var(--radius-lg);
-        padding: 18px 16px;
-        box-shadow: 0 14px 30px rgba(148, 163, 184, 0.25);
-        border: 1px solid rgba(226, 232, 240, 0.9);
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 18px;
+        padding: 28px 24px;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        position: relative;
       }
 
       .feature-icon {
-        width: 32px;
-        height: 32px;
-        border-radius: 12px;
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 10px;
-        font-size: 18px;
+        font-size: 22px;
+        margin-bottom: 16px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
       }
 
       .feature-title {
-        font-size: 15px;
-        font-weight: 600;
-        margin-bottom: 4px;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #0f172a;
       }
 
       .feature-text {
-        font-size: 13px;
-        color: var(--text-muted);
-        line-height: 1.5;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #475569;
       }
 
       /* SECTION: STEPS */
