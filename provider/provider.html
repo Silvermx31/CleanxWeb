@@ -1220,7 +1220,11 @@
               </div>
             </div>
 
-            <form id="registrationForm" class="reg-card">
+            <form
+              id="registrationForm"
+              class="reg-card"
+              enctype="multipart/form-data"
+            >
               <input type="hidden" name="_captcha" value="false" />
               <input
                 type="hidden"
@@ -1308,9 +1312,7 @@
                     <input
                       id="birthdate"
                       name="birthdate"
-                      type="text"
-                      maxlength="10"
-                      placeholder="PP.KK.AAAA or DD.MM.YYYY"
+                      type="date"
                       required
                     />
                     <span class="helper" data-i18n="form_birthdate_helper">
@@ -1361,21 +1363,10 @@
                     Dokumendi tüüp
                   </label>
                   <select id="document_type" name="document_type" required>
-                    <option value="" data-i18n="form_document_select">
-                      Vali dokumendi tüüp
-                    </option>
-
-                    <option value="Eesti ID-kaart" data-i18n="doc_id_card">
-                      Eesti ID-kaart
-                    </option>
-
-                    <option value="Eesti pass" data-i18n="doc_passport">
-                      Eesti pass
-                    </option>
-
-                    <option value="Elamisluba" data-i18n="doc_residence_permit">
-                      Elamisluba
-                    </option>
+                    <option value="">Vali dokumendi tüüp</option>
+                    <option value="id_card">Eesti ID-kaart</option>
+                    <option value="passport">Eesti pass</option>
+                    <option value="residence_permit">Elamisluba</option>
                   </select>
                 </div>
 
@@ -1438,7 +1429,7 @@
                     >
                       Ettevõtte nimi (kui OÜ)
                     </label>
-                    <input id="companyName" name="companyName" type="text" />
+                    <input id="company_name" name="company_name" type="text" />
                   </div>
                   <div class="input-group">
                     <label
@@ -1449,8 +1440,8 @@
                       Registrikood (kui OÜ)
                     </label>
                     <input
-                      id="companyRegistryCode"
-                      name="companyRegistryCode"
+                      id="company_registry_code"
+                      name="company_registry_code"
                       type="text"
                     />
                   </div>
@@ -2052,7 +2043,7 @@
         const formData = new FormData(form);
 
         // AJUTINE – hiljem vahetad URLi backendi vastu@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        const ENDPOINT = "https://formsubmit.co/silvermx31@gmail.com";
+        const ENDPOINT = "https://cleanxapp.eu/api/provider-applications/";
 
         try {
           const res = await fetch(ENDPOINT, {
@@ -2063,22 +2054,32 @@
             },
           });
 
-          if (!res.ok) throw new Error("Submit failed");
+          // 🔑 loeme ALATI vastuse
+          const data = await res.json();
 
+          // ❌ kui backend ütleb, et midagi on valesti
+          if (!res.ok) {
+            status.textContent = Object.values(data).flat().join("\n");
+            status.className = "reg-status error";
+            return;
+          }
+
+          // ✅ edukas
           const successMsg = {
             et: "Aitäh! Sinu taotlus on edukalt saadetud.",
             en: "Thank you! Your application has been successfully submitted.",
           };
 
           status.textContent = successMsg[document.documentElement.lang];
-
           status.className = "reg-status success";
 
           form.reset();
         } catch (err) {
+          console.error("Network / JS error:", err);
+
           const errorMsg = {
-            et: "Midagi läks valesti. Palun proovi uuesti.",
-            en: "Something went wrong. Please try again.",
+            et: "Võrguviga. Palun proovi mõne hetke pärast uuesti.",
+            en: "Network error. Please try again in a moment.",
           };
 
           status.textContent = errorMsg[document.documentElement.lang];
